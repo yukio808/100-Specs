@@ -12,6 +12,7 @@ class HundredSpecs
   {
     M.describe("Step 1", step1);
     M.describe("Step 2", step2);
+    M.describe("Step 3", step3);
   }
 
   private inline function step1():Void
@@ -30,6 +31,13 @@ class HundredSpecs
   {
     M.it("should define a variable named 'vgsystem' with a value of 'atari'.", function() {
       E.expect(untyped(vgsystem)).toBe("atari"); // doesn't work
+    });
+  }
+
+  private inline function step3():Void
+  {
+    M.it("should define a variable named 'sahara_animal' with a value of 'The Addax'.", function() {
+      E.expect(untyped(sahara_animal)).toBe("The Addax"); // doesn't work
     });
   }
 

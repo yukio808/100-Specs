@@ -3,6 +3,7 @@ var $estr = function() { return js.Boot.__string_rec(this,''); };
 var HundredSpecs = function() {
 	js.mocha.M.describe("Step 1",$bind(this,this.step1));
 	js.mocha.M.describe("Step 2",$bind(this,this.step2));
+	js.mocha.M.describe("Step 3",$bind(this,this.step3));
 };
 HundredSpecs.__name__ = true;
 HundredSpecs.main = function() {
@@ -11,7 +12,12 @@ HundredSpecs.main = function() {
 	js.mocha.Mocha.run();
 }
 HundredSpecs.prototype = {
-	step2: function() {
+	step3: function() {
+		js.mocha.M.it("should define a variable named 'sahara_animal' with a value of 'The Addax'.",function() {
+			js.expect.ExpectMixins.toBe(js.expect.E.expect(sahara_animal),"The Addax");
+		});
+	}
+	,step2: function() {
 		js.mocha.M.it("should define a variable named 'vgsystem' with a value of 'atari'.",function() {
 			js.expect.ExpectMixins.toBe(js.expect.E.expect(vgsystem),"atari");
 		});
