@@ -1,5 +1,5 @@
 {
-  "name": "100-things",
+  "name": "100-specs",
   "version": "0.0.0",
   "description": "make 100 tests pass",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/DevLeague/100-things.git"
+    "url": "https://github.com/DevLeague/100-specs.git"
   },
   "keywords": [
     "nodejs"
@@ -16,9 +16,9 @@
   "author": "@theRemix",
   "license": "BSD2",
   "bugs": {
-    "url": "https://github.com/DevLeague/100-things/issues"
+    "url": "https://github.com/DevLeague/100-specs/issues"
   },
-  "homepage": "https://github.com/DevLeague/100-things",
+  "homepage": "https://github.com/DevLeague/100-specs",
   "devDependencies": {
     "gulp": "^3.8.8",
     "gulp-connect": "^2.0.6"
