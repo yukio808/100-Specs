@@ -10,10 +10,15 @@ class HundredSpecs
 {
   public function new()
   {
-    M.describe("A Spec", function()
+    M.describe("Step 1", function()
     {
-      M.it("tests synchronous code", function() {
-        true.should().be.ok();
+      M.it("should define a variable named unicorn with no value set.", function() {
+        if(untyped(unicorn) == null){
+          E.expect(true).to.be.ok();
+        }else{
+          E.expect().fail("unicorn is not set");
+        }
+        // E.expect(untyped(unicorn)).to.eql(null); // doesn't work
       });
     });
   }

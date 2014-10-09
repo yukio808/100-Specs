@@ -1,9 +1,9 @@
 (function () { "use strict";
 var $estr = function() { return js.Boot.__string_rec(this,''); };
 var HundredSpecs = function() {
-	js.mocha.M.describe("A Spec",function() {
-		js.mocha.M.it("tests synchronous code",function() {
-			js.expect.E.should(true).be.ok();
+	js.mocha.M.describe("Step 1",function() {
+		js.mocha.M.it("should define a variable named unicorn with no value set.",function() {
+			if(unicorn == null) js.expect.E.expect(true).to.be.ok(); else js.expect.E.expect().fail("unicorn is not set");
 		});
 	});
 };
