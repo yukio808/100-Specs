@@ -4,6 +4,7 @@ var HundredSpecs = function() {
 	js.mocha.M.describe("Step 1",$bind(this,this.step1));
 	js.mocha.M.describe("Step 2",$bind(this,this.step2));
 	js.mocha.M.describe("Step 3",$bind(this,this.step3));
+	js.mocha.M.describe("Step 30",$bind(this,this.step30));
 };
 HundredSpecs.__name__ = true;
 HundredSpecs.main = function() {
@@ -12,18 +13,26 @@ HundredSpecs.main = function() {
 	js.mocha.Mocha.run();
 }
 HundredSpecs.prototype = {
-	step3: function() {
-		js.mocha.M.it("should define a variable named 'sahara_animal' with a value of 'The Addax'.",function() {
+	step30: function() {
+		js.mocha.M.it("should define a function named 'sahara_river'.",function() {
+			js.expect.E.expect(sahara_river).to.be.a("function");
+		});
+		js.mocha.M.it("'sahara_river' should return the string 'Nile River'.",function() {
+			js.expect.ExpectMixins.toBe(js.expect.E.expect(sahara_river()),"Nile River");
+		});
+	}
+	,step3: function() {
+		js.mocha.M.it("should declare a variable named 'sahara_animal' with a value of 'The Addax'.",function() {
 			js.expect.ExpectMixins.toBe(js.expect.E.expect(sahara_animal),"The Addax");
 		});
 	}
 	,step2: function() {
-		js.mocha.M.it("should define a variable named 'vgsystem' with a value of 'atari'.",function() {
+		js.mocha.M.it("should declare a variable named 'vgsystem' with a value of 'atari'.",function() {
 			js.expect.ExpectMixins.toBe(js.expect.E.expect(vgsystem),"atari");
 		});
 	}
 	,step1: function() {
-		js.mocha.M.it("should define a variable named 'unicorn' with no value set.",function() {
+		js.mocha.M.it("should declare a variable named 'unicorn' with no value set.",function() {
 			if(unicorn == null) js.expect.E.expect(true).to.be.ok(); else js.expect.E.expect().fail("unicorn is not set");
 		});
 	}
