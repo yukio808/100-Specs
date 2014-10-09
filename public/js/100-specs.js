@@ -1,17 +1,26 @@
 (function () { "use strict";
 var $estr = function() { return js.Boot.__string_rec(this,''); };
 var HundredSpecs = function() {
-	js.mocha.M.describe("Step 1",function() {
-		js.mocha.M.it("should define a variable named unicorn with no value set.",function() {
-			if(unicorn == null) js.expect.E.expect(true).to.be.ok(); else js.expect.E.expect().fail("unicorn is not set");
-		});
-	});
+	js.mocha.M.describe("Step 1",$bind(this,this.step1));
+	js.mocha.M.describe("Step 2",$bind(this,this.step2));
 };
 HundredSpecs.__name__ = true;
 HundredSpecs.main = function() {
 	js.mocha.Mocha.setup({ ui : js.mocha.Ui.BDD});
 	new HundredSpecs();
 	js.mocha.Mocha.run();
+}
+HundredSpecs.prototype = {
+	step2: function() {
+		js.mocha.M.it("should define a variable named 'vgsystem' with a value of 'atari'.",function() {
+			js.expect.ExpectMixins.toBe(js.expect.E.expect(vgsystem),"atari");
+		});
+	}
+	,step1: function() {
+		js.mocha.M.it("should define a variable named 'unicorn' with no value set.",function() {
+			if(unicorn == null) js.expect.E.expect(true).to.be.ok(); else js.expect.E.expect().fail("unicorn is not set");
+		});
+	}
 }
 var Reflect = function() { }
 Reflect.__name__ = true;
@@ -241,6 +250,8 @@ js.mocha.M.test = function(description,test) {
 js.mocha.M.teardown = function(func) {
 	teardown(func);
 }
+var $_, $fid = 0;
+function $bind(o,m) { if( m == null ) return null; if( m.__id__ == null ) m.__id__ = $fid++; var f; if( o.hx__closures__ == null ) o.hx__closures__ = {}; else f = o.hx__closures__[m.__id__]; if( f == null ) { f = function(){ return f.method.apply(f.scope, arguments); }; f.scope = o; f.method = m; o.hx__closures__[m.__id__] = f; } return f; };
 String.__name__ = true;
 Array.__name__ = true;
 if(typeof expect !== 'undefined') js.expect.E._expect = expect; else if(typeof require !== 'undefined') js.expect.E._expect = require('expect.js'); else throw "make sure to include expect.js";

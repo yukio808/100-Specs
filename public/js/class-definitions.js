@@ -3,4 +3,11 @@
  * Define a variable named "unicorn"
  *
  */
- var unicorn;
+
+
+/* Step 2
+ *
+ * Define a variable named "vgsystem"
+ * then assign the value of phone to "atari"
+ *
+ */
