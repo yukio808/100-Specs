@@ -22,6 +22,7 @@ class HundredSpecs
     M.describe("Princess Leia", step10);
     M.describe("Domains", step11);
     M.describe("Browsers", step12);
+    M.describe("Rainbow", step13);
     M.describe("Step 20", step20);
   }
 
@@ -183,6 +184,31 @@ class HundredSpecs
       E.expect( untyped(browsers)["Sleipnir"] ).to.eql("fenrir");
       E.expect( untyped(browsers)["Konqueror"] ).to.eql("KDE");
       E.expect( untyped(browsers)["Links"] ).to.eql("GPLv2+");
+    });
+  }
+
+  private inline function step13():Void
+  {
+    M.it("should declare a literal object named 'rainbow'", function() {
+      E.expect(untyped(rainbow)).not.toBe(null);
+    });
+    M.it("should have 2 properties", function() {
+      E.expect( Reflect.fields( untyped(rainbow) ) ).to.have.length(8);
+    });
+    M.it("colors should have 7 properties", function() {
+      E.expect( Reflect.fields( untyped(rainbow.colors) ) ).to.have.length(7);
+    });
+    M.it("colors should define 7 colors in hexadecimal format", function() {
+      E.expect( untyped(rainbow.colors)["red"] ).to.eql("#F0280A");
+      E.expect( untyped(rainbow.colors)["orange"] ).to.eql("#FF8800");
+      E.expect( untyped(rainbow.colors)["yellow"]).to.eql("#FFDD00");
+      E.expect( untyped(rainbow.colors)["green"] ).to.eql("#51AB0C");
+      E.expect( untyped(rainbow.colors)["blue"] ).to.eql("#1593ED");
+      E.expect( untyped(rainbow.colors)["indigo"] ).to.eql("#5215ED");
+      E.expect( untyped(rainbow.colors)["violet"] ).to.eql("#A915ED");
+    });
+    M.it("should be a double rainbow", function() {
+      E.expect( Reflect.fields( untyped(rainbow.isDouble) ) ).to.be.ok();
     });
   }
 

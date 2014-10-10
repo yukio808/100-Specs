@@ -131,31 +131,21 @@
 
 /* Step 13
  *
+ * Define a literal object named "rainbow"
+ * with properties and values set to:
  *
- * WIP
- *
- * Define a literal object
- * rainbow
- * colors
- *   red
- *   orange
- *   yellow
- *   green
- *   blue
- *   indigo
- *   violet
- *
- *
- * 
- * Define a literal object
- * SCMs
- * git
- * svn
- * mercurial
- * bazaar
- * cvs
+ *  colors    => [LITERAL OBJECT]
+ *                  red       => "#F0280A"
+ *                  orange    => "#FF8800"
+ *                  yellow    => "#FFDD00"
+ *                  green     => "#51AB0C"
+ *                  blue      => "#1593ED"
+ *                  indigo    => "#5215ED"
+ *                  violet    => "#A915ED"
+ *  isDouble  => true
  *
  */
+
 
 
 /* Step 14
@@ -222,13 +212,13 @@
 /* Step 18
  *
  * WIP
- * Kilo
- * Hecta
- * Deca
- * Deci
- * Centi
- * Milli
- * Nano
+ * Define a literal object
+ * SCMs
+ * git
+ * svn
+ * mercurial
+ * bazaar
+ * cvs
  *
  */
 
