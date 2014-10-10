@@ -13,7 +13,7 @@ class HundredSpecs
     M.describe("Step 1", step1);
     M.describe("Step 2", step2);
     M.describe("Step 3", step3);
-    M.describe("Step 30", step30);
+    M.describe("Step 20", step20);
   }
 
   private inline function step1():Void
@@ -42,7 +42,7 @@ class HundredSpecs
     });
   }
 
-  private inline function step30():Void
+  private inline function step20():Void
   {
     M.it("should define a function named 'sahara_river'.", function() {
       E.expect(untyped(sahara_river)).to.be.a("function");
