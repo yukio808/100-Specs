@@ -7,8 +7,8 @@
 
 /* Step 2
  *
- * Declare a variable named "vgsystem"
- * then assign the value of phone to "atari"
+ * Declare a variable named "videogame_system"
+ * then assign the value of phone to "Atari"
  *
  */
 
@@ -23,88 +23,116 @@
 
 /* Step 4
  *
- * WIP
- * planets  8
- *
+ * Declare a variable named "planets"
+ * and assign the value of planets to an array containing
+ * each planet in our solar system
  *
  */
+
 
 
 /* Step 5
  *
- * WIP
- * moons jupitor
- * titan
- * europa
- * ganymede
- * io
+ * Declare a variable named "galilean_moons"
+ * and assign the value of galilean_moons to an array containing
+ * each galilean moon of Jupiter
  *
  */
 
 
-/* Step 6
+
+/* Step 6 φ
  *
- * WIP
- * limbic system
- * motor control
+ * Declare a variable named "golden_ratio"
+ * and assign the value of golden_ratio to 1.61803398874
  *
  */
+
 
 
 /* Step 7
  *
- * WIP
- * earth
- * water
- * 75%
+ * Declare a variable named "earths_water_composition"
+ * and assign the value of earths_water_composition to 0.71
  *
  */
 
 
 /* Step 8
  *
- * WIP
+ * Declare a variable named "club_name"
+ * and assign the value of club_name to "Fight Club"
+ *
  */
+
 
 
 /* Step 9
  *
- * Define a literal object
- * Princess Leia
- *   money
- *   age
- *   gender
- *   name
- *   address
+ * Define a literal object named "Gender"
+ * with properties and values set to:
  *
- */
+ *   female ;
+  *   male   ;
+  *   unknown;
+  */
+
 
 
 /* Step 10
  *
- * Define a literal object
- * domains
- *  names : ip
  *
+ * Define a literal object named "princess_leia"
+ * with properties and values set to:
  *
- *
+ *   name   ;
+  *   money  ;
+  *   age    ;
+  *   gender ;
+  *
  */
+
+
 
 
 /* Step 11
  *
- * Define a literal object
- * Browsers
- * Chrome
- * Safari
- * Opera
- * Firefox
+ * Define a literal object named "domains"
+ * with properties and values set to:
  *
- *
+ *   ycombinator.com                 ;
+  *   laughingsquid.com               ;
+  *   slumlordhosting.com             ;
+  *   jsonformatter.curiousconcept.com;
+  *
  */
 
 
+
+
 /* Step 12
+ *
+ * Define a literal object named "browsers"
+ * with properties and values set to:
+ *
+ *   Chrome    ;
+  *   Chromium  ;
+  *   Safari    ;
+  *   Opera     ;
+  *   Firefox   ;
+  *   Sleipnir  ;
+  *   Konqueror ;
+  *   Links     ;
+  *
+ */
+
+
+
+
+/* Step 13
+ *
+ *
+ * WIP
  *
  * Define a literal object
  * rainbow
@@ -117,10 +145,7 @@
  *   indigo
  *   violet
  *
- */
-
-
-/* Step 13
+ *
  *
  * Define a literal object
  * SCMs
@@ -156,9 +181,6 @@
  *     adenine
  *     thymine
  *     cytosine
- *
- *
- *
  *
  */
 
@@ -243,7 +265,7 @@
 /* Step 21
  *
  * Define a functions object
- * add
+ * add numbers
  *
  */
 
@@ -251,7 +273,7 @@
 /* Step 22
  *
  * Define a functions object
- * to cat sound
+ * install linux()
  *
  *
  */
@@ -260,7 +282,7 @@
 /* Step 23
  *
  * Define a functions object
- * drink(beverage)
+ * drink(beer)
  *
  */
 
@@ -268,7 +290,7 @@
 /* Step 24
  *
  * WIP
- *
+ * browse url ( browser )
  *
  *
  */
@@ -279,7 +301,6 @@
  * WIP
  * listify Living Organism Classification
  * each on it's own line
- *
  *
  */
 
@@ -312,6 +333,7 @@
 /* Step 29
  *
  * WIP
+ * talk_about(club) false
  *
  *
  */
@@ -319,28 +341,47 @@
 
 /* Step 30
  *
- * Define a literal object
+ * Define a literal object with functions
+ * Garden
+ *   plants
+ *   grow
+ *   water
  *
  */
 
 
 /* Step 31
  *
- * Define a literal object
+ * Define a literal object with functions
+ * Pen
+ *   color
+ *   write()
  *
  */
 
 
 /* Step 32
  *
- * Define a literal object
+ * Define a literal object with functions
+ * Solar system
+ *  planets   Array
+ *  addPlanet
+ *  removePlanet
  *
  */
 
 
 /* Step 33
  *
- * Define a literal object
+ * Define a literal object with functions
+ * Hero
+ *  name princess leia
+ *  age
+ *  ...
+ *  ...
+ *  shoots gun
+ *  gets in trouble
+ *  marries ( Han solo )
  *
  */
 
@@ -348,7 +389,9 @@
 /* Step 34
  *
  * WIP
- *
+ * Stapler
+ *  color red
+ *  staples paper (max paper)
  *
  */
 
@@ -356,6 +399,18 @@
 /* Step 35
  *
  * WIP
+ * Leonhard Euler
+ *  mathematician
+ *  physicist
+ *  discoveries in
+ *    infinitesimal calculus
+ *    graph theory
+ *    mechanics,
+ *    fluid dynamics,
+ *    optics,
+ *    astronomy,
+ *    music theory.
+ *  do(math)
  *
  *
  */
@@ -364,7 +419,11 @@
 /* Step 36
  *
  * WIP
- *
+ * Bank Account
+ *  balance
+ *  withdraw
+ *  deposit
+ *  rob
  *
  */
 
@@ -372,6 +431,14 @@
 /* Step 37
  *
  * WIP
+ * PacMan
+ *  x
+ *  y
+ *  north()
+ *  south()
+ *  east()
+ *  west()
+ *  getPosition()
  *
  *
  */
@@ -380,7 +447,11 @@
 /* Step 38
  *
  * WIP
- *
+ * beer
+ *  temperature 50
+ *  volume 12
+ *  dispense()
+ *  getVolume()
  *
  */
 
@@ -388,8 +459,12 @@
 /* Step 39
  *
  * WIP
- *
- *
+ * cow
+ *   poops : 0
+ *   milks : 0
+ *   eat() poops ;
+  *   drink() milks ;
+  *
  */
 
 /* Step 50
@@ -403,88 +478,54 @@
  * @param {string} species The animal species
  * @param {string} gender  male or female
  */
-function Animal (species, gender) {
-  this.species = species;
-  this.gender = gender;
-}
 
 /**
  * Vehicle class
  * @param {string} make The vehicle's make
  * @param {string} model The vehicle's model
  */
-function Vehicle (make, model) {
-  this.make = make;
-  this.model = model;
-}
 
 /**
  * Shape class
  * @param {number} sides The number of sides, should be greater than 3
  */
-function Shape (sides) {
-  this.sides = sides;
-}
 
 /**
  * Box class
  * @param {anything} contents The contents of the box
  * @param {boolean} isOpen     Whether the box is opened or closed
  */
-function Box (contents, isOpen) {
-  this.contents = contents;
-  this.isOpen = isOpen;
-}
 
 /**
  * Door class
  * @param {boolean} isOpen Whether the door is opened or closed
  */
-function Door (isOpen) {
-  this.isOpen = isOpen;
-}
 
 /**
  * Shoe class
  * @param {number} size  The shoe size
  * @param {string} color The shoe color
  */
-function Shoe (size, color) {
-  this.size = size;
-  this.color = color;
-}
 
 /**
  * House class
  * @param {number} stories How many stories tall the house is
  */
-function House (stories) {
-  this.stories = stories;
-}
 
 /**
  * Lightbulb class
  * @param {boolean} isOn Whether the light is on or off
  */
-function Lightbulb (isOn) {
-  this.isOn = isOn;
-}
 
 /**
  * Cookie class
  * @param {string} flavor The cookie's flavor
  */
-function Cookie (flavor) {
-  this.flavor = flavor;
-}
 
 /**
  * Meal class
  * @param {Array} foods All the foods in the meal
  */
-function Meal (foods) {
-  this.foods = foods;
-}
 
 /* Step 60
  *
@@ -493,44 +534,44 @@ function Meal (foods) {
  */
 
 // Create 2 different species of animals
-var george = new Animal("Monkey", "male");
-var nemo = new Animal("Fish", "male");
+var george;
+var nemo;
 
 // Create 2 different vehicles
-var civic = new Vehicle("Honda", "Civic");
-var forte = new Vehicle("KIA", "Forte");
+var civic;
+var forte;
 
 // Create 2 shapes with different numbers of sides
-var square = new Shape(4);
-var hexagon = new Shape(6);
+var square;
+var hexagon;
 
 // Create 2 boxes
-var catBox = new Box(new Animal("Cat"), true);
-var christmasPresent = new Box({}, false);
+var catBox;
+var christmasPresent;
 
 // Create 2 doors
-var automaticDoor = new Door(true);
-var bankVault = new Door(false);
+var automaticDoor;
+var bankVault;
 
 // Create 2 shoes
-var rubySlippers = new Shoe(7, "red");
-var dressShoes = new Shoe(10, "black");
+var rubySlippers;
+var dressShoes;
 
 // Create 2 houses
-var singleStory = new House(1);
-var twoStory = new House(2);
+var singleStory;
+var twoStory;
 
 // Create 2 lightbulbs
-var incandescent = new Lightbulb(true);
-var halogen = new Lightbulb(false);
+var incandescent;
+var halogen;
 
 // Create 2 cookies of different flavors
-var chocolateChip = new Cookie("chocolate");
-var gingerbread = new Cookie("gingerbread");
+var chocolateChip;
+var gingerbread;
 
 // Create 2 different meals
-var breakfast = new Meal(["cereal", "milk"]);
-var dinner = new Meal(["fish", "vegetables"]);
+var breakfast;
+var dinner;
 
 /* Step 80
  *
