@@ -84,14 +84,14 @@ HundredSpecs.prototype = {
 		var lowercase_planets_6 = "uranus";
 		var lowercase_planets_7 = "neptune";
 		js.mocha.M.it("should contain the name of each of our solar system's planets",function() {
-			js.expect.E.expect(lowercase_planets_0).to.contain(planets[0]);
-			js.expect.E.expect(lowercase_planets_1).to.contain(planets[1]);
-			js.expect.E.expect(lowercase_planets_2).to.contain(planets[2]);
-			js.expect.E.expect(lowercase_planets_3).to.contain(planets[3]);
-			js.expect.E.expect(lowercase_planets_4).to.contain(planets[4]);
-			js.expect.E.expect(lowercase_planets_5).to.contain(planets[5]);
-			js.expect.E.expect(lowercase_planets_6).to.contain(planets[6]);
-			js.expect.E.expect(lowercase_planets_7).to.contain(planets[7]);
+			js.expect.E.expect(lowercase_planets_0).to.eql(planets[0]);
+			js.expect.E.expect(lowercase_planets_1).to.eql(planets[1]);
+			js.expect.E.expect(lowercase_planets_2).to.eql(planets[2]);
+			js.expect.E.expect(lowercase_planets_3).to.eql(planets[3]);
+			js.expect.E.expect(lowercase_planets_4).to.eql(planets[4]);
+			js.expect.E.expect(lowercase_planets_5).to.eql(planets[5]);
+			js.expect.E.expect(lowercase_planets_6).to.eql(planets[6]);
+			js.expect.E.expect(lowercase_planets_7).to.eql(planets[7]);
 		});
 		js.mocha.M.it("should have each planet listed in order",function() {
 			js.expect.E.expect(planets[0].toLowerCase()).to.eql("mercury");
