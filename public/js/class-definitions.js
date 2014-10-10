@@ -33,14 +33,12 @@
 
 /* Step 5
  *
- * WIP
- * moons jupitor
- * titan 
- * europa
- * ganymede
- * io
+ * Declare a variable named "galilean_moons"
+ * and assign the value of galilean_moons to an array containing
+ * each galilean moon of Jupiter
  *
  */
+
 
 
 /* Step 6

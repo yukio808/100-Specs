@@ -5,6 +5,7 @@ var HundredSpecs = function() {
 	js.mocha.M.describe("Videogame System",$bind(this,this.step2));
 	js.mocha.M.describe("Sahara Animal",$bind(this,this.step3));
 	js.mocha.M.describe("Planets",$bind(this,this.step4));
+	js.mocha.M.describe("Galilean Moons",$bind(this,this.step5));
 	js.mocha.M.describe("Step 20",$bind(this,this.step20));
 };
 HundredSpecs.__name__ = true;
@@ -22,6 +23,21 @@ HundredSpecs.prototype = {
 			js.expect.ExpectMixins.toBe(js.expect.E.expect(sahara_river()),"Nile River");
 		});
 	}
+	,step5: function() {
+		js.mocha.M.it("should declare a variable named 'galilean_moons' that is an array.",function() {
+			js.expect.E.expect(galilean_moons).to.be.an(Array);
+		});
+		js.mocha.M.it("should have 4 items",function() {
+			js.expect.E.expect(galilean_moons).to.have.length(4);
+		});
+		js.mocha.M.it("should contain the name of each galilean moon of Jupiter",function() {
+			var lowercase_moons = ["io","europa","ganymede","callisto"];
+			js.expect.E.expect(lowercase_moons).to.contain(galilean_moons[0].toLowerCase());
+			js.expect.E.expect(lowercase_moons).to.contain(galilean_moons[1].toLowerCase());
+			js.expect.E.expect(lowercase_moons).to.contain(galilean_moons[2].toLowerCase());
+			js.expect.E.expect(lowercase_moons).to.contain(galilean_moons[3].toLowerCase());
+		});
+	}
 	,step4: function() {
 		js.mocha.M.it("should declare a variable named 'planets' that is an array.",function() {
 			js.expect.E.expect(planets).to.be.an(Array);
@@ -30,14 +46,24 @@ HundredSpecs.prototype = {
 			js.expect.E.expect(planets.length).to.eql(8);
 		});
 		js.mocha.M.it("should contain the name of each of our solar system's planets",function() {
+			js.expect.E.expect(planets.toLowerCase()).to.contain("mercury");
+			js.expect.E.expect(planets.toLowerCase()).to.contain("venus");
+			js.expect.E.expect(planets.toLowerCase()).to.contain("earth");
+			js.expect.E.expect(planets.toLowerCase()).to.contain("mars");
+			js.expect.E.expect(planets.toLowerCase()).to.contain("jupiter");
+			js.expect.E.expect(planets.toLowerCase()).to.contain("saturn");
+			js.expect.E.expect(planets.toLowerCase()).to.contain("uranus");
+			js.expect.E.expect(planets.toLowerCase()).to.contain("neptune");
+		});
+		js.mocha.M.it("should have each planet listed in order",function() {
 			js.expect.E.expect(planets[0].toLowerCase()).to.eql("mercury");
-			js.expect.E.expect(planets[0].toLowerCase()).to.eql("venus");
-			js.expect.E.expect(planets[0].toLowerCase()).to.eql("earth");
-			js.expect.E.expect(planets[0].toLowerCase()).to.eql("mars");
-			js.expect.E.expect(planets[0].toLowerCase()).to.eql("jupiter");
-			js.expect.E.expect(planets[0].toLowerCase()).to.eql("saturn");
-			js.expect.E.expect(planets[0].toLowerCase()).to.eql("uranus");
-			js.expect.E.expect(planets[0].toLowerCase()).to.eql("neptune");
+			js.expect.E.expect(planets[1].toLowerCase()).to.eql("venus");
+			js.expect.E.expect(planets[2].toLowerCase()).to.eql("earth");
+			js.expect.E.expect(planets[3].toLowerCase()).to.eql("mars");
+			js.expect.E.expect(planets[4].toLowerCase()).to.eql("jupiter");
+			js.expect.E.expect(planets[5].toLowerCase()).to.eql("saturn");
+			js.expect.E.expect(planets[6].toLowerCase()).to.eql("uranus");
+			js.expect.E.expect(planets[7].toLowerCase()).to.eql("neptune");
 		});
 	}
 	,step3: function() {
