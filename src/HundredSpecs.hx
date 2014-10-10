@@ -20,6 +20,7 @@ class HundredSpecs
     M.describe("Club Name", step8);
     M.describe("Gender", step9);
     M.describe("Princess Leia", step10);
+    M.describe("Domains", step11);
     M.describe("Step 20", step20);
   }
 
@@ -145,6 +146,22 @@ class HundredSpecs
       E.expect( untyped(princess_leia).money ).to.eql(890);
       E.expect( untyped(princess_leia).age ).to.eql(20);
       E.expect( untyped(princess_leia).gender ).to.eql('female');
+    });
+  }
+
+  private inline function step11():Void
+  {
+    M.it("should declare a literal object named 'domains'", function() {
+      E.expect(untyped(domains)).not.toBe(null);
+    });
+    M.it("should have 4 properties", function() {
+      E.expect( Reflect.fields( untyped(domains) ) ).to.have.length(4);
+    });
+    M.it("should define domain names mapped to ip addresses.", function() {
+      E.expect( untyped(domains)["ycombinator.com"] ).to.eql("198.41.190.47");
+      E.expect( untyped(domains)["laughingsquid.com"] ).to.eql("162.159.247.97");
+      E.expect( untyped(domains)["slumlordhosting.com"]).to.eql("198.61.179.126");
+      E.expect( untyped(domains)["jsonformatter.curiousconcept.com"] ).to.eql("104.28.5.70");
     });
   }
 

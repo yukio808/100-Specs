@@ -11,6 +11,7 @@ var HundredSpecs = function() {
 	js.mocha.M.describe("Club Name",$bind(this,this.step8));
 	js.mocha.M.describe("Gender",$bind(this,this.step9));
 	js.mocha.M.describe("Princess Leia",$bind(this,this.step10));
+	js.mocha.M.describe("Domains",$bind(this,this.step11));
 	js.mocha.M.describe("Step 20",$bind(this,this.step20));
 };
 HundredSpecs.__name__ = true;
@@ -26,6 +27,20 @@ HundredSpecs.prototype = {
 		});
 		js.mocha.M.it("'sahara_river' should return the string 'Nile River'.",function() {
 			js.expect.ExpectMixins.toBe(js.expect.E.expect(sahara_river()),"Nile River");
+		});
+	}
+	,step11: function() {
+		js.mocha.M.it("should declare a literal object named 'domains'",function() {
+			js.expect.ExpectMixins.toBe(js.expect.E.expect(domains).not,null);
+		});
+		js.mocha.M.it("should have 4 properties",function() {
+			js.expect.E.expect(Reflect.fields(domains)).to.have.length(4);
+		});
+		js.mocha.M.it("should define domain names mapped to ip addresses.",function() {
+			js.expect.E.expect(domains["ycombinator.com"]).to.eql("198.41.190.47");
+			js.expect.E.expect(domains["laughingsquid.com"]).to.eql("162.159.247.97");
+			js.expect.E.expect(domains["slumlordhosting.com"]).to.eql("198.61.179.126");
+			js.expect.E.expect(domains["jsonformatter.curiousconcept.com"]).to.eql("104.28.5.70");
 		});
 	}
 	,step10: function() {
