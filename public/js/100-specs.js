@@ -13,6 +13,7 @@ var HundredSpecs = function() {
 	js.mocha.M.describe("Princess Leia",$bind(this,this.step10));
 	js.mocha.M.describe("Domains",$bind(this,this.step11));
 	js.mocha.M.describe("Browsers",$bind(this,this.step12));
+	js.mocha.M.describe("Rainbow",$bind(this,this.step13));
 	js.mocha.M.describe("Step 20",$bind(this,this.step20));
 	js.mocha.M.describe("Step 50",$bind(this,this.step50));
 	js.mocha.M.describe("Step 51",$bind(this,this.step51));
@@ -164,6 +165,29 @@ HundredSpecs.prototype = {
 			js.expect.E.expect(domains["laughingsquid.com"]).to.eql("162.159.247.97");
 			js.expect.E.expect(domains["slumlordhosting.com"]).to.eql("198.61.179.126");
 			js.expect.E.expect(domains["jsonformatter.curiousconcept.com"]).to.eql("104.28.5.70");
+		});
+	}
+	,step13: function() {
+		js.mocha.M.it("should declare a literal object named 'rainbow'",function() {
+			js.expect.ExpectMixins.toBe(js.expect.E.expect(rainbow).not,null);
+		});
+		js.mocha.M.it("should have 2 properties",function() {
+			js.expect.E.expect(Reflect.fields(rainbow)).to.have.length(8);
+		});
+		js.mocha.M.it("colors should have 7 properties",function() {
+			js.expect.E.expect(Reflect.fields(rainbow.colors)).to.have.length(7);
+		});
+		js.mocha.M.it("colors should define 7 colors in hexadecimal format",function() {
+			js.expect.E.expect(rainbow.colors.red).to.eql("#F0280A");
+			js.expect.E.expect(rainbow.colors.orange).to.eql("#FF8800");
+			js.expect.E.expect(rainbow.colors.yellow).to.eql("#FFDD00");
+			js.expect.E.expect(rainbow.colors.green).to.eql("#51AB0C");
+			js.expect.E.expect(rainbow.colors.blue).to.eql("#1593ED");
+			js.expect.E.expect(rainbow.colors.indigo).to.eql("#5215ED");
+			js.expect.E.expect(rainbow.colors.violet).to.eql("#A915ED");
+		});
+		js.mocha.M.it("should be a double rainbow",function() {
+			js.expect.E.expect(Reflect.fields(rainbow.isDouble)).to.be.ok();
 		});
 	}
 	,step12: function() {
