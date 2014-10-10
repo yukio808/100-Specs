@@ -194,7 +194,7 @@ class HundredSpecs
       E.expect(untyped(rainbow)).not.toBe(null);
     });
     M.it("should have 2 properties", function() {
-      E.expect( Reflect.fields( untyped(rainbow) ) ).to.have.length(8);
+      E.expect( Reflect.fields( untyped(rainbow) ) ).to.have.length(2);
     });
     M.it("colors should have 7 properties", function() {
       E.expect( Reflect.fields( untyped(rainbow.colors) ) ).to.have.length(7);

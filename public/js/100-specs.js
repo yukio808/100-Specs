@@ -168,7 +168,7 @@ HundredSpecs.prototype = {
 			js.expect.ExpectMixins.toBe(js.expect.E.expect(rainbow).not,null);
 		});
 		js.mocha.M.it("should have 2 properties",function() {
-			js.expect.E.expect(Reflect.fields(rainbow)).to.have.length(8);
+			js.expect.E.expect(Reflect.fields(rainbow)).to.have.length(2);
 		});
 		js.mocha.M.it("colors should have 7 properties",function() {
 			js.expect.E.expect(Reflect.fields(rainbow.colors)).to.have.length(7);
