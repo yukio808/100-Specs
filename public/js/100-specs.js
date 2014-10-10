@@ -10,6 +10,7 @@ var HundredSpecs = function() {
 	js.mocha.M.describe("Water Comprising Earth's Surface",$bind(this,this.step7));
 	js.mocha.M.describe("Club Name",$bind(this,this.step8));
 	js.mocha.M.describe("Gender",$bind(this,this.step9));
+	js.mocha.M.describe("Princess Leia",$bind(this,this.step10));
 	js.mocha.M.describe("Step 20",$bind(this,this.step20));
 };
 HundredSpecs.__name__ = true;
@@ -27,8 +28,22 @@ HundredSpecs.prototype = {
 			js.expect.ExpectMixins.toBe(js.expect.E.expect(sahara_river()),"Nile River");
 		});
 	}
+	,step10: function() {
+		js.mocha.M.it("should declare a literal object named 'princess_leia'",function() {
+			js.expect.ExpectMixins.toBe(js.expect.E.expect(princess_leia).not,null);
+		});
+		js.mocha.M.it("should have 4 properties",function() {
+			js.expect.E.expect(Reflect.fields(princess_leia)).to.have.length(4);
+		});
+		js.mocha.M.it("should define princess_leia's properties: name, money, age, and gender.",function() {
+			js.expect.E.expect(princess_leia.name).to.eql("Leia Organa");
+			js.expect.E.expect(princess_leia.money).to.eql(890);
+			js.expect.E.expect(princess_leia.age).to.eql(20);
+			js.expect.E.expect(princess_leia.gender).to.eql("female");
+		});
+	}
 	,step9: function() {
-		js.mocha.M.it("should declare a variable named 'Gender'",function() {
+		js.mocha.M.it("should declare a literal object named 'Gender'",function() {
 			js.expect.ExpectMixins.toBe(js.expect.E.expect(Gender).not,null);
 		});
 		js.mocha.M.it("should have 3 properties",function() {

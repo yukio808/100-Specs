@@ -19,6 +19,7 @@ class HundredSpecs
     M.describe("Water Comprising Earth's Surface", step7);
     M.describe("Club Name", step8);
     M.describe("Gender", step9);
+    M.describe("Princess Leia", step10);
     M.describe("Step 20", step20);
   }
 
@@ -118,7 +119,7 @@ class HundredSpecs
 
   private inline function step9():Void
   {
-    M.it("should declare a variable named 'Gender'", function() {
+    M.it("should declare a literal object named 'Gender'", function() {
       E.expect(untyped(Gender)).not.toBe(null);
     });
     M.it("should have 3 properties", function() {
@@ -128,6 +129,22 @@ class HundredSpecs
       E.expect( untyped(Gender).female ).to.eql('female');
       E.expect( untyped(Gender).male ).to.eql('male');
       E.expect( untyped(Gender).unknown ).to.be.an('undefined');
+    });
+  }
+
+  private inline function step10():Void
+  {
+    M.it("should declare a literal object named 'princess_leia'", function() {
+      E.expect(untyped(princess_leia)).not.toBe(null);
+    });
+    M.it("should have 4 properties", function() {
+      E.expect( Reflect.fields( untyped(princess_leia) ) ).to.have.length(4);
+    });
+    M.it("should define princess_leia's properties: name, money, age, and gender.", function() {
+      E.expect( untyped(princess_leia).name ).to.eql("Leia Organa");
+      E.expect( untyped(princess_leia).money ).to.eql(890);
+      E.expect( untyped(princess_leia).age ).to.eql(20);
+      E.expect( untyped(princess_leia).gender ).to.eql('female');
     });
   }
 
