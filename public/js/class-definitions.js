@@ -41,13 +41,13 @@
 
 
 
-/* Step 6
+/* Step 6 φ
  *
- * WIP
- * limbic system
- * motor control
- *
+ * Declare a variable named "golden_ratio"
+ * and assign the value of golden_ratio to 1.61803398874
+ * 
  */
+
 
 
 /* Step 7

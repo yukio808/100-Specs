@@ -15,6 +15,7 @@ class HundredSpecs
     M.describe("Sahara Animal", step3);
     M.describe("Planets", step4);
     M.describe("Galilean Moons", step5);
+    M.describe("Golden Ratio φ", step6);
     M.describe("Step 20", step20);
   }
 
@@ -88,6 +89,13 @@ class HundredSpecs
       E.expect( lowercase_moons ).to.contain(untyped(galilean_moons)[1].toLowerCase());
       E.expect( lowercase_moons ).to.contain(untyped(galilean_moons)[2].toLowerCase());
       E.expect( lowercase_moons ).to.contain(untyped(galilean_moons)[3].toLowerCase());
+    });
+  }
+
+  private inline function step6():Void
+  {
+    M.it("should declare a variable named 'golden_ratio' with a value of '1.61803398874'.", function() {
+      E.expect(untyped(golden_ratio)).toBe(1.61803398874);
     });
   }
 
