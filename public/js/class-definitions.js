@@ -25,7 +25,7 @@
  *
  * WIP
  * planets  8
- * 
+ *
  *
  */
 
@@ -34,7 +34,7 @@
  *
  * WIP
  * moons jupitor
- * titan 
+ * titan
  * europa
  * ganymede
  * io
@@ -85,9 +85,9 @@
  * Define a literal object
  * domains
  *  names : ip
- *   
- * 
- * 
+ *
+ *
+ *
  */
 
 
@@ -99,7 +99,7 @@
  * Safari
  * Opera
  * Firefox
- * 
+ *
  *
  */
 
@@ -156,9 +156,9 @@
  *     adenine
  *     thymine
  *     cytosine
- *   
- * 
- * 
+ *
+ *
+ *
  *
  */
 
@@ -183,7 +183,7 @@
  *
  * WIP
  * Living Organism Classification
- * Kingdom 
+ * Kingdom
  * Phylum
  * Class
  * Order
@@ -234,7 +234,7 @@
  *
  * Define a function named 'sahara_river'
  * that returns the string 'Nile River'
- * 
+ *
  * @return {String}
  *
  */
@@ -252,7 +252,7 @@
  *
  * Define a functions object
  * to cat sound
- * 
+ *
  *
  */
 
@@ -268,8 +268,8 @@
 /* Step 24
  *
  * WIP
- * 
- * 
+ *
+ *
  *
  */
 
@@ -279,7 +279,7 @@
  * WIP
  * listify Living Organism Classification
  * each on it's own line
- * 
+ *
  *
  */
 
@@ -312,7 +312,7 @@
 /* Step 29
  *
  * WIP
- * 
+ *
  *
  */
 
@@ -320,7 +320,7 @@
 /* Step 30
  *
  * Define a literal object
- * 
+ *
  */
 
 
@@ -348,7 +348,7 @@
 /* Step 34
  *
  * WIP
- * 
+ *
  *
  */
 
@@ -356,7 +356,7 @@
 /* Step 35
  *
  * WIP
- * 
+ *
  *
  */
 
@@ -364,7 +364,7 @@
 /* Step 36
  *
  * WIP
- * 
+ *
  *
  */
 
@@ -372,7 +372,7 @@
 /* Step 37
  *
  * WIP
- * 
+ *
  *
  */
 
@@ -380,7 +380,7 @@
 /* Step 38
  *
  * WIP
- * 
+ *
  *
  */
 
@@ -388,7 +388,7 @@
 /* Step 39
  *
  * WIP
- * 
+ *
  *
  */
 
@@ -398,22 +398,149 @@
  *
  */
 
+/**
+ * Animal class
+ * @param {string} species The animal species
+ * @param {string} gender  male or female
+ */
+function Animal (species, gender) {
+  this.species = species;
+  this.gender = gender;
+}
+
+/**
+ * Vehicle class
+ * @param {string} make The vehicle's make
+ * @param {string} model The vehicle's model
+ */
+function Vehicle (make, model) {
+  this.make = make;
+  this.model = model;
+}
+
+/**
+ * Shape class
+ * @param {number} sides The number of sides, should be greater than 3
+ */
+function Shape (sides) {
+  this.sides = sides;
+}
+
+/**
+ * Box class
+ * @param {anything} contents The contents of the box
+ * @param {boolean} isOpen     Whether the box is opened or closed
+ */
+function Box (contents, isOpen) {
+  this.contents = contents;
+  this.isOpen = isOpen;
+}
+
+/**
+ * Door class
+ * @param {boolean} isOpen Whether the door is opened or closed
+ */
+function Door (isOpen) {
+  this.isOpen = isOpen;
+}
+
+/**
+ * Shoe class
+ * @param {number} size  The shoe size
+ * @param {string} color The shoe color
+ */
+function Shoe (size, color) {
+  this.size = size;
+  this.color = color;
+}
+
+/**
+ * House class
+ * @param {number} stories How many stories tall the house is
+ */
+function House (stories) {
+  this.stories = stories;
+}
+
+/**
+ * Lightbulb class
+ * @param {boolean} isOn Whether the light is on or off
+ */
+function Lightbulb (isOn) {
+  this.isOn = isOn;
+}
+
+/**
+ * Cookie class
+ * @param {string} flavor The cookie's flavor
+ */
+function Cookie (flavor) {
+  this.flavor = flavor;
+}
+
+/**
+ * Meal class
+ * @param {Array} foods All the foods in the meal
+ */
+function Meal (foods) {
+  this.foods = foods;
+}
+
 /* Step 60
  *
- * Create a new instance of 
+ * Create a new instance of
  *
  */
 
+// Create 2 different species of animals
+var george = new Animal("Monkey", "male");
+var nemo = new Animal("Fish", "male");
+
+// Create 2 different vehicles
+var civic = new Vehicle("Honda", "Civic");
+var forte = new Vehicle("KIA", "Forte");
+
+// Create 2 shapes with different numbers of sides
+var square = new Shape(4);
+var hexagon = new Shape(6);
+
+// Create 2 boxes
+var catBox = new Box(new Animal("Cat"), true);
+var christmasPresent = new Box({}, false);
+
+// Create 2 doors
+var automaticDoor = new Door(true);
+var bankVault = new Door(false);
+
+// Create 2 shoes
+var rubySlippers = new Shoe(7, "red");
+var dressShoes = new Shoe(10, "black");
+
+// Create 2 houses
+var singleStory = new House(1);
+var twoStory = new House(2);
+
+// Create 2 lightbulbs
+var incandescent = new Lightbulb(true);
+var halogen = new Lightbulb(false);
+
+// Create 2 cookies of different flavors
+var chocolateChip = new Cookie("chocolate");
+var gingerbread = new Cookie("gingerbread");
+
+// Create 2 different meals
+var breakfast = new Meal(["cereal", "milk"]);
+var dinner = new Meal(["fish", "vegetables"]);
 
 /* Step 80
  *
- * Call methods 
+ * Call methods
  *
  */
 
 
 /* Step 100
  *
- * Call 
+ * Call
  *
  */
