@@ -60,10 +60,11 @@
 
 /* Step 8
  *
- * WIP
- *  club Fight Club
+ * Declare a variable named "club_name"
+ * and assign the value of club_name to "Fight Club"
  * 
  */
+
 
 
 /* Step 9

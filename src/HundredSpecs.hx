@@ -17,6 +17,7 @@ class HundredSpecs
     M.describe("Galilean Moons", step5);
     M.describe("Golden Ratio φ", step6);
     M.describe("Water Comprising Earth's Surface", step7);
+    M.describe("Club Name", step8);
     M.describe("Step 20", step20);
   }
 
@@ -104,6 +105,13 @@ class HundredSpecs
   {
     M.it("should declare a variable named 'earths_water_composition' with a value representing 71%.", function() {
       E.expect(untyped(earths_water_composition)).toBe(0.71);
+    });
+  }
+
+  private inline function step8():Void
+  {
+    M.it("should declare a variable named 'club_name' with a value of 'Fight Club'", function() {
+      E.expect(untyped(club_name)).toBe("Fight Club");
     });
   }
 

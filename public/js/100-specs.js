@@ -8,6 +8,7 @@ var HundredSpecs = function() {
 	js.mocha.M.describe("Galilean Moons",$bind(this,this.step5));
 	js.mocha.M.describe("Golden Ratio φ",$bind(this,this.step6));
 	js.mocha.M.describe("Water Comprising Earth's Surface",$bind(this,this.step7));
+	js.mocha.M.describe("Club Name",$bind(this,this.step8));
 	js.mocha.M.describe("Step 20",$bind(this,this.step20));
 };
 HundredSpecs.__name__ = true;
@@ -23,6 +24,11 @@ HundredSpecs.prototype = {
 		});
 		js.mocha.M.it("'sahara_river' should return the string 'Nile River'.",function() {
 			js.expect.ExpectMixins.toBe(js.expect.E.expect(sahara_river()),"Nile River");
+		});
+	}
+	,step8: function() {
+		js.mocha.M.it("should declare a variable named 'club_name' with a value of 'Fight Club'",function() {
+			js.expect.ExpectMixins.toBe(js.expect.E.expect(club_name),"Fight Club");
 		});
 	}
 	,step7: function() {
