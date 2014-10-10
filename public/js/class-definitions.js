@@ -52,10 +52,8 @@
 
 /* Step 7
  *
- * WIP
- * earth
- * water
- * 75%
+ * Declare a variable named "earths_water_composition"
+ * and assign the value of earths_water_composition to 0.71
  *
  */
 

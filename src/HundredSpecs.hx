@@ -16,6 +16,7 @@ class HundredSpecs
     M.describe("Planets", step4);
     M.describe("Galilean Moons", step5);
     M.describe("Golden Ratio φ", step6);
+    M.describe("Water Comprising Earth's Surface", step7);
     M.describe("Step 20", step20);
   }
 
@@ -41,7 +42,7 @@ class HundredSpecs
   private inline function step3():Void
   {
     M.it("should declare a variable named 'sahara_animal' with a value of 'The Addax'.", function() {
-      E.expect(untyped(sahara_animal)).toBe("The Addax");
+      E.expect(untyped __js__("new sahara_animal()")).toBe("The Addax");
     });
   }
 
@@ -96,6 +97,13 @@ class HundredSpecs
   {
     M.it("should declare a variable named 'golden_ratio' with a value of '1.61803398874'.", function() {
       E.expect(untyped(golden_ratio)).toBe(1.61803398874);
+    });
+  }
+
+  private inline function step7():Void
+  {
+    M.it("should declare a variable named 'earths_water_composition' with a value representing 71%.", function() {
+      E.expect(untyped(earths_water_composition)).toBe(0.71);
     });
   }
 

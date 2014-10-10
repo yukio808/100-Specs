@@ -7,6 +7,7 @@ var HundredSpecs = function() {
 	js.mocha.M.describe("Planets",$bind(this,this.step4));
 	js.mocha.M.describe("Galilean Moons",$bind(this,this.step5));
 	js.mocha.M.describe("Golden Ratio φ",$bind(this,this.step6));
+	js.mocha.M.describe("Water Comprising Earth's Surface",$bind(this,this.step7));
 	js.mocha.M.describe("Step 20",$bind(this,this.step20));
 };
 HundredSpecs.__name__ = true;
@@ -22,6 +23,11 @@ HundredSpecs.prototype = {
 		});
 		js.mocha.M.it("'sahara_river' should return the string 'Nile River'.",function() {
 			js.expect.ExpectMixins.toBe(js.expect.E.expect(sahara_river()),"Nile River");
+		});
+	}
+	,step7: function() {
+		js.mocha.M.it("should declare a variable named 'earths_water_composition' with a value representing 71%.",function() {
+			js.expect.ExpectMixins.toBe(js.expect.E.expect(earths_water_composition),0.71);
 		});
 	}
 	,step6: function() {
@@ -74,7 +80,7 @@ HundredSpecs.prototype = {
 	}
 	,step3: function() {
 		js.mocha.M.it("should declare a variable named 'sahara_animal' with a value of 'The Addax'.",function() {
-			js.expect.ExpectMixins.toBe(js.expect.E.expect(sahara_animal),"The Addax");
+			js.expect.ExpectMixins.toBe(js.expect.E.expect(new sahara_animal()),"The Addax");
 		});
 	}
 	,step2: function() {
