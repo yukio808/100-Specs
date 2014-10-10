@@ -12,6 +12,7 @@ var HundredSpecs = function() {
 	js.mocha.M.describe("Gender",$bind(this,this.step9));
 	js.mocha.M.describe("Princess Leia",$bind(this,this.step10));
 	js.mocha.M.describe("Domains",$bind(this,this.step11));
+	js.mocha.M.describe("Browsers",$bind(this,this.step12));
 	js.mocha.M.describe("Step 20",$bind(this,this.step20));
 };
 HundredSpecs.__name__ = true;
@@ -27,6 +28,24 @@ HundredSpecs.prototype = {
 		});
 		js.mocha.M.it("'sahara_river' should return the string 'Nile River'.",function() {
 			js.expect.ExpectMixins.toBe(js.expect.E.expect(sahara_river()),"Nile River");
+		});
+	}
+	,step12: function() {
+		js.mocha.M.it("should declare a literal object named 'browsers'",function() {
+			js.expect.ExpectMixins.toBe(js.expect.E.expect(browsers).not,null);
+		});
+		js.mocha.M.it("should have 8 properties",function() {
+			js.expect.E.expect(Reflect.fields(browsers)).to.have.length(8);
+		});
+		js.mocha.M.it("should define browsers and their developer.",function() {
+			js.expect.E.expect(browsers.Chrome).to.eql("google");
+			js.expect.E.expect(browsers.Chromium).to.eql("google");
+			js.expect.E.expect(browsers.Safari).to.eql("apple");
+			js.expect.E.expect(browsers.Opera).to.eql("opera");
+			js.expect.E.expect(browsers.Firefox).to.eql("mozilla");
+			js.expect.E.expect(browsers.Sleipnir).to.eql("fenrir");
+			js.expect.E.expect(browsers.Konqueror).to.eql("KDE");
+			js.expect.E.expect(browsers.Links).to.eql("GPLv2+");
 		});
 	}
 	,step11: function() {

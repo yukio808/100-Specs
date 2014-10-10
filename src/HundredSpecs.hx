@@ -21,6 +21,7 @@ class HundredSpecs
     M.describe("Gender", step9);
     M.describe("Princess Leia", step10);
     M.describe("Domains", step11);
+    M.describe("Browsers", step12);
     M.describe("Step 20", step20);
   }
 
@@ -162,6 +163,26 @@ class HundredSpecs
       E.expect( untyped(domains)["laughingsquid.com"] ).to.eql("162.159.247.97");
       E.expect( untyped(domains)["slumlordhosting.com"]).to.eql("198.61.179.126");
       E.expect( untyped(domains)["jsonformatter.curiousconcept.com"] ).to.eql("104.28.5.70");
+    });
+  }
+
+  private inline function step12():Void
+  {
+    M.it("should declare a literal object named 'browsers'", function() {
+      E.expect(untyped(browsers)).not.toBe(null);
+    });
+    M.it("should have 8 properties", function() {
+      E.expect( Reflect.fields( untyped(browsers) ) ).to.have.length(8);
+    });
+    M.it("should define browsers and their developer.", function() {
+      E.expect( untyped(browsers)["Chrome"] ).to.eql("google");
+      E.expect( untyped(browsers)["Chromium"] ).to.eql("google");
+      E.expect( untyped(browsers)["Safari"]).to.eql("apple");
+      E.expect( untyped(browsers)["Opera"] ).to.eql("opera");
+      E.expect( untyped(browsers)["Firefox"] ).to.eql("mozilla");
+      E.expect( untyped(browsers)["Sleipnir"] ).to.eql("fenrir");
+      E.expect( untyped(browsers)["Konqueror"] ).to.eql("KDE");
+      E.expect( untyped(browsers)["Links"] ).to.eql("GPLv2+");
     });
   }
 
