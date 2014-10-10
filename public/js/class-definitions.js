@@ -7,8 +7,8 @@
 
 /* Step 2
  *
- * Declare a variable named "vgsystem"
- * then assign the value of phone to "atari"
+ * Declare a variable named "videogame_system"
+ * then assign the value of phone to "Atari"
  *
  */
 
@@ -23,11 +23,12 @@
 
 /* Step 4
  *
- * WIP
- * planets  8
+ * Declare a variable named "planets"
+ * and assign the value of planets to an array containing
+ * each planet in our solar system
  * 
- *
  */
+
 
 
 /* Step 5

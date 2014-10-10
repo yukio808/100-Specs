@@ -1,10 +1,11 @@
 (function () { "use strict";
 var $estr = function() { return js.Boot.__string_rec(this,''); };
 var HundredSpecs = function() {
-	js.mocha.M.describe("Step 1",$bind(this,this.step1));
-	js.mocha.M.describe("Step 2",$bind(this,this.step2));
-	js.mocha.M.describe("Step 3",$bind(this,this.step3));
-	js.mocha.M.describe("Step 30",$bind(this,this.step30));
+	js.mocha.M.describe("Unicorn",$bind(this,this.step1));
+	js.mocha.M.describe("Videogame System",$bind(this,this.step2));
+	js.mocha.M.describe("Sahara Animal",$bind(this,this.step3));
+	js.mocha.M.describe("Planets",$bind(this,this.step4));
+	js.mocha.M.describe("Step 20",$bind(this,this.step20));
 };
 HundredSpecs.__name__ = true;
 HundredSpecs.main = function() {
@@ -13,12 +14,30 @@ HundredSpecs.main = function() {
 	js.mocha.Mocha.run();
 }
 HundredSpecs.prototype = {
-	step30: function() {
+	step20: function() {
 		js.mocha.M.it("should define a function named 'sahara_river'.",function() {
 			js.expect.E.expect(sahara_river).to.be.a("function");
 		});
 		js.mocha.M.it("'sahara_river' should return the string 'Nile River'.",function() {
 			js.expect.ExpectMixins.toBe(js.expect.E.expect(sahara_river()),"Nile River");
+		});
+	}
+	,step4: function() {
+		js.mocha.M.it("should declare a variable named 'planets' that is an array.",function() {
+			js.expect.E.expect(planets).to.be.an(Array);
+		});
+		js.mocha.M.it("should have 8 items",function() {
+			js.expect.E.expect(planets.length).to.eql(8);
+		});
+		js.mocha.M.it("should contain the name of each of our solar system's planets",function() {
+			js.expect.E.expect(planets[0].toLowerCase()).to.eql("mercury");
+			js.expect.E.expect(planets[0].toLowerCase()).to.eql("venus");
+			js.expect.E.expect(planets[0].toLowerCase()).to.eql("earth");
+			js.expect.E.expect(planets[0].toLowerCase()).to.eql("mars");
+			js.expect.E.expect(planets[0].toLowerCase()).to.eql("jupiter");
+			js.expect.E.expect(planets[0].toLowerCase()).to.eql("saturn");
+			js.expect.E.expect(planets[0].toLowerCase()).to.eql("uranus");
+			js.expect.E.expect(planets[0].toLowerCase()).to.eql("neptune");
 		});
 	}
 	,step3: function() {
@@ -27,8 +46,8 @@ HundredSpecs.prototype = {
 		});
 	}
 	,step2: function() {
-		js.mocha.M.it("should declare a variable named 'vgsystem' with a value of 'atari'.",function() {
-			js.expect.ExpectMixins.toBe(js.expect.E.expect(vgsystem),"atari");
+		js.mocha.M.it("should declare a variable named 'videogame_system' with a value of 'Atari'.",function() {
+			js.expect.ExpectMixins.toBe(js.expect.E.expect(videogame_system),"Atari");
 		});
 	}
 	,step1: function() {

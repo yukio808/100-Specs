@@ -10,9 +10,10 @@ class HundredSpecs
 {
   public function new()
   {
-    M.describe("Step 1", step1);
-    M.describe("Step 2", step2);
-    M.describe("Step 3", step3);
+    M.describe("Unicorn", step1);
+    M.describe("Videogame System", step2);
+    M.describe("Sahara Animal", step3);
+    M.describe("Planets", step4);
     M.describe("Step 20", step20);
   }
 
@@ -30,8 +31,8 @@ class HundredSpecs
 
   private inline function step2():Void
   {
-    M.it("should declare a variable named 'vgsystem' with a value of 'atari'.", function() {
-      E.expect(untyped(vgsystem)).toBe("atari");
+    M.it("should declare a variable named 'videogame_system' with a value of 'Atari'.", function() {
+      E.expect(untyped(videogame_system)).toBe("Atari");
     });
   }
 
@@ -39,6 +40,26 @@ class HundredSpecs
   {
     M.it("should declare a variable named 'sahara_animal' with a value of 'The Addax'.", function() {
       E.expect(untyped(sahara_animal)).toBe("The Addax");
+    });
+  }
+
+  private inline function step4():Void
+  {
+    M.it("should declare a variable named 'planets' that is an array.", function() {
+      E.expect(untyped(planets)).to.be.an(Array);
+    });
+    M.it("should have 8 items", function() {
+      E.expect(untyped(planets).length).to.eql(8);
+    });
+    M.it("should contain the name of each of our solar system's planets", function() {
+      E.expect( untyped(planets)[0].toLowerCase() ).to.eql("mercury");
+      E.expect( untyped(planets)[0].toLowerCase() ).to.eql("venus");
+      E.expect( untyped(planets)[0].toLowerCase() ).to.eql("earth");
+      E.expect( untyped(planets)[0].toLowerCase() ).to.eql("mars");
+      E.expect( untyped(planets)[0].toLowerCase() ).to.eql("jupiter");
+      E.expect( untyped(planets)[0].toLowerCase() ).to.eql("saturn");
+      E.expect( untyped(planets)[0].toLowerCase() ).to.eql("uranus");
+      E.expect( untyped(planets)[0].toLowerCase() ).to.eql("neptune");
     });
   }
 
