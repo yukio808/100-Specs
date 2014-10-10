@@ -65,7 +65,7 @@ HundredSpecs.prototype = {
 	}
 	,step3: function() {
 		js.mocha.M.it("should declare a variable named 'sahara_animal' with a value of 'The Addax'.",function() {
-			js.expect.ExpectMixins.toBe(js.expect.E.expect(new sahara_animal()),"The Addax");
+			js.expect.ExpectMixins.toBe(js.expect.E.expect(sahara_animal),"The Addax");
 		});
 	}
 	,step4: function() {
@@ -75,15 +75,23 @@ HundredSpecs.prototype = {
 		js.mocha.M.it("should have 8 items",function() {
 			js.expect.E.expect(planets.length).to.eql(8);
 		});
+		var lowercase_planets_0 = "mercury";
+		var lowercase_planets_1 = "venus";
+		var lowercase_planets_2 = "earth";
+		var lowercase_planets_3 = "mars";
+		var lowercase_planets_4 = "jupiter";
+		var lowercase_planets_5 = "saturn";
+		var lowercase_planets_6 = "uranus";
+		var lowercase_planets_7 = "neptune";
 		js.mocha.M.it("should contain the name of each of our solar system's planets",function() {
-			js.expect.E.expect(planets.toLowerCase()).to.contain("mercury");
-			js.expect.E.expect(planets.toLowerCase()).to.contain("venus");
-			js.expect.E.expect(planets.toLowerCase()).to.contain("earth");
-			js.expect.E.expect(planets.toLowerCase()).to.contain("mars");
-			js.expect.E.expect(planets.toLowerCase()).to.contain("jupiter");
-			js.expect.E.expect(planets.toLowerCase()).to.contain("saturn");
-			js.expect.E.expect(planets.toLowerCase()).to.contain("uranus");
-			js.expect.E.expect(planets.toLowerCase()).to.contain("neptune");
+			js.expect.E.expect(lowercase_planets_0).to.contain(planets[0]);
+			js.expect.E.expect(lowercase_planets_1).to.contain(planets[1]);
+			js.expect.E.expect(lowercase_planets_2).to.contain(planets[2]);
+			js.expect.E.expect(lowercase_planets_3).to.contain(planets[3]);
+			js.expect.E.expect(lowercase_planets_4).to.contain(planets[4]);
+			js.expect.E.expect(lowercase_planets_5).to.contain(planets[5]);
+			js.expect.E.expect(lowercase_planets_6).to.contain(planets[6]);
+			js.expect.E.expect(lowercase_planets_7).to.contain(planets[7]);
 		});
 		js.mocha.M.it("should have each planet listed in order",function() {
 			js.expect.E.expect(planets[0].toLowerCase()).to.eql("mercury");
@@ -167,29 +175,6 @@ HundredSpecs.prototype = {
 			js.expect.E.expect(domains["jsonformatter.curiousconcept.com"]).to.eql("104.28.5.70");
 		});
 	}
-	,step13: function() {
-		js.mocha.M.it("should declare a literal object named 'rainbow'",function() {
-			js.expect.ExpectMixins.toBe(js.expect.E.expect(rainbow).not,null);
-		});
-		js.mocha.M.it("should have 2 properties",function() {
-			js.expect.E.expect(Reflect.fields(rainbow)).to.have.length(8);
-		});
-		js.mocha.M.it("colors should have 7 properties",function() {
-			js.expect.E.expect(Reflect.fields(rainbow.colors)).to.have.length(7);
-		});
-		js.mocha.M.it("colors should define 7 colors in hexadecimal format",function() {
-			js.expect.E.expect(rainbow.colors.red).to.eql("#F0280A");
-			js.expect.E.expect(rainbow.colors.orange).to.eql("#FF8800");
-			js.expect.E.expect(rainbow.colors.yellow).to.eql("#FFDD00");
-			js.expect.E.expect(rainbow.colors.green).to.eql("#51AB0C");
-			js.expect.E.expect(rainbow.colors.blue).to.eql("#1593ED");
-			js.expect.E.expect(rainbow.colors.indigo).to.eql("#5215ED");
-			js.expect.E.expect(rainbow.colors.violet).to.eql("#A915ED");
-		});
-		js.mocha.M.it("should be a double rainbow",function() {
-			js.expect.E.expect(Reflect.fields(rainbow.isDouble)).to.be.ok();
-		});
-	}
 	,step12: function() {
 		js.mocha.M.it("should declare a literal object named 'browsers'",function() {
 			js.expect.ExpectMixins.toBe(js.expect.E.expect(browsers).not,null);
@@ -206,6 +191,29 @@ HundredSpecs.prototype = {
 			js.expect.E.expect(browsers.Sleipnir).to.eql("fenrir");
 			js.expect.E.expect(browsers.Konqueror).to.eql("KDE");
 			js.expect.E.expect(browsers.Links).to.eql("GPLv2+");
+		});
+	}
+	,step13: function() {
+		js.mocha.M.it("should declare a literal object named 'rainbow'",function() {
+			js.expect.ExpectMixins.toBe(js.expect.E.expect(rainbow).not,null);
+		});
+		js.mocha.M.it("should have 2 properties",function() {
+			js.expect.E.expect(Reflect.fields(rainbow)).to.have.length(2);
+		});
+		js.mocha.M.it("colors should have 7 properties",function() {
+			js.expect.E.expect(Reflect.fields(rainbow.colors)).to.have.length(7);
+		});
+		js.mocha.M.it("colors should define 7 colors in hexadecimal format",function() {
+			js.expect.E.expect(rainbow.colors.red).to.eql("#F0280A");
+			js.expect.E.expect(rainbow.colors.orange).to.eql("#FF8800");
+			js.expect.E.expect(rainbow.colors.yellow).to.eql("#FFDD00");
+			js.expect.E.expect(rainbow.colors.green).to.eql("#51AB0C");
+			js.expect.E.expect(rainbow.colors.blue).to.eql("#1593ED");
+			js.expect.E.expect(rainbow.colors.indigo).to.eql("#5215ED");
+			js.expect.E.expect(rainbow.colors.violet).to.eql("#A915ED");
+		});
+		js.mocha.M.it("should be a double rainbow",function() {
+			js.expect.E.expect(Reflect.fields(rainbow.isDouble)).to.be.ok();
 		});
 	}
 	,step20: function() {

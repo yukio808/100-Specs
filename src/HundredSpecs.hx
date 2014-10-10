@@ -78,7 +78,7 @@ class HundredSpecs
   private inline function step3():Void
   {
     M.it("should declare a variable named 'sahara_animal' with a value of 'The Addax'.", function() {
-      E.expect(untyped __js__("new sahara_animal()")).toBe("The Addax");
+      E.expect(untyped __js__("sahara_animal")).toBe("The Addax");
     });
   }
 
@@ -90,15 +90,16 @@ class HundredSpecs
     M.it("should have 8 items", function() {
       E.expect(untyped(planets).length).to.eql(8);
     });
+    var lowercase_planets = ["mercury", "venus", "earth", "mars", "jupiter", "saturn", "uranus", "neptune"];
     M.it("should contain the name of each of our solar system's planets", function() {
-      E.expect( untyped(planets).toLowerCase() ).to.contain("mercury");
-      E.expect( untyped(planets).toLowerCase() ).to.contain("venus");
-      E.expect( untyped(planets).toLowerCase() ).to.contain("earth");
-      E.expect( untyped(planets).toLowerCase() ).to.contain("mars");
-      E.expect( untyped(planets).toLowerCase() ).to.contain("jupiter");
-      E.expect( untyped(planets).toLowerCase() ).to.contain("saturn");
-      E.expect( untyped(planets).toLowerCase() ).to.contain("uranus");
-      E.expect( untyped(planets).toLowerCase() ).to.contain("neptune");
+      E.expect( lowercase_planets[0] ).to.contain(untyped(planets)[0]);
+      E.expect( lowercase_planets[1] ).to.contain(untyped(planets)[1]);
+      E.expect( lowercase_planets[2] ).to.contain(untyped(planets)[2]);
+      E.expect( lowercase_planets[3] ).to.contain(untyped(planets)[3]);
+      E.expect( lowercase_planets[4] ).to.contain(untyped(planets)[4]);
+      E.expect( lowercase_planets[5] ).to.contain(untyped(planets)[5]);
+      E.expect( lowercase_planets[6] ).to.contain(untyped(planets)[6]);
+      E.expect( lowercase_planets[7] ).to.contain(untyped(planets)[7]);
     });
     M.it("should have each planet listed in order", function() {
       E.expect( untyped(planets)[0].toLowerCase() ).to.eql("mercury");
@@ -223,7 +224,7 @@ class HundredSpecs
       E.expect(untyped(rainbow)).not.toBe(null);
     });
     M.it("should have 2 properties", function() {
-      E.expect( Reflect.fields( untyped(rainbow) ) ).to.have.length(8);
+      E.expect( Reflect.fields( untyped(rainbow) ) ).to.have.length(2);
     });
     M.it("colors should have 7 properties", function() {
       E.expect( Reflect.fields( untyped(rainbow.colors) ) ).to.have.length(7);
