@@ -15,6 +15,13 @@ class HundredSpecs
     M.describe("Sahara Animal", step3);
     M.describe("Planets", step4);
     M.describe("Galilean Moons", step5);
+    M.describe("Golden Ratio φ", step6);
+    M.describe("Water Comprising Earth's Surface", step7);
+    M.describe("Club Name", step8);
+    M.describe("Gender", step9);
+    M.describe("Princess Leia", step10);
+    M.describe("Domains", step11);
+    M.describe("Browsers", step12);
     M.describe("Step 20", step20);
   }
 
@@ -40,7 +47,7 @@ class HundredSpecs
   private inline function step3():Void
   {
     M.it("should declare a variable named 'sahara_animal' with a value of 'The Addax'.", function() {
-      E.expect(untyped(sahara_animal)).toBe("The Addax");
+      E.expect(untyped __js__("new sahara_animal()")).toBe("The Addax");
     });
   }
 
@@ -90,6 +97,95 @@ class HundredSpecs
       E.expect( lowercase_moons ).to.contain(untyped(galilean_moons)[3].toLowerCase());
     });
   }
+
+  private inline function step6():Void
+  {
+    M.it("should declare a variable named 'golden_ratio' with a value of '1.61803398874'.", function() {
+      E.expect(untyped(golden_ratio)).toBe(1.61803398874);
+    });
+  }
+
+  private inline function step7():Void
+  {
+    M.it("should declare a variable named 'earths_water_composition' with a value representing 71%.", function() {
+      E.expect(untyped(earths_water_composition)).toBe(0.71);
+    });
+  }
+
+  private inline function step8():Void
+  {
+    M.it("should declare a variable named 'club_name' with a value of 'Fight Club'", function() {
+      E.expect(untyped(club_name)).toBe("Fight Club");
+    });
+  }
+
+  private inline function step9():Void
+  {
+    M.it("should declare a literal object named 'Gender'", function() {
+      E.expect(untyped(Gender)).not.toBe(null);
+    });
+    M.it("should have 3 properties", function() {
+      E.expect( Reflect.fields( untyped(Gender) ) ).to.have.length(3);
+    });
+    M.it("should define genders female, male, and unknown.", function() {
+      E.expect( untyped(Gender).female ).to.eql('female');
+      E.expect( untyped(Gender).male ).to.eql('male');
+      E.expect( untyped(Gender).unknown ).to.be.an('undefined');
+    });
+  }
+
+  private inline function step10():Void
+  {
+    M.it("should declare a literal object named 'princess_leia'", function() {
+      E.expect(untyped(princess_leia)).not.toBe(null);
+    });
+    M.it("should have 4 properties", function() {
+      E.expect( Reflect.fields( untyped(princess_leia) ) ).to.have.length(4);
+    });
+    M.it("should define princess_leia's properties: name, money, age, and gender.", function() {
+      E.expect( untyped(princess_leia).name ).to.eql("Leia Organa");
+      E.expect( untyped(princess_leia).money ).to.eql(890);
+      E.expect( untyped(princess_leia).age ).to.eql(20);
+      E.expect( untyped(princess_leia).gender ).to.eql('female');
+    });
+  }
+
+  private inline function step11():Void
+  {
+    M.it("should declare a literal object named 'domains'", function() {
+      E.expect(untyped(domains)).not.toBe(null);
+    });
+    M.it("should have 4 properties", function() {
+      E.expect( Reflect.fields( untyped(domains) ) ).to.have.length(4);
+    });
+    M.it("should define domain names mapped to ip addresses.", function() {
+      E.expect( untyped(domains)["ycombinator.com"] ).to.eql("198.41.190.47");
+      E.expect( untyped(domains)["laughingsquid.com"] ).to.eql("162.159.247.97");
+      E.expect( untyped(domains)["slumlordhosting.com"]).to.eql("198.61.179.126");
+      E.expect( untyped(domains)["jsonformatter.curiousconcept.com"] ).to.eql("104.28.5.70");
+    });
+  }
+
+  private inline function step12():Void
+  {
+    M.it("should declare a literal object named 'browsers'", function() {
+      E.expect(untyped(browsers)).not.toBe(null);
+    });
+    M.it("should have 8 properties", function() {
+      E.expect( Reflect.fields( untyped(browsers) ) ).to.have.length(8);
+    });
+    M.it("should define browsers and their developer.", function() {
+      E.expect( untyped(browsers)["Chrome"] ).to.eql("google");
+      E.expect( untyped(browsers)["Chromium"] ).to.eql("google");
+      E.expect( untyped(browsers)["Safari"]).to.eql("apple");
+      E.expect( untyped(browsers)["Opera"] ).to.eql("opera");
+      E.expect( untyped(browsers)["Firefox"] ).to.eql("mozilla");
+      E.expect( untyped(browsers)["Sleipnir"] ).to.eql("fenrir");
+      E.expect( untyped(browsers)["Konqueror"] ).to.eql("KDE");
+      E.expect( untyped(browsers)["Links"] ).to.eql("GPLv2+");
+    });
+  }
+
 
   private inline function step20():Void
   {

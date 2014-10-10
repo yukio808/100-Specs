@@ -6,6 +6,13 @@ var HundredSpecs = function() {
 	js.mocha.M.describe("Sahara Animal",$bind(this,this.step3));
 	js.mocha.M.describe("Planets",$bind(this,this.step4));
 	js.mocha.M.describe("Galilean Moons",$bind(this,this.step5));
+	js.mocha.M.describe("Golden Ratio φ",$bind(this,this.step6));
+	js.mocha.M.describe("Water Comprising Earth's Surface",$bind(this,this.step7));
+	js.mocha.M.describe("Club Name",$bind(this,this.step8));
+	js.mocha.M.describe("Gender",$bind(this,this.step9));
+	js.mocha.M.describe("Princess Leia",$bind(this,this.step10));
+	js.mocha.M.describe("Domains",$bind(this,this.step11));
+	js.mocha.M.describe("Browsers",$bind(this,this.step12));
 	js.mocha.M.describe("Step 20",$bind(this,this.step20));
 };
 HundredSpecs.__name__ = true;
@@ -21,6 +28,80 @@ HundredSpecs.prototype = {
 		});
 		js.mocha.M.it("'sahara_river' should return the string 'Nile River'.",function() {
 			js.expect.ExpectMixins.toBe(js.expect.E.expect(sahara_river()),"Nile River");
+		});
+	}
+	,step12: function() {
+		js.mocha.M.it("should declare a literal object named 'browsers'",function() {
+			js.expect.ExpectMixins.toBe(js.expect.E.expect(browsers).not,null);
+		});
+		js.mocha.M.it("should have 8 properties",function() {
+			js.expect.E.expect(Reflect.fields(browsers)).to.have.length(8);
+		});
+		js.mocha.M.it("should define browsers and their developer.",function() {
+			js.expect.E.expect(browsers.Chrome).to.eql("google");
+			js.expect.E.expect(browsers.Chromium).to.eql("google");
+			js.expect.E.expect(browsers.Safari).to.eql("apple");
+			js.expect.E.expect(browsers.Opera).to.eql("opera");
+			js.expect.E.expect(browsers.Firefox).to.eql("mozilla");
+			js.expect.E.expect(browsers.Sleipnir).to.eql("fenrir");
+			js.expect.E.expect(browsers.Konqueror).to.eql("KDE");
+			js.expect.E.expect(browsers.Links).to.eql("GPLv2+");
+		});
+	}
+	,step11: function() {
+		js.mocha.M.it("should declare a literal object named 'domains'",function() {
+			js.expect.ExpectMixins.toBe(js.expect.E.expect(domains).not,null);
+		});
+		js.mocha.M.it("should have 4 properties",function() {
+			js.expect.E.expect(Reflect.fields(domains)).to.have.length(4);
+		});
+		js.mocha.M.it("should define domain names mapped to ip addresses.",function() {
+			js.expect.E.expect(domains["ycombinator.com"]).to.eql("198.41.190.47");
+			js.expect.E.expect(domains["laughingsquid.com"]).to.eql("162.159.247.97");
+			js.expect.E.expect(domains["slumlordhosting.com"]).to.eql("198.61.179.126");
+			js.expect.E.expect(domains["jsonformatter.curiousconcept.com"]).to.eql("104.28.5.70");
+		});
+	}
+	,step10: function() {
+		js.mocha.M.it("should declare a literal object named 'princess_leia'",function() {
+			js.expect.ExpectMixins.toBe(js.expect.E.expect(princess_leia).not,null);
+		});
+		js.mocha.M.it("should have 4 properties",function() {
+			js.expect.E.expect(Reflect.fields(princess_leia)).to.have.length(4);
+		});
+		js.mocha.M.it("should define princess_leia's properties: name, money, age, and gender.",function() {
+			js.expect.E.expect(princess_leia.name).to.eql("Leia Organa");
+			js.expect.E.expect(princess_leia.money).to.eql(890);
+			js.expect.E.expect(princess_leia.age).to.eql(20);
+			js.expect.E.expect(princess_leia.gender).to.eql("female");
+		});
+	}
+	,step9: function() {
+		js.mocha.M.it("should declare a literal object named 'Gender'",function() {
+			js.expect.ExpectMixins.toBe(js.expect.E.expect(Gender).not,null);
+		});
+		js.mocha.M.it("should have 3 properties",function() {
+			js.expect.E.expect(Reflect.fields(Gender)).to.have.length(3);
+		});
+		js.mocha.M.it("should define genders female, male, and unknown.",function() {
+			js.expect.E.expect(Gender.female).to.eql("female");
+			js.expect.E.expect(Gender.male).to.eql("male");
+			js.expect.E.expect(Gender.unknown).to.be.an("undefined");
+		});
+	}
+	,step8: function() {
+		js.mocha.M.it("should declare a variable named 'club_name' with a value of 'Fight Club'",function() {
+			js.expect.ExpectMixins.toBe(js.expect.E.expect(club_name),"Fight Club");
+		});
+	}
+	,step7: function() {
+		js.mocha.M.it("should declare a variable named 'earths_water_composition' with a value representing 71%.",function() {
+			js.expect.ExpectMixins.toBe(js.expect.E.expect(earths_water_composition),0.71);
+		});
+	}
+	,step6: function() {
+		js.mocha.M.it("should declare a variable named 'golden_ratio' with a value of '1.61803398874'.",function() {
+			js.expect.ExpectMixins.toBe(js.expect.E.expect(golden_ratio),1.61803398874);
 		});
 	}
 	,step5: function() {
@@ -68,7 +149,7 @@ HundredSpecs.prototype = {
 	}
 	,step3: function() {
 		js.mocha.M.it("should declare a variable named 'sahara_animal' with a value of 'The Addax'.",function() {
-			js.expect.ExpectMixins.toBe(js.expect.E.expect(sahara_animal),"The Addax");
+			js.expect.ExpectMixins.toBe(js.expect.E.expect(new sahara_animal()),"The Addax");
 		});
 	}
 	,step2: function() {
@@ -86,6 +167,16 @@ var Reflect = function() { }
 Reflect.__name__ = true;
 Reflect.hasField = function(o,field) {
 	return Object.prototype.hasOwnProperty.call(o,field);
+}
+Reflect.fields = function(o) {
+	var a = [];
+	if(o != null) {
+		var hasOwnProperty = Object.prototype.hasOwnProperty;
+		for( var f in o ) {
+		if(f != "__id__" && f != "hx__closures__" && hasOwnProperty.call(o,f)) a.push(f);
+		}
+	}
+	return a;
 }
 var Std = function() { }
 Std.__name__ = true;

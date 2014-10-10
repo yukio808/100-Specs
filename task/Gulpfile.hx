@@ -52,7 +52,7 @@ class Gulpfile
       livereload: true
     });
     if(AUTO_OPEN_BROWSER){
-      Node.child_process.exec('open http://$HOST:$PORT && subl $WEBROOT/', null, function(error:{ code : Int }, stdout:String, stderr:String):Void
+      Node.child_process.exec('open http://$HOST:$PORT && subl $WEBROOT/js/class-definitions.js', null, function(error:{ code : Int }, stdout:String, stderr:String):Void
       {
         trace('          «--´¯`--–…·´--».-.- ( NOTICE ) -.-.«-`·…–--´¯`-----»
 
@@ -71,7 +71,7 @@ class Gulpfile
 
           (¯`·._.·[ Opened $WEBROOT/index.html in your default web browser ]·._.·´¯)
 
-          •^v^–[ Opened $WEBROOT/ in Sublime Text ]–^v^•
+          •^v^–[ Opened $WEBROOT/js/class-definitions.js in Sublime Text ]–^v^•
           ');
       });
     }

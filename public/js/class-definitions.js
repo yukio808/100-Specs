@@ -41,71 +41,98 @@
 
 
 
-/* Step 6
+/* Step 6 φ
  *
- * WIP
- * limbic system
- * motor control
- *
+ * Declare a variable named "golden_ratio"
+ * and assign the value of golden_ratio to 1.61803398874
+ * 
  */
+
 
 
 /* Step 7
  *
- * WIP
- * earth
- * water
- * 75%
+ * Declare a variable named "earths_water_composition"
+ * and assign the value of earths_water_composition to 0.71
  *
  */
 
 
 /* Step 8
  *
- * WIP
- *  club Fight Club
+ * Declare a variable named "club_name"
+ * and assign the value of club_name to "Fight Club"
  * 
  */
+
 
 
 /* Step 9
  *
- * Define a literal object
- * Princess Leia
- *   money
- *   age
- *   gender
- *   name
- *   address
- *
+ * Define a literal object named "Gender"
+ * with properties and values set to:
+ * 
+ *   female  => "female"
+ *   male    => "male"
+ *   unknown => undefined
  */
+
 
 
 /* Step 10
  *
- * Define a literal object
- * domains
- *  names : ip
+ *
+ * Define a literal object named "princess_leia"
+ * with properties and values set to:
  *   
- * 
+ *   name    => "Leia Organa"
+ *   money   => 890
+ *   age     => 20
+ *   gender  => Gender.female
  * 
  */
+
+
 
 
 /* Step 11
  *
- * Define a literal object
- * Browsers
- * Chrome
- * Safari
- * Opera
- * Firefox
+ * Define a literal object named "domains"
+ * with properties and values set to:
  * 
- *
+ *   ycombinator.com                  => "198.41.190.47"
+ *   laughingsquid.com                => "162.159.247.97"
+ *   slumlordhosting.com              => "198.61.179.126"
+ *   jsonformatter.curiousconcept.com => "104.28.5.70"
+ * 
  */
 
 
+
+
 /* Step 12
+ *
+ * Define a literal object named "browsers"
+ * with properties and values set to:
+ *
+ *   Chrome     => "google"
+ *   Chromium   => "google"
+ *   Safari     => "apple"
+ *   Opera      => "opera"
+ *   Firefox    => "mozilla"
+ *   Sleipnir   => "fenrir"
+ *   Konqueror  => "KDE"
+ *   Links      => "GPLv2+"
+ * 
+ */
+
+
+
+
+/* Step 13
+ *
+ *
+ * WIP
  *
  * Define a literal object
  * rainbow
@@ -118,11 +145,8 @@
  *   indigo
  *   violet
  *
- */
-
-
-/* Step 13
  *
+ * 
  * Define a literal object
  * SCMs
  * git
