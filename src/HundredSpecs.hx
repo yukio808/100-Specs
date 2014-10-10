@@ -18,6 +18,7 @@ class HundredSpecs
     M.describe("Golden Ratio φ", step6);
     M.describe("Water Comprising Earth's Surface", step7);
     M.describe("Club Name", step8);
+    M.describe("Gender", step9);
     M.describe("Step 20", step20);
   }
 
@@ -114,6 +115,22 @@ class HundredSpecs
       E.expect(untyped(club_name)).toBe("Fight Club");
     });
   }
+
+  private inline function step9():Void
+  {
+    M.it("should declare a variable named 'Gender'", function() {
+      E.expect(untyped(Gender)).not.toBe(null);
+    });
+    M.it("should have 3 properties", function() {
+      E.expect( Reflect.fields( untyped(Gender) ) ).to.have.length(3);
+    });
+    M.it("should define genders female, male, and unknown.", function() {
+      E.expect( untyped(Gender).female ).to.eql('female');
+      E.expect( untyped(Gender).male ).to.eql('male');
+      E.expect( untyped(Gender).unknown ).to.be.an('undefined');
+    });
+  }
+
 
   private inline function step20():Void
   {

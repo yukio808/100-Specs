@@ -9,6 +9,7 @@ var HundredSpecs = function() {
 	js.mocha.M.describe("Golden Ratio φ",$bind(this,this.step6));
 	js.mocha.M.describe("Water Comprising Earth's Surface",$bind(this,this.step7));
 	js.mocha.M.describe("Club Name",$bind(this,this.step8));
+	js.mocha.M.describe("Gender",$bind(this,this.step9));
 	js.mocha.M.describe("Step 20",$bind(this,this.step20));
 };
 HundredSpecs.__name__ = true;
@@ -24,6 +25,19 @@ HundredSpecs.prototype = {
 		});
 		js.mocha.M.it("'sahara_river' should return the string 'Nile River'.",function() {
 			js.expect.ExpectMixins.toBe(js.expect.E.expect(sahara_river()),"Nile River");
+		});
+	}
+	,step9: function() {
+		js.mocha.M.it("should declare a variable named 'Gender'",function() {
+			js.expect.ExpectMixins.toBe(js.expect.E.expect(Gender).not,null);
+		});
+		js.mocha.M.it("should have 3 properties",function() {
+			js.expect.E.expect(Reflect.fields(Gender)).to.have.length(3);
+		});
+		js.mocha.M.it("should define genders female, male, and unknown.",function() {
+			js.expect.E.expect(Gender.female).to.eql("female");
+			js.expect.E.expect(Gender.male).to.eql("male");
+			js.expect.E.expect(Gender.unknown).to.be.an("undefined");
 		});
 	}
 	,step8: function() {
@@ -104,6 +118,16 @@ var Reflect = function() { }
 Reflect.__name__ = true;
 Reflect.hasField = function(o,field) {
 	return Object.prototype.hasOwnProperty.call(o,field);
+}
+Reflect.fields = function(o) {
+	var a = [];
+	if(o != null) {
+		var hasOwnProperty = Object.prototype.hasOwnProperty;
+		for( var f in o ) {
+		if(f != "__id__" && f != "hx__closures__" && hasOwnProperty.call(o,f)) a.push(f);
+		}
+	}
+	return a;
 }
 var Std = function() { }
 Std.__name__ = true;
