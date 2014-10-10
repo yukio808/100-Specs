@@ -26,7 +26,7 @@
  * Declare a variable named "planets"
  * and assign the value of planets to an array containing
  * each planet in our solar system
- * 
+ *
  */
 
 
@@ -45,7 +45,7 @@
  *
  * Declare a variable named "golden_ratio"
  * and assign the value of golden_ratio to 1.61803398874
- * 
+ *
  */
 
 
@@ -62,7 +62,7 @@
  *
  * Declare a variable named "club_name"
  * and assign the value of club_name to "Fight Club"
- * 
+ *
  */
 
 
@@ -71,11 +71,11 @@
  *
  * Define a literal object named "Gender"
  * with properties and values set to:
- * 
- *   female  => "female"
- *   male    => "male"
- *   unknown => undefined
- */
+ *
+ *   female ;
+  *   male   ;
+  *   unknown;
+  */
 
 
 
@@ -84,12 +84,12 @@
  *
  * Define a literal object named "princess_leia"
  * with properties and values set to:
- *   
- *   name    => "Leia Organa"
- *   money   => 890
- *   age     => 20
- *   gender  => Gender.female
- * 
+ *
+ *   name   ;
+  *   money  ;
+  *   age    ;
+  *   gender ;
+  *
  */
 
 
@@ -99,12 +99,12 @@
  *
  * Define a literal object named "domains"
  * with properties and values set to:
- * 
- *   ycombinator.com                  => "198.41.190.47"
- *   laughingsquid.com                => "162.159.247.97"
- *   slumlordhosting.com              => "198.61.179.126"
- *   jsonformatter.curiousconcept.com => "104.28.5.70"
- * 
+ *
+ *   ycombinator.com                 ;
+  *   laughingsquid.com               ;
+  *   slumlordhosting.com             ;
+  *   jsonformatter.curiousconcept.com;
+  *
  */
 
 
@@ -115,15 +115,15 @@
  * Define a literal object named "browsers"
  * with properties and values set to:
  *
- *   Chrome     => "google"
- *   Chromium   => "google"
- *   Safari     => "apple"
- *   Opera      => "opera"
- *   Firefox    => "mozilla"
- *   Sleipnir   => "fenrir"
- *   Konqueror  => "KDE"
- *   Links      => "GPLv2+"
- * 
+ *   Chrome    ;
+  *   Chromium  ;
+  *   Safari    ;
+  *   Opera     ;
+  *   Firefox   ;
+  *   Sleipnir  ;
+  *   Konqueror ;
+  *   Links     ;
+  *
  */
 
 
@@ -146,7 +146,7 @@
  *   violet
  *
  *
- * 
+ *
  * Define a literal object
  * SCMs
  * git
@@ -181,9 +181,6 @@
  *     adenine
  *     thymine
  *     cytosine
- *   
- * 
- * 
  *
  */
 
@@ -208,7 +205,7 @@
  *
  * WIP
  * Living Organism Classification
- * Kingdom 
+ * Kingdom
  * Phylum
  * Class
  * Order
@@ -259,7 +256,7 @@
  *
  * Define a function named 'sahara_river'
  * that returns the string 'Nile River'
- * 
+ *
  * @return {String}
  *
  */
@@ -277,7 +274,7 @@
  *
  * Define a functions object
  * install linux()
- * 
+ *
  *
  */
 
@@ -294,7 +291,7 @@
  *
  * WIP
  * browse url ( browser )
- * 
+ *
  *
  */
 
@@ -304,7 +301,6 @@
  * WIP
  * listify Living Organism Classification
  * each on it's own line
- * 
  *
  */
 
@@ -339,6 +335,7 @@
  * WIP
  * talk_about(club) false
  *
+ *
  */
 
 
@@ -349,7 +346,7 @@
  *   plants
  *   grow
  *   water
- * 
+ *
  */
 
 
@@ -385,7 +382,7 @@
  *  shoots gun
  *  gets in trouble
  *  marries ( Han solo )
- * 
+ *
  */
 
 
@@ -405,17 +402,17 @@
  * Leonhard Euler
  *  mathematician
  *  physicist
- *  discoveries in 
+ *  discoveries in
  *    infinitesimal calculus
- *    graph theory 
- *    mechanics, 
- *    fluid dynamics, 
- *    optics, 
- *    astronomy, 
+ *    graph theory
+ *    mechanics,
+ *    fluid dynamics,
+ *    optics,
+ *    astronomy,
  *    music theory.
  *  do(math)
  *
- * 
+ *
  */
 
 
@@ -443,6 +440,7 @@
  *  west()
  *  getPosition()
  *
+ *
  */
 
 
@@ -454,7 +452,7 @@
  *  volume 12
  *  dispense()
  *  getVolume()
- *  
+ *
  */
 
 
@@ -464,11 +462,10 @@
  * cow
  *   poops : 0
  *   milks : 0
- *   eat() poops += quantity / 10
- *   drink() milks += volume *.9
- *
+ *   eat() poops ;
+  *   drink() milks ;
+  *
  */
-
 
 /* Step 50
  *
@@ -476,22 +473,115 @@
  *
  */
 
+/**
+ * Animal class
+ * @param {string} species The animal species
+ * @param {string} gender  male or female
+ */
+
+/**
+ * Vehicle class
+ * @param {string} make The vehicle's make
+ * @param {string} model The vehicle's model
+ */
+
+/**
+ * Shape class
+ * @param {number} sides The number of sides, should be greater than 3
+ */
+
+/**
+ * Box class
+ * @param {anything} contents The contents of the box
+ * @param {boolean} isOpen     Whether the box is opened or closed
+ */
+
+/**
+ * Door class
+ * @param {boolean} isOpen Whether the door is opened or closed
+ */
+
+/**
+ * Shoe class
+ * @param {number} size  The shoe size
+ * @param {string} color The shoe color
+ */
+
+/**
+ * House class
+ * @param {number} stories How many stories tall the house is
+ */
+
+/**
+ * Lightbulb class
+ * @param {boolean} isOn Whether the light is on or off
+ */
+
+/**
+ * Cookie class
+ * @param {string} flavor The cookie's flavor
+ */
+
+/**
+ * Meal class
+ * @param {Array} foods All the foods in the meal
+ */
+
 /* Step 60
  *
- * Create a new instance of 
+ * Create a new instance of
  *
  */
 
+// Create 2 different species of animals
+var george;
+var nemo;
+
+// Create 2 different vehicles
+var civic;
+var forte;
+
+// Create 2 shapes with different numbers of sides
+var square;
+var hexagon;
+
+// Create 2 boxes
+var catBox;
+var christmasPresent;
+
+// Create 2 doors
+var automaticDoor;
+var bankVault;
+
+// Create 2 shoes
+var rubySlippers;
+var dressShoes;
+
+// Create 2 houses
+var singleStory;
+var twoStory;
+
+// Create 2 lightbulbs
+var incandescent;
+var halogen;
+
+// Create 2 cookies of different flavors
+var chocolateChip;
+var gingerbread;
+
+// Create 2 different meals
+var breakfast;
+var dinner;
 
 /* Step 80
  *
- * Call methods 
+ * Call methods
  *
  */
 
 
 /* Step 100
  *
- * Call 
+ * Call
  *
  */
