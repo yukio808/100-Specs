@@ -64,6 +64,8 @@
 /* Step 8
  *
  * WIP
+ *  club Fight Club
+ * 
  */
 
 
@@ -243,7 +245,7 @@
 /* Step 21
  *
  * Define a functions object
- * add
+ * add numbers
  *
  */
 
@@ -251,7 +253,7 @@
 /* Step 22
  *
  * Define a functions object
- * to cat sound
+ * install linux()
  * 
  *
  */
@@ -260,7 +262,7 @@
 /* Step 23
  *
  * Define a functions object
- * drink(beverage)
+ * drink(beer)
  *
  */
 
@@ -268,7 +270,7 @@
 /* Step 24
  *
  * WIP
- * 
+ * browse url ( browser )
  * 
  *
  */
@@ -312,43 +314,64 @@
 /* Step 29
  *
  * WIP
- * 
+ * talk_about(club) false
  *
  */
 
 
 /* Step 30
  *
- * Define a literal object
+ * Define a literal object with functions
+ * Garden
+ *   plants
+ *   grow
+ *   water
  * 
  */
 
 
 /* Step 31
  *
- * Define a literal object
+ * Define a literal object with functions
+ * Pen
+ *   color
+ *   write()
  *
  */
 
 
 /* Step 32
  *
- * Define a literal object
+ * Define a literal object with functions
+ * Solar system
+ *  planets   Array
+ *  addPlanet
+ *  removePlanet
  *
  */
 
 
 /* Step 33
  *
- * Define a literal object
- *
+ * Define a literal object with functions
+ * Hero
+ *  name princess leia
+ *  age
+ *  ...
+ *  ...
+ *  shoots gun
+ *  gets in trouble
+ *  marries ( Han solo )
+ * 
  */
 
 
 /* Step 34
  *
  * WIP
- * 
+ * Stapler
+ *  color red
+ *  staples paper (max paper)
  *
  */
 
@@ -356,15 +379,31 @@
 /* Step 35
  *
  * WIP
- * 
+ * Leonhard Euler
+ *  mathematician
+ *  physicist
+ *  discoveries in 
+ *    infinitesimal calculus
+ *    graph theory 
+ *    mechanics, 
+ *    fluid dynamics, 
+ *    optics, 
+ *    astronomy, 
+ *    music theory.
+ *  do(math)
  *
+ * 
  */
 
 
 /* Step 36
  *
  * WIP
- * 
+ * Bank Account
+ *  balance
+ *  withdraw
+ *  deposit
+ *  rob
  *
  */
 
@@ -372,7 +411,14 @@
 /* Step 37
  *
  * WIP
- * 
+ * PacMan
+ *  x
+ *  y
+ *  north()
+ *  south()
+ *  east()
+ *  west()
+ *  getPosition()
  *
  */
 
@@ -380,17 +426,26 @@
 /* Step 38
  *
  * WIP
- * 
- *
+ * beer
+ *  temperature 50
+ *  volume 12
+ *  dispense()
+ *  getVolume()
+ *  
  */
 
 
 /* Step 39
  *
  * WIP
- * 
+ * cow
+ *   poops : 0
+ *   milks : 0
+ *   eat() poops += quantity / 10
+ *   drink() milks += volume *.9
  *
  */
+
 
 /* Step 50
  *
