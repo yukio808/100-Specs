@@ -563,15 +563,233 @@ var gingerbread;
 var breakfast;
 var dinner;
 
-/* Step 80
+
+ /* Steps 81 to 90
+ *
+ * Create methods
+ *
+ */
+
+
+/* Step 81
+ *
+ * Declare an Animal method called isWarmBlooded that returns
+ * a true if the animal species is warm-blooded, false if cold-blooded.
+ * Three species are provided below.  If the species is anything else,
+ * return the string indicated below.
+ *
+ *            this.species => 
+ *                "Fish"   => false
+ *                "Monkey" => true
+ *                "Bird"   => true
+ *       Any other species => "Could not determine if warm-blooded"
+ *
+ */
+
+
+/* Step 82
+ *
+ * Declare a Vehicle method called drive that accepts a parameter
+ * called streetName.  If streetName is a string and is not empty,
+ * return "Driving on {streetName}", else return "Driving forward".
+ *
+ */
+
+
+ /* Step 83
+ *
+ * Declare a Shape method called getType that returns a string
+ * containing the type of shape based on the sides property.
+ *
+ *       this.sides => 
+ *                3 => "triangle"
+ *                4 => "quadrilateral"
+ *                5 => "pentagon"
+ *                6 => "hexagon"
+ *                7 => "heptagon"
+ *                8 => "octagon"
+ *                9 => "nonagon"
+ *               10 => "decagon"
+ * Any other number => "Could not determine type"
+ *
+ */
+
+
+/* Step 84
+ *
+ * Declare a Box method called openBox that opens the box
+ * if it is already closed.
+ * But it should not close the box if it is already open.
+ * Return true if openBox opens the box, false otherwise.
+ *
+ */
+
+
+ /* Step 85
+ *
+ * Declare a Door method called openClose that opens the door
+ * if it is already closed, or closes the door if it is already open.
+ * Return true if openClose opens the door, false if openClose closes the door.
+ *
+ */
+
+
+/* Step 86
+ *
+ * Declare a Shoe method called findShoes that returns a string containing
+ * the color and size of the shoe ("Found red shoes of size 8").
+ *
+ */
+
+
+ /* Step 87
+ *
+ * Declare a House method called isATallStory that accepts a
+ * param number called storiesTooTall.
+ * If the house's stories property is greater than or equal to
+ * storiesTooTall, return true, else return false.
+ *
+ */
+
+
+ /* Step 88
+ *
+ * Declare a Lightbulb method called flipSwitch that accepts a
+ * param string called on.  If on is the string "on", set
+ * the isOn property to true.  If on is any other string,
+ * set isOn to false.
+ * Return true if isOn is true, false otherwise.
+ *
+ */
+
+
+ /* Step 89
+ *
+ * Declare a Cookie method called swipedByCookieMonster that accepts
+ * a param called dayOfTheWeek.  If the cookie's flavor is "chocolate"
+ * and the dayOfTheWeek is "Monday", return true.  Else return false.
+ *
+ */
+
+
+ /* Step 90
+ *
+ * Declare a Meal method called containsJunkFood that returns true if
+ * at least one of the items in the foods array is junk food, false otherwise.
+ * To check if the food item is junk food, create an array called
+ * junkFood containing the following strings: "chips", "soda", "ice cream",
+ * "popcorn", and "candy".
+ *
+ * Use Array's indexOf method to check if the foods array contains junk food.
+ * Note that if an element is not found in the array, indexOf returns -1.
+ * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf
+ *
+ */
+
+
+ /* Steps 91 to 100
  *
  * Call methods
  *
  */
 
 
-/* Step 100
+/* Step 91
  *
- * Call
+ * Call the isWarmBlooded method on three Animal instances
+ * and assign the values to each variable below.
  *
  */
+var warmBloodedAnimal;
+var coldBloodedAnimal;
+var notWarmOrColdAnimal;
+
+
+/* Step 92
+ *
+ * Call the drive method on two Vehicle instances
+ * and assign the values to each variable below.
+ *
+ */
+var streetDriving;
+var forwardDriving;
+
+
+ /* Step 93
+ *
+ * Call the getType method on two Shape instances
+ * and assign the values to each variable below.
+ *
+ */
+var decagon;
+var polygon;
+
+
+/* Step 94
+ *
+ * Call the openBox method on two Box instances
+ * and assign the values to each variable below.
+ *
+ */
+var openAClosedBox;
+var closeAnOpenBox;
+
+
+ /* Step 95
+ *
+ * Call the openClose method on two Door instances
+ * and assign the values to each variable below.
+ *
+ */
+var openAClosedDoor;
+var closeAnOpenDoor;
+
+
+/* Step 96
+ *
+ * Call the findShoes method on two Shoe instances
+ * and assign the values to each variable below.
+ *
+ */
+var redShoesSize7;
+var blackShoesSize10;
+
+
+ /* Step 97
+ *
+ * Call the isATallStory method on two House instances
+ * and assign the values to each variable below.
+ *
+ */
+var farTooTallAStory;
+var shortStory;
+
+
+ /* Step 98
+ *
+ * Call the switch method on two Lightbulb instances
+ * and assign the values to each variable below.
+ *
+ */
+var kitchenLightsOn;
+var porchLightsOff;
+
+
+ /* Step 99
+ *
+ * Call the swipedByCookieMonster method on two Cookie instances
+ * and assign the values to each variable below.
+ *
+ */
+var cookieMonsterPwns;
+var cookieMonsterBlocked;
+
+
+ /* Step 100
+ *
+ * Call the containsJunkFood method on two Meal instances
+ * and assign the values to each variable below.
+ *
+ */
+var badForYou;
+var goodForYou;

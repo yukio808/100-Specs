@@ -54,6 +54,26 @@ class HundredSpecs
     M.describe("Step 77", step77);
     M.describe("Step 78", step78);
     M.describe("Step 79", step79);
+    M.describe("Step 81", step81);
+    M.describe("Step 82", step82);
+    M.describe("Step 83", step83);
+    M.describe("Step 84", step84);
+    M.describe("Step 85", step85);
+    M.describe("Step 86", step86);
+    M.describe("Step 87", step87);
+    M.describe("Step 88", step88);
+    M.describe("Step 89", step89);
+    M.describe("Step 90", step90);
+    M.describe("Step 91", step91);
+    M.describe("Step 92", step92);
+    M.describe("Step 93", step93);
+    M.describe("Step 94", step94);
+    M.describe("Step 95", step95);
+    M.describe("Step 96", step96);
+    M.describe("Step 97", step97);
+    M.describe("Step 98", step98);
+    M.describe("Step 99", step99);
+    M.describe("Step 100", step100);
   }
 
   private inline function step1():Void
@@ -592,6 +612,268 @@ class HundredSpecs
       E.expect(untyped(dinner.foods)).to.contain("fish");
       E.expect(untyped(dinner.foods)).to.contain("vegetables");
       E.expect(untyped(dinner.foods.length)).to.be.above(1);
+    });
+  }
+
+  private inline function step81():Void
+  {
+    var dory = untyped __js__("new Animal('Fish', 'female')");
+    M.it("isWarmBlooded should be a function.", function() {
+      E.expect(dory.isWarmBlooded).to.be.a("function");
+    });
+    M.it("'Monkey' and 'Bird' should return true.", function() {
+      E.expect(untyped __js__("new Animal('Monkey', 'male')").isWarmBlooded()).to.equal(true);
+      E.expect(untyped __js__("new Animal('Bird', 'female')").isWarmBlooded()).to.equal(true);
+    });
+    M.it("'Fish' should return false.", function() {
+      E.expect(dory.isWarmBlooded()).to.equal(false);
+    });
+    M.it("any other species should return 'Could not determine if warm-blooded'.", function() {
+      E.expect(untyped __js__("new Animal('Cat', 'male')").isWarmBlooded()).to.equal("Could not determine if warm-blooded");
+    });
+  }
+
+  private inline function step82():Void
+  {
+    var cruiser = untyped __js__("new Vehicle('Toyota', 'FJ Cruiser')");
+    M.it("drive should be a function.", function() {
+      E.expect(cruiser.drive).to.be.a("function");
+    });
+    M.it("should return 'Driving on {streetName}' if param is a string and not empty", function() {
+      E.expect(cruiser.drive("University Avenue")).to.equal("Driving on University Avenue");
+    });
+    M.it("should return 'Driving forward' if param is not a string and/or is empty", function() {
+      E.expect(cruiser.drive("")).to.equal("Driving forward");
+      E.expect(cruiser.drive(null)).to.equal("Driving forward");
+    });
+  }
+
+  private inline function step83():Void
+  {
+    var heptagon = untyped __js__("new Shape(7)");
+    M.it("getType should be a function.", function() {
+      E.expect(heptagon.getType).to.be.a("function");
+    });
+    M.it("should return the correct types for sides 3 to 10.", function() {
+      E.expect(untyped __js__("new Shape(3)").getType()).to.equal("triangle");
+      E.expect(untyped __js__("new Shape(4)").getType()).to.equal("quadrilateral");
+      E.expect(untyped __js__("new Shape(5)").getType()).to.equal("pentagon");
+      E.expect(untyped __js__("new Shape(6)").getType()).to.equal("hexagon");
+      E.expect(untyped __js__("new Shape(7)").getType()).to.equal("heptagon");
+      E.expect(untyped __js__("new Shape(8)").getType()).to.equal("octagon");
+      E.expect(untyped __js__("new Shape(9)").getType()).to.equal("nonagon");
+      E.expect(untyped __js__("new Shape(10)").getType()).to.equal("decagon");
+    });
+    M.it("should return 'Could not determine type' for any other number of sides.", function() {
+      E.expect(untyped __js__("new Shape(11)").getType()).to.equal("Could not determine type");
+    });
+  }
+
+  private inline function step84():Void
+  {
+    var garfieldBox = untyped __js__("new Box(new Animal('Cat', 'male'), false)");
+    M.it("openBox should be a function.", function() {
+      E.expect(garfieldBox.openBox).to.be.a("function");
+    });
+    M.it("should open the box if it is closed.", function() {
+      E.expect(garfieldBox.openBox()).to.equal(true);
+      E.expect(untyped(garfieldBox.isOpen)).to.equal(true);
+    });
+    M.it("should not close the box if it is open.", function() {
+      E.expect(garfieldBox.openBox()).to.equal(false);
+      E.expect(untyped(garfieldBox.isOpen)).to.equal(true);
+    });
+  }
+
+  private inline function step85():Void
+  {
+    var door = untyped __js__("new Door(false)");
+    M.it("openClose should be a function.", function() {
+      E.expect(door.openClose).to.be.a("function");
+    });
+    M.it("should open the door if it is closed.", function() {
+      E.expect(door.openClose()).to.equal(true);
+      E.expect(untyped(door.isOpen)).to.equal(true);
+    });
+    M.it("should close the door if it is open.", function() {
+      E.expect(door.openClose()).to.equal(false);
+      E.expect(untyped(door.isOpen)).to.equal(false);
+    });
+  }
+
+  private inline function step86():Void
+  {
+    var shoes = untyped __js__("new Shoe(7, 'silver')");
+    M.it("findShoes should be a function.", function() {
+      E.expect(shoes.findShoes).to.be.a("function");
+    });
+    M.it("should return 'Found {color} shoes of size {size}'.", function() {
+      E.expect(shoes.findShoes()).to.equal("Found silver shoes of size 7");
+    });
+  }
+
+  private inline function step87():Void
+  {
+    var house = untyped __js__("new House(3)");
+    M.it("isATallStory should be a function.", function() {
+      E.expect(house.isATallStory).to.be.a("function");
+    });
+    M.it("should return true if stories is greater than or equal to storiesTooTall.", function() {
+      E.expect(house.isATallStory(3)).to.equal(true);
+      E.expect(house.isATallStory(2)).to.equal(true);
+    });
+    M.it("should return false if stories is less than storiesTooTall.", function() {
+      E.expect(house.isATallStory(4)).to.equal(false);
+    });
+  }
+
+  private inline function step88():Void
+  {
+    var light = untyped __js__("new Lightbulb(false)");
+    M.it("flipSwitch should be a function.", function() {
+      E.expect(light.flipSwitch).to.be.a("function");
+    });
+    M.it("should flip the switch on if 'on' is passed in as a param.", function() {
+      E.expect(light.flipSwitch("on")).to.equal(true);
+      E.expect(untyped(light.isOn)).to.equal(true);
+    });
+    M.it("should flip the switch off if anything other than 'on' is passed in.", function() {
+      E.expect(light.flipSwitch("off")).to.equal(false);
+      E.expect(untyped(light.isOn)).to.equal(false);
+    });
+  }
+
+  private inline function step89():Void
+  {
+    var chocoCookie = untyped __js__("new Cookie('chocolate')");
+    M.it("swipedByCookieMonster should be a function.", function() {
+      E.expect(chocoCookie.swipedByCookieMonster).to.be.a("function");
+    });
+    M.it("should return true if the flavor is 'chocolate' and the day of the week is 'Monday'.", function() {
+      E.expect(chocoCookie.swipedByCookieMonster("Monday")).to.equal(true);
+    });
+    M.it("should return false if the flavor is not 'chocolate' and/or the day of the week is not 'Monday'.", function() {
+      E.expect(chocoCookie.swipedByCookieMonster("Saturday")).to.equal(false);
+      E.expect(untyped __js__("new Cookie('Oreo')").swipedByCookieMonster("Monday")).to.equal(false);
+      E.expect(untyped __js__("new Cookie('sugar')").swipedByCookieMonster("Sunday")).to.equal(false);
+    });
+  }
+
+  private inline function step90():Void
+  {
+    var dishes = untyped __js__("new Meal(['pizza', 'pie', 'fish', 'shrimp', 'pasta'])");
+    var snacks = untyped __js__("new Meal(['ice cream', 'chips', 'salad'])");
+    M.it("containsJunkFood should be a function.", function() {
+      E.expect(dishes.containsJunkFood).to.be.a("function");
+    });
+    M.it("should return true if foods array contains at least one of the junk foods.", function() {
+      E.expect(snacks.containsJunkFood()).to.equal(true);
+    });
+    M.it("should return false if foods array does not contain any junk food item.", function() {
+      E.expect(dishes.containsJunkFood()).to.equal(false);
+    });
+  }
+
+  private inline function step91():Void
+  {
+    M.it("'warmBloodedAnimal' should be warm-blooded", function() {
+      E.expect(untyped(warmBloodedAnimal)).to.equal(true);
+    });
+    M.it("'coldBloodedAnimal' should not be warm-blooded", function() {
+      E.expect(untyped(coldBloodedAnimal)).to.equal(false);
+    });
+    M.it("'notWarmOrColdAnimal' should not be warm- or cold-blooded", function() {
+      E.expect(untyped(notWarmOrColdAnimal)).to.equal("Could not determine if warm-blooded");
+    });
+  }
+
+  private inline function step92():Void
+  {
+    M.it("'streetDriving' should contain 'Driving on {streetName}'", function() {
+      E.expect(untyped(streetDriving)).to.contain("Driving on ");
+    });
+    M.it("'forwardDriving' should contain 'Driving forward'", function() {
+      E.expect(untyped(forwardDriving)).to.equal("Driving forward");
+    });
+  }
+
+  private inline function step93():Void
+  {
+    M.it("'decagon' should be a decagon", function() {
+      E.expect(untyped(decagon)).to.equal("decagon");
+    });
+    M.it("'polygon' should contain 'Could not determine type'", function() {
+      E.expect(untyped(polygon)).to.equal("Could not determine type");
+    });
+  }
+
+  private inline function step94():Void
+  {
+    M.it("'openAClosedBox' should open the box", function() {
+      E.expect(untyped(openAClosedBox)).to.equal(true);
+    });
+    M.it("'closeAnOpenBox' should not close the box", function() {
+      E.expect(untyped(closeAnOpenBox)).to.equal(false);
+    });
+  }
+
+  private inline function step95():Void
+  {
+    M.it("'openAClosedDoor' should open the door", function() {
+      E.expect(untyped(openAClosedDoor)).to.equal(true);
+    });
+    M.it("'closeAnOpenDoor' should close the door", function() {
+      E.expect(untyped(closeAnOpenDoor)).to.equal(false);
+    });
+  }
+
+  private inline function step96():Void
+  {
+    M.it("'redShoesSize7' should contain 'Found red shoes of size 7'", function() {
+      E.expect(untyped(redShoesSize7)).to.equal("Found red shoes of size 7");
+    });
+    M.it("'blackShoesSize10' should contain 'Found black shoes of size 10'", function() {
+      E.expect(untyped(blackShoesSize10)).to.equal("Found black shoes of size 10");
+    });
+  }
+
+  private inline function step97():Void
+  {
+    M.it("'farTooTallAStory' should be a tall story", function() {
+      E.expect(untyped(farTooTallAStory)).to.equal(true);
+    });
+    M.it("'shortStory' should be a short story", function() {
+      E.expect(untyped(shortStory)).to.equal(false);
+    });
+  }
+
+  private inline function step98():Void
+  {
+    M.it("'kitchenLightsOn' should be switched on", function() {
+      E.expect(untyped(kitchenLightsOn)).to.equal(true);
+    });
+    M.it("'porchLightsOff' should be switched off", function() {
+      E.expect(untyped(porchLightsOff)).to.equal(false);
+    });
+  }
+
+  private inline function step99():Void
+  {
+    M.it("'cookieMonsterPwns' means the Cookie Monster stole your cookies", function() {
+      E.expect(untyped(cookieMonsterPwns)).to.equal(true);
+    });
+    M.it("'cookieMonsterBlocked' means the Cookie Monster missed his chance", function() {
+      E.expect(untyped(cookieMonsterBlocked)).to.equal(false);
+    });
+  }
+
+  private inline function step100():Void
+  {
+    M.it("'badForYou' should contain at least one junk food item", function() {
+      E.expect(untyped(badForYou)).to.equal(true);
+    });
+    M.it("'goodForYou' should only contain healthy food items", function() {
+      E.expect(untyped(goodForYou)).to.equal(false);
     });
   }
 
