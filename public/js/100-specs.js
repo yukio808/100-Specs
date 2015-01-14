@@ -93,35 +93,41 @@ HundredSpecs.prototype = {
 			js.expect.E.expect(planets).to.be.an(Array);
 		});
 		js.mocha.M.it("should have 8 items",function() {
-			js.expect.E.expect(planets.length).to.eql(8);
+			js.expect.E.expect(planets.length).to.eql(9);
 		});
-		var lowercase_planets_0 = "mercury";
-		var lowercase_planets_1 = "venus";
-		var lowercase_planets_2 = "earth";
-		var lowercase_planets_3 = "mars";
-		var lowercase_planets_4 = "jupiter";
-		var lowercase_planets_5 = "saturn";
-		var lowercase_planets_6 = "uranus";
-		var lowercase_planets_7 = "neptune";
-		js.mocha.M.it("should contain the name of each of our solar system's planets",function() {
-			js.expect.E.expect(lowercase_planets_0).to.eql(planets[0]);
-			js.expect.E.expect(lowercase_planets_1).to.eql(planets[1]);
-			js.expect.E.expect(lowercase_planets_2).to.eql(planets[2]);
-			js.expect.E.expect(lowercase_planets_3).to.eql(planets[3]);
-			js.expect.E.expect(lowercase_planets_4).to.eql(planets[4]);
-			js.expect.E.expect(lowercase_planets_5).to.eql(planets[5]);
-			js.expect.E.expect(lowercase_planets_6).to.eql(planets[6]);
-			js.expect.E.expect(lowercase_planets_7).to.eql(planets[7]);
+    var planets_legend = [
+  		"mercury",
+  		"venus",
+  		"earth",
+  		"mars",
+  		"jupiter",
+  		"saturn",
+  		"uranus",
+  		"neptune",
+      "pluto"
+    ];
+
+		js.mocha.M.it("should contain the name of each of our solar system's planets (9)",function() {
+			js.expect.E.expect(planets).to.contain(planets[0]);
+			js.expect.E.expect(planets).to.contain(planets[1]);
+			js.expect.E.expect(planets).to.contain(planets[2]);
+			js.expect.E.expect(planets).to.contain(planets[3]);
+			js.expect.E.expect(planets).to.contain(planets[4]);
+			js.expect.E.expect(planets).to.contain(planets[5]);
+			js.expect.E.expect(planets).to.contain(planets[6]);
+      js.expect.E.expect(planets).to.contain(planets[7]);
+			js.expect.E.expect(planets).to.contain(planets[8]);
 		});
-		js.mocha.M.it("should have each planet listed in order",function() {
-			js.expect.E.expect(planets[0].toLowerCase()).to.eql("mercury");
-			js.expect.E.expect(planets[1].toLowerCase()).to.eql("venus");
-			js.expect.E.expect(planets[2].toLowerCase()).to.eql("earth");
-			js.expect.E.expect(planets[3].toLowerCase()).to.eql("mars");
-			js.expect.E.expect(planets[4].toLowerCase()).to.eql("jupiter");
-			js.expect.E.expect(planets[5].toLowerCase()).to.eql("saturn");
-			js.expect.E.expect(planets[6].toLowerCase()).to.eql("uranus");
-			js.expect.E.expect(planets[7].toLowerCase()).to.eql("neptune");
+		js.mocha.M.it("should have each planet listed in order of distance from the Sun",function() {
+			js.expect.E.expect(planets[0].toLowerCase()).to.eql(planets_legend[0]);
+			js.expect.E.expect(planets[1].toLowerCase()).to.eql(planets_legend[1]);
+			js.expect.E.expect(planets[2].toLowerCase()).to.eql(planets_legend[2]);
+			js.expect.E.expect(planets[3].toLowerCase()).to.eql(planets_legend[3]);
+			js.expect.E.expect(planets[4].toLowerCase()).to.eql(planets_legend[4]);
+			js.expect.E.expect(planets[5].toLowerCase()).to.eql(planets_legend[5]);
+			js.expect.E.expect(planets[6].toLowerCase()).to.eql(planets_legend[6]);
+      js.expect.E.expect(planets[7].toLowerCase()).to.eql(planets_legend[7]);
+			js.expect.E.expect(planets[8].toLowerCase()).to.eql(planets_legend[8]);
 		});
 	}
 	,step5: function() {
