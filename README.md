@@ -11,14 +11,12 @@ Failing test, make it pass!
 ![single failing test](https://raw.githubusercontent.com/devleague/100-Specs/master/doc/ex1.png)
 -----
 
------
 Example 2:
 It passes, now commit!
 
 ![passing test, time to commit](https://raw.githubusercontent.com/devleague/100-Specs/master/doc/ex2.png)
 -----
 
------
 Example 3:
 All tests for this block passes, commit!
 
