@@ -1,18 +1,50 @@
-# 100 Specs
+# 100-Specs
+===
+There are 100 test Specs in this exercise when you first visit the page you will see failing tests, your job is to write code that will satisfy the tests requirements.
 
-1. Navigate to this project in your terminal
-2. Run `http-server`
-3. Open [http://localhost:8081](http://localhost:8081) in Chrome
+# Work Flow
+====
+Write code that will make each test pass one at a time. When an entire code block passes, commit your changes to Git.
 
-*You should see failing tests.*
+Example 1:
+Failing test, make it pass!
+[dont commit yet]
 
-Follow the instructions for each step and write your code in `public/js/class-definitions.js`.
+Example 2:
+It passes, now commit!
+[show single task block]
 
-After you complete each step:
+Example 3:
+All tests for this block passes, commit!
+[show multi task block]
 
-1. Save `class-definitions.js`.
-2. Reload [http://localhost:8081](http://localhost:8081) in Chrome.
-3. Check if your test passes.
-4. If it passes, move on to the next step.
 
-Be sure to [commit your work](http://git-scm.com/book/en/Git-Basics-Recording-Changes-to-the-Repository) every few steps.
+# Getting Started
+====
+After you have `forked` this repo to your github account and have it `cloned` into your `DevLeague/` directory on your computer, navigate into your project, e.g. 
+
+### Install LiveReload Chrome plugin
+[http://tinyurl.com/chrome-livereload](http://tinyurl.com/chrome-livereload)
+
+LiveReload saves us sometime by detecting when a file changes in our project and automatically refreshes the brower for us!
+
+### Install Package Dependencies from NPM
+Run this command in your Terminal to install the packages that are needed to run this exercise.
+
+    npm install
+
+### Open your files in Sublime Text
+Run this command in your Terminal.
+
+    subl .
+
+
+### Starting your server through Gulp
+Run this command in your Terminal. Gulp starts our server and open up our webbrowser. Convenience, Ho!
+
+    gulp
+
+
+# Extra Tips
+====
+Since we have LiveReload running we don't have to manually refresh our browser anymore. One tip is to have your browser take up one-half of your screen vertically and then have your Text Editor take up the otehr half. As you make changes and save your progress you'll see the browser update itself. Immediate feedback feels gooooood.
