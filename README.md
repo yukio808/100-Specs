@@ -6,15 +6,15 @@ Write code that will make each test pass one at a time. When an entire code bloc
 
 Example 1:
 Failing test, make it pass!
-![single failing test](https://raw.githubusercontent.com/devleague/100-Specs/master/doc/ex1.png)
+[single failing test](https://raw.githubusercontent.com/devleague/100-Specs/master/doc/ex1.png)
 
 Example 2:
 It passes, now commit!
-![passing test, time to commit](https://raw.githubusercontent.com/devleague/100-Specs/master/doc/ex2.png)
+[passing test, time to commit](https://raw.githubusercontent.com/devleague/100-Specs/master/doc/ex2.png)
 
 Example 3:
 All tests for this block passes, commit!
-![Block of Tests with multiple sub-tests, commit it](https://raw.githubusercontent.com/devleague/100-Specs/master/doc/ex3.png)
+[Block of Tests with multiple sub-tests, commit it](https://raw.githubusercontent.com/devleague/100-Specs/master/doc/ex3.png)
 
 
 # Getting Started
