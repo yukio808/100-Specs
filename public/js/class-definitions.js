@@ -468,90 +468,71 @@
  * @param {string} species The animal species
  * @param {string} gender  male or female
  */
-function Animal() {
 
-}
 
 /**
  * Vehicle class
  * @param {string} make The vehicle's make
  * @param {string} model The vehicle's model
  */
-function Vehicle() {
 
-}
 
 /**
  * Shape class
  * @param {number} sides The number of sides, should be greater than 3
  */
-function Shape() {
 
-}
 
 /**
  * Box class
  * @param {anything} contents The contents of the box
  * @param {boolean} isOpen     Whether the box is opened or closed
  */
-function Box() {
 
-}
 
 /**
  * Door class
  * @param {boolean} isOpen Whether the door is opened or closed
  */
-function Door() {
 
-}
 
 /**
  * Shoe class
  * @param {number} size  The shoe size
  * @param {string} color The shoe color
  */
-function Shoe() {
 
-}
 
 /**
  * House class
  * @param {number} stories How many stories tall the house is
  */
-function House() {
 
-}
 
 /**
  * Lightbulb class
  * @param {boolean} isOn Whether the light is on or off
  */
-function Lightbulb() {
 
-}
 
 /**
  * Cookie class
  * @param {string} flavor The cookie's flavor
  */
-function Cookie() {
 
-}
 
 /**
  * Meal class
  * @param {Array} foods All the foods in the meal
  */
-function Meal() {
 
-}
 
 /* Step 60
  *
  * Create a new instance of
  *
  */
+
 
 // Create 2 different species of animals
 var george;
