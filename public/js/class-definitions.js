@@ -150,94 +150,91 @@
 
 /* Step 14
  *
- * WIP
- * Linux flavors
- * Gentoo
- * Fedora
- * Debian
- * Slackware
- * Red Hat
- * Bieber Linux
+ * Declare an array named "linuxFlavors"
+ * with the following values:
+ * 
+ * "Gentoo"
+ * "Fedora"
+ * "Debian"
+ * "Slackware"
+ * "Red Hat"
+ * "Bieber Linux"
  *
  */
 
 
 /* Step 15
  *
- * WIP
- * DNA
- *   nucleatides
- *     guanine
- *     adenine
- *     thymine
- *     cytosine
+ * Declare an array named "DNA" with the
+ * following values:
+ * 
+ * "nucleatides"
+ * "guanine"
+ * "adenine"
+ * "thymine"
+ * "cytosine"
  *
  */
 
 
 /* Step 16
  *
- * WIP
- * Laptops
- *  MacBook
- *    $1500
- *  AlienWare
- *    $2500
- *  HP
- *    $499
- *  Surface
- *    $320
+ * Define a literal object named "laptopCosts"
+ * with properties and values set to:
+ * 
+ * MacBook      => 1500
+ * AlienWare    => 2500
+ * HP           => 499
+ * Surface      => 320
  *
  */
 
 
 /* Step 17
  *
- * WIP
- * Living Organism Classification
- * Kingdom
- * Phylum
- * Class
- * Order
- * Family
- * Genus
- * Species
+ * Declare an array named "livingOrganismClassification"
+ * with the following values:
+ * 
+ * "Kingdom"
+ * "Phylum"
+ * "Class"
+ * "Order"
+ * "Family"
+ * "Genus"
+ * "Species"
  *
  */
 
 
 /* Step 18
  *
- * WIP
- * Define a literal object
- * SCMs
- * git
- * svn
- * mercurial
- * bazaar
- * cvs
+ * Declare an array named "scmList" with
+ * the following values:
+ * 
+ * "git"
+ * "svn"
+ * "mercurial"
+ * "bazaar"
+ * "cvs"
  *
  */
 
 
 /* Step 19
  *
- * WIP
- * Beer
- *  IPA
- *    Ale
- *  Lager
- *    Tastes Good
- *  Heffeweisen
- *    German
- *  Stout
- *    Thick
- *    Dark
- *  Porter
- *    Bitter
- *  Ale
- *    Light
- *    Golden
+ * Define a literal object named "beers" with
+ * properties and values set to:
+ * 
+ * "IPA"        => "Ale"
+ * "Lager"      => "Tastes Good"
+ * "Heffeweisen"=> "German"
+ * "Stout"      => [Array]
+ *                  "Thick"
+ *                  "Dark"
+ * "Porter"     => "Bitter"
+ * "Ale"        => [Array]
+ *                  "Light"
+ *                  "Golden"
  *
  */
 
@@ -254,25 +251,45 @@
 
 /* Step 21
  *
- * Define a functions object
- * add numbers
+ * Define a function named "addNumbers"
+ * that returns the sum of two numbers
+ * 
+ * @param {Number}
+ * @param {Number}
+ * @return {Number}
  *
  */
 
 
 /* Step 22
  *
- * Define a functions object
- * install linux()
- *
+ * Define a function named "installLinux"
+ * that takes a type of Linux as a parameter,
+ * checks if it exists in "linuxFlavors" and
+ * returns success or failure
+ * 
+ * @param {String}
+ * @return {Bool}
  *
  */
 
 
 /* Step 23
  *
- * Define a functions object
- * drink(beer)
+ * Define a function named "drink" that takes
+ * a type of beer as a paramter. If it is not
+ * a valid type of beer as defined in "beers",
+ * return failure. If it is valid, return success
+ * and print the following message:
+ * 
+ * "This {beerName} is {beerDescription}."
+ * 
+ * Or, if there are multiple descriptions:
+ * 
+ * "This {beerName is {beerDescription1} and {beerDescription2} and..."
+ * 
+ * @param {String}
+ * @return {Bool}
  *
  */
 
