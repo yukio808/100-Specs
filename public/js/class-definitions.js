@@ -225,14 +225,14 @@
  * Define a literal object named "beers" with
  * properties and values set to:
  * 
- * "IPA"        => "Ale"
- * "Lager"      => "Tastes Good"
- * "Heffeweisen"=> "German"
- * "Stout"      => [Array]
+ * IPA          => "Ale"
+ * Lager        => "Tastes Good"
+ * Heffeweisen  => "German"
+ * Stout        => [Array]
  *                  "Thick"
  *                  "Dark"
- * "Porter"     => "Bitter"
- * "Ale"        => [Array]
+ * Porter       => "Bitter"
+ * Ale          => [Array]
  *                  "Light"
  *                  "Golden"
  *
@@ -296,26 +296,44 @@
 
 /* Step 24
  *
- * WIP
- * browse url ( browser )
- *
+ * Define a function named "browseURL" that takes
+ * a browser and validates it, as defined by "browsers"
+ * If the browser doesn't exist, return an error message.
+ * If the browser exists, return the browser homepage listed.
+ * 
+ * @param {String}
+ * @return {String}
  *
  */
 
 
 /* Step 25
  *
- * WIP
- * listify Living Organism Classification
- * each on it's own line
+ * Define a function named "listLivingOrgClass" that
+ * returns an HTML-formatted list of all
+ * living organism classifications
+ * 
+ * @return {String}
  *
  */
 
 
 /* Step 26
  *
- * WIP
- * resolve
+ * Define a function named "favoritePlanet" that
+ * takes in the person's current planet and validates
+ * that the planet exists. If it doesn't, print the
+ * following message:
+ * 
+ * "{currentPlanet} is not a planet!"
+ * 
+ * If the planet does exist, select a different, random
+ * planet from the "planets" variable. Once selected,
+ * print the following message:
+ * 
+ * "I'm from {currentPlanet}, but I wish I could go to {randomPlanet}."
+ * 
+ * @param {String}
  *
  */
 
@@ -330,75 +348,129 @@
 
 /* Step 28
  *
- * WIP
- * purchase() laptop
- * return cost
+ * Define a function named "purchaseLaptop" that takes
+ * a laptop as a parameter. If the laptop is valid as
+ * defined in "laptopCosts" then return the cost. Otherwise,
+ * return -1
+ * 
+ * @param {String}
+ * @return {Number}
  *
  */
 
 
 /* Step 29
  *
- * WIP
- * talk_about(club) false
- *
+ * Define a function named "canTalkAbout" that takes
+ * a club as a parameter. Return true if you can
+ * talk about the club and false if the club passed
+ * in has the same value as "club_name"
+ * 
+ * @param {String}
+ * @return {Bool}
  *
  */
 
 
 /* Step 30
  *
- * Define a literal object with functions
- * Garden
- *   plants
- *   grow
- *   water
+ * Define a class named "Pen" with a property for
+ * color and a class method named "write" that takes
+ * a message to write as a parameter and prints the
+ * message out.
+ * 
+ * class
+ *   Pen
+ * properties
+ *   color
+ * methods
+ *   write
  *
  */
 
 
 /* Step 31
  *
- * Define a literal object with functions
- * Pen
- *   color
- *   write()
- *
+ * Define a class named "Garden" with a property for
+ * the number of plants and whether it was recently
+ * watered. Define class methods for "water" which
+ * sets the recently watered property to true and
+ * "grow" which adds a plant to the garden if it was
+ * recently watered and exhausts the water.
+ * 
+ * class
+ *   Garden
+ * properties
+ *   plants
+ *   isWatered
+ * methods
+ *   water
+ *   grow
+ * 
  */
 
 
 /* Step 32
  *
- * Define a literal object with functions
- * Solar system
- *  planets   Array
- *  addPlanet
- *  removePlanet
+ * Define a class named "SolarSystem" with a property
+ * "planets" that is initialized as an empty array. Add
+ * a method "addPlanet" that adds a planet to the list
+ * and a method "removePlanet" that removes a planet.
+ * 
+ * class
+ *   SolarSystem
+ * properties
+ *   planets
+ * methods
+ *   addPlanet
+ *   removePlanet
  *
  */
 
 
 /* Step 33
  *
- * Define a literal object with functions
- * Hero
- *  name princess leia
- *  age
- *  ...
- *  ...
- *  shoots gun
- *  gets in trouble
- *  marries ( Han solo )
+ * Define a class named "Hero" with properties "name,"
+ * "money," "age," "gender," and "isInTrouble" that gets
+ * instantiated by the "princess_leia" variable. Add a
+ * method "shootsGun" that prints a message about shooting
+ * her gun if she's in trouble, "getsInTrouble" that puts
+ * her in trouble, and "marries" that takes a prospective
+ * love interest and returns true for "Han Solo" or false
+ * for anyone else. Add a message of disapproval for
+ * "Luke Skywalker"
+ * 
+ * class
+ *   Hero
+ * properties
+ *   name
+ *   money
+ *   age
+ *   gender
+ *   isInTrouble
+ * methods
+ *   shootsGun
+ *   getsInTrouble
+ *   marries
  *
  */
 
 
 /* Step 34
  *
- * WIP
- * Stapler
- *  color red
- *  staples paper (max paper)
+ * Define a class named "Stapler" with properties "color"
+ * and "maxPapers." Add a method "staple" that accepts a
+ * number of papers as a parameter and returns true if the
+ * papers are less than or equal to the papers and false
+ * if there are too many papers to staple.
+ * 
+ * class
+ *   Stapler
+ * properties
+ *   color
+ *   maxPapers
+ * methods
+ *   staple
  *
  */
 
