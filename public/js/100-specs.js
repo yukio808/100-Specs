@@ -18,6 +18,7 @@ var HundredSpecs = function() {
 	js.mocha.M.describe("laptop Costs",$bind(this,this.step16));
 	js.mocha.M.describe("Living Organism Classification",$bind(this,this.step17));
 	js.mocha.M.describe("SCM List",$bind(this,this.step18));
+	js.mocha.M.describe("Beers!!!",$bind(this,this.step19));
 	js.mocha.M.describe("Step 20",$bind(this,this.step20));
 	js.mocha.M.describe("Step 50",$bind(this,this.step50));
 	js.mocha.M.describe("Step 51",$bind(this,this.step51));
@@ -594,6 +595,22 @@ HundredSpecs.prototype = {
 			js.expect.ExpectMixins.toBe(js.expect.E.expect(sahara_river()),"Nile River");
 		});
 	}
+	,step19: function() {
+		var stringProps = ["IPA","Lager","Heffeweisen","Stout","Porter","Ale"];
+		js.mocha.M.it("should declare a new object literal named 'beers",function() {
+			js.expect.E.expect(beers).to.not.be.an("undefined");
+		});
+		js.mocha.M.it("should have 6 properties",function() {
+			js.expect.E.expect(Reflect.fields(beers)).to.have.length(6);
+			js.expect.E.expect(beers).to.only.have.keys(stringProps);
+		});
+		js.mocha.M.it("should have strings at certain properties",function() {
+			js.expect.E.expect(beers.IPA).to.equal("Ale");
+			js.expect.E.expect(beers.Lager).to.equal("Tastes Good");
+			js.expect.E.expect(beers.Heffeweisen).to.equal("German");
+			js.expect.E.expect(beers.Porter).to.equal("Bitter");
+		});
+	}
 	,step18: function() {
 		js.mocha.M.it("should declare a new array named 'scmList",function() {
 			js.expect.E.expect(scmList).to.not.be.an("undefined");
@@ -632,10 +649,8 @@ HundredSpecs.prototype = {
 		js.mocha.M.it("should declare a new object literal named 'laptopCosts",function() {
 			js.expect.E.expect(laptopCosts).to.not.be.an("undefined");
 		});
-		js.mocha.M.it("should have 4 properties",function() {
-			js.expect.E.expect(Reflect.fields(laptopCosts)).to.have.length(4);
-		});
 		js.mocha.M.it("should defined 4 laptops brands as properties",function() {
+			js.expect.E.expect(Reflect.fields(laptopCosts)).to.have.length(4);
 			js.expect.E.expect(laptopCosts).to.only.have.keys(brandProps);
 		});
 		js.mocha.M.it("should have correct values for each of the brands",function() {

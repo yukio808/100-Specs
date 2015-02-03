@@ -28,6 +28,7 @@ class HundredSpecs
     M.describe("laptop Costs", step16);
     M.describe("Living Organism Classification", step17);
     M.describe("SCM List", step18);
+    M.describe("Beers!!!", step19);
     M.describe("Step 20", step20);
     M.describe("Step 50", step50);
     M.describe("Step 51", step51);
@@ -348,6 +349,24 @@ class HundredSpecs
       for (i in 0...scmKeys.length) {
         E.expect( untyped(scmList) ).to.contain(scmKeys[i]);
       }
+    });
+  }
+
+  public inline function step19():Void
+  {
+    var stringProps = ["IPA", "Lager", "Heffeweisen", "Stout", "Porter", "Ale"];
+    M.it("should declare a new object literal named 'beers", function() {
+      E.expect(untyped(beers)).to.not.be.an('undefined');
+    });
+    M.it("should have 6 properties", function (){
+      E.expect( Reflect.fields(untyped(beers)) ).to.have.length(6);
+      E.expect( untyped(beers) ).to.only.have.keys(stringProps);
+    });
+    M.it("should have strings at certain properties", function (){
+      E.expect( untyped(beers)["IPA"] ).to.equal("Ale");
+      E.expect( untyped(beers)["Lager"] ).to.equal("Tastes Good");
+      E.expect( untyped(beers)["Heffeweisen"] ).to.equal("German");
+      E.expect( untyped(beers)["Porter"] ).to.equal("Bitter");
     });
   }
 
