@@ -88,12 +88,7 @@ class HundredSpecs
   private inline function step1():Void
   {
     M.it("should declare a variable named 'unicorn' with no value set.", function() {
-      // if(untyped(unicorn) == null){
-      //   E.expect(true).to.be.ok();
-      // }else{
-      //   E.expect().fail("unicorn is not set");
-      // }
-      E.expect(untyped(unicorn)).to.be.a('null');
+      E.expect(untyped(unicorn)).to.not.be.a('undefined');
     });
   }
 
@@ -182,16 +177,16 @@ class HundredSpecs
 
   private inline function step9():Void
   {
-    M.it("should declare a literal object named 'Gender'", function() {
-      E.expect(untyped(Gender)).not.toBe(null);
+    M.it("should declare a literal object named 'gender'", function() {
+      E.expect(untyped(gender)).not.toBe(null);
     });
     M.it("should have 3 properties", function() {
-      E.expect( Reflect.fields( untyped(Gender) ) ).to.have.length(3);
+      E.expect( Reflect.fields( untyped(gender) ) ).to.have.length(3);
     });
     M.it("should define genders female, male, and unknown.", function() {
-      E.expect( untyped(Gender).female ).to.eql('female');
-      E.expect( untyped(Gender).male ).to.eql('male');
-      E.expect( untyped(Gender).unknown ).to.be.an('undefined');
+      E.expect( untyped(gender).female ).to.eql('female');
+      E.expect( untyped(gender).male ).to.eql('male');
+      E.expect( untyped(gender).unknown ).to.be.an('undefined');
     });
   }
 
@@ -232,18 +227,16 @@ class HundredSpecs
     M.it("should declare a literal object named 'browsers'", function() {
       E.expect(untyped(browsers)).not.toBe(null);
     });
-    M.it("should have 8 properties", function() {
-      E.expect( Reflect.fields( untyped(browsers) ) ).to.have.length(8);
+    M.it("should have 6 properties", function() {
+      E.expect( Reflect.fields( untyped(browsers) ) ).to.have.length(6);
     });
     M.it("should define browsers and their developer.", function() {
-      E.expect( untyped(browsers)["Chrome"] ).to.eql("google");
-      E.expect( untyped(browsers)["Chromium"] ).to.eql("google");
-      E.expect( untyped(browsers)["Safari"]).to.eql("apple");
-      E.expect( untyped(browsers)["Opera"] ).to.eql("opera");
-      E.expect( untyped(browsers)["Firefox"] ).to.eql("mozilla");
-      E.expect( untyped(browsers)["Sleipnir"] ).to.eql("fenrir");
-      E.expect( untyped(browsers)["Konqueror"] ).to.eql("KDE");
-      E.expect( untyped(browsers)["Links"] ).to.eql("GPLv2+");
+      E.expect( untyped(browsers)["Chromium"] ).to.eql("google.com");
+      E.expect( untyped(browsers)["Safari"]).to.eql("apple.com");
+      E.expect( untyped(browsers)["Opera"] ).to.eql("opera.com");
+      E.expect( untyped(browsers)["Firefox"] ).to.eql("mozilla.org");
+      E.expect( untyped(browsers)["Sleipnir"] ).to.eql("fenrir-inc.com");
+      E.expect( untyped(browsers)["Konqueror"] ).to.eql("konqueror.org");
     });
   }
 
@@ -411,9 +404,9 @@ class HundredSpecs
       E.expect( untyped(installLinux("Gentoo")) ).to.equal(true);
     });
     M.it("should return False for anything else", function (){
-      E.expect( untyped(installLinux({})) ).to.equal(true);
-      E.expect( untyped(installLinux([])) ).to.equal(true);
-      E.expect( untyped(installLinux("adventureTimeLinux")) ).to.equal(true);
+      E.expect( untyped(installLinux({})) ).to.equal(false);
+      E.expect( untyped(installLinux([])) ).to.equal(false);
+      E.expect( untyped(installLinux("adventureTimeLinux")) ).to.equal(false);
     });
   }
 
