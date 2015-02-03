@@ -42,6 +42,7 @@ class HundredSpecs
     M.describe("Pen Class", step30);
     M.describe("Garden Class", step31);
     M.describe("SolarSystem Class", step32);
+    M.describe("PrincessLeia Class", step33);
     M.describe("Step 50", step50);
     M.describe("Step 51", step51);
     M.describe("Step 52", step52);
@@ -514,7 +515,7 @@ class HundredSpecs
     M.it("should instantiate a new Person if given correct arguments", function (){
       var stringProps = ["name", "money", "age", "gender"];
       var kingtak = untyped __js__("new Person('Justin Wong', 100, 26, 'Male')");
-      E.expect( kingtak ).to.be.a(untyped __js__("Person"));
+      E.expect( kingtak ).to.be.a( untyped __js__("Person") );
       E.expect( Reflect.fields( untyped(kingtak) ) ).to.have.length(4);
       E.expect( kingtak ).to.only.have.keys(stringProps);
     });
@@ -580,7 +581,7 @@ class HundredSpecs
     });
     M.it("should instantiate a new Pen if given correct arguments", function (){
       var bluePen = untyped __js__("new Pen('blue')");
-      E.expect( bluePen ).to.be.a(untyped __js__("Pen"));
+      E.expect( bluePen ).to.be.a( untyped __js__("Pen") );
       E.expect( Reflect.fields( untyped(bluePen) ) ).to.have.length(1);
       E.expect( bluePen ).to.only.have.key("color");
     });
@@ -601,7 +602,7 @@ class HundredSpecs
     });
     M.it("should instantiate a new Garden if given correct arguments", function (){
       var myGarden = untyped __js__("new Garden(10)");
-      E.expect( myGarden ).to.be.a(untyped __js__("Garden"));
+      E.expect( myGarden ).to.be.a( untyped __js__("Garden") );
       E.expect( Reflect.fields( untyped(myGarden) ) ).to.have.length(2);
       E.expect( myGarden ).to.have.key("plantsTotal");
       E.expect( myGarden ).to.have.key("isWatered");
@@ -635,7 +636,7 @@ class HundredSpecs
     });
     M.it("should instantiate a new Solar System if given correct arguments", function (){
       var mySystem = untyped __js__("new SolarSystem()");
-      E.expect( mySystem ).to.be.a(untyped __js__("SolarSystem"));
+      E.expect( mySystem ).to.be.a( untyped __js__("SolarSystem") );
       E.expect( Reflect.fields( untyped(mySystem) ) ).to.have.length(1);
       E.expect( untyped(mySystem) ).to.have.key("planets");
       E.expect( untyped(mySystem.planets) ).to.be.a("array");
@@ -661,6 +662,62 @@ class HundredSpecs
       E.expect( untyped(mySystem.planets) ).to.have.length(1);
       untyped(mySystem.removePlanet());
       E.expect( untyped(mySystem.planets) ).to.have.length(0);
+    });
+  }
+
+  public inline function step33():Void
+  {
+    var leia = untyped __js__("new PrincessLeia('Leia', 1000, 20, 'female')");
+    M.it("should define a Class named 'PrincessLeia'", function (){
+      E.expect( untyped(PrincessLeia) ).to.be.a('function');
+    });
+    M.it("should be an instance of the PrincessLeia Class", function (){
+      E.expect( leia ).to.be.a( untyped __js__("PrincessLeia") );
+      E.expect( Reflect.fields( untyped(leia) ) ).to.have.length(5);
+      E.expect( leia ).to.key("name");
+      E.expect( leia.name ).to.be.a('string');
+      E.expect( leia ).to.key("money");
+      E.expect( leia.money ).to.be.a('number');
+      E.expect( leia ).to.key("age");
+      E.expect( leia.age ).to.be.a('number');
+      E.expect( leia ).to.key("gender");
+      E.expect( leia.gender ).to.be.a('string');
+      E.expect( leia ).to.key("isInTrouble");
+      E.expect( leia.isInTrouble ).to.equal(null);
+    });
+    M.it("should extend from the Person Class", function (){
+      E.expect( leia ).to.be.a(untyped __js__("Person"));
+    });
+    M.it("should have a method named 'shootsGun'", function (){
+      E.expect( untyped(leia.shootsGun) ).to.be.a('function');
+    });
+    M.it("'shootsGun' returns a message", function (){
+      var result = untyped(leia.shootsGun());
+      E.expect( result ).to.contain('shoots');
+      E.expect( result ).to.contain('gun');
+      E.expect( result ).to.contain('wildly');
+      E.expect( result ).to.contain('Leia');
+    });
+    M.it("should have a method named 'getsInTrouble'", function (){
+      E.expect( untyped(leia.getsInTrouble) ).to.be.a('function');
+    });
+    M.it("'getsInTrouble' returns a message", function (){
+      var result = untyped(leia.getsInTrouble());
+      E.expect( result ).to.contain('Help');
+      E.expect( result ).to.contain('you\'re my only');
+      E.expect( result ).to.contain('Obi-wan Kenobi');
+    });
+    M.it("should have a method named 'marries'", function (){
+      E.expect( untyped(leia.marries) ).to.be.a('function');
+    });
+    M.it("'marries' should return True if given 'Han Solo' as an argument", function (){
+      E.expect( untyped(leia.marries("Han Solo")) ).to.equal(true);
+    });
+    M.it("'marries' should return False if given anything else as an argument", function (){
+      E.expect( untyped(leia.marries("Han Solo")) ).to.equal(true);
+    });
+    M.it("but... 'marries' should return a message if given 'Luke Skywalker' as an argument", function (){
+      E.expect( untyped(leia.marries("Luke Skywalker")) ).to.equal("Gross!");
     });
   }
 

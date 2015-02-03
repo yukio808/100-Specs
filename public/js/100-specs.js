@@ -32,6 +32,7 @@ var HundredSpecs = function() {
 	js.mocha.M.describe("Pen Class",$bind(this,this.step30));
 	js.mocha.M.describe("Garden Class",$bind(this,this.step31));
 	js.mocha.M.describe("SolarSystem Class",$bind(this,this.step32));
+	js.mocha.M.describe("PrincessLeia Class",$bind(this,this.step33));
 	js.mocha.M.describe("Step 50",$bind(this,this.step50));
 	js.mocha.M.describe("Step 51",$bind(this,this.step51));
 	js.mocha.M.describe("Step 52",$bind(this,this.step52));
@@ -597,6 +598,60 @@ HundredSpecs.prototype = {
 		});
 		js.mocha.M.it("should have a gender property.",function() {
 			js.expect.E.expect(new Animal('Frog', 'male')).to.have.property("gender");
+		});
+	}
+	,step33: function() {
+		var leia = new PrincessLeia('Leia', 1000, 20, 'female');
+		js.mocha.M.it("should define a Class named 'PrincessLeia'",function() {
+			js.expect.E.expect(PrincessLeia).to.be.a("function");
+		});
+		js.mocha.M.it("should be an instance of the PrincessLeia Class",function() {
+			js.expect.E.expect(leia).to.be.a(PrincessLeia);
+			js.expect.E.expect(Reflect.fields(leia)).to.have.length(5);
+			js.expect.E.expect(leia).to.key("name");
+			js.expect.E.expect(leia.name).to.be.a("string");
+			js.expect.E.expect(leia).to.key("money");
+			js.expect.E.expect(leia.money).to.be.a("number");
+			js.expect.E.expect(leia).to.key("age");
+			js.expect.E.expect(leia.age).to.be.a("number");
+			js.expect.E.expect(leia).to.key("gender");
+			js.expect.E.expect(leia.gender).to.be.a("string");
+			js.expect.E.expect(leia).to.key("isInTrouble");
+			js.expect.E.expect(leia.isInTrouble).to.equal(null);
+		});
+		js.mocha.M.it("should extend from the Person Class",function() {
+			js.expect.E.expect(leia).to.be.a(Person);
+		});
+		js.mocha.M.it("should have a method named 'shootsGun'",function() {
+			js.expect.E.expect(leia.shootsGun).to.be.a("function");
+		});
+		js.mocha.M.it("'shootsGun' returns a message",function() {
+			var result = leia.shootsGun();
+			js.expect.E.expect(result).to.contain("shoots");
+			js.expect.E.expect(result).to.contain("gun");
+			js.expect.E.expect(result).to.contain("wildly");
+			js.expect.E.expect(result).to.contain("Leia");
+		});
+		js.mocha.M.it("should have a method named 'getsInTrouble'",function() {
+			js.expect.E.expect(leia.getsInTrouble).to.be.a("function");
+		});
+		js.mocha.M.it("'getsInTrouble' returns a message",function() {
+			var result = leia.getsInTrouble();
+			js.expect.E.expect(result).to.contain("Help");
+			js.expect.E.expect(result).to.contain("you're my only");
+			js.expect.E.expect(result).to.contain("Obi-wan Kenobi");
+		});
+		js.mocha.M.it("should have a method named 'marries'",function() {
+			js.expect.E.expect(leia.marries).to.be.a("function");
+		});
+		js.mocha.M.it("'marries' should return True if given 'Han Solo' as an argument",function() {
+			js.expect.E.expect(leia.marries("Han Solo")).to.equal(true);
+		});
+		js.mocha.M.it("'marries' should return False if given anything else as an argument",function() {
+			js.expect.E.expect(leia.marries("Han Solo")).to.equal(true);
+		});
+		js.mocha.M.it("but... 'marries' should return a message if given 'Luke Skywalker' as an argument",function() {
+			js.expect.E.expect(leia.marries("Luke Skywalker")).to.equal("Gross!");
 		});
 	}
 	,step32: function() {
