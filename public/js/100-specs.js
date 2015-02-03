@@ -598,6 +598,26 @@ HundredSpecs.prototype = {
 			js.expect.E.expect(new Animal('Frog', 'male')).to.have.property("gender");
 		});
 	}
+	,step32: function() {
+		js.mocha.M.it("should define a Class named 'SolarSystem'",function() {
+			js.expect.E.expect(SolarSystem).to.be.a("function");
+		});
+		js.mocha.M.it("should instantiate a new Garden if given correct arguments",function() {
+			var mySystem = new Garden(10);
+			js.expect.E.expect(mySystem).to.be.a(Garden);
+			js.expect.E.expect(Reflect.fields(mySystem)).to.have.length(2);
+			js.expect.E.expect(mySystem).to.have.key("plantsTotal");
+			js.expect.E.expect(mySystem).to.have.key("isWatered");
+		});
+		js.mocha.M.it("should have a method named 'write'",function() {
+			var Garden = new Pen('blue');
+			js.expect.E.expect(Garden.write).to.be.a("function");
+		});
+		js.mocha.M.it("should print and return a message string",function() {
+			var Garden = new Pen('blue');
+			js.expect.E.expect(Garden.write("Yar Yar Yar")).to.equal("blue: Yar Yar Yar");
+		});
+	}
 	,step31: function() {
 		js.mocha.M.it("should define a Class named 'Garden'",function() {
 			js.expect.E.expect(Garden).to.be.a("function");
