@@ -13,6 +13,7 @@ var HundredSpecs = function() {
 	js.mocha.M.describe("Domains",$bind(this,this.step11));
 	js.mocha.M.describe("Browsers",$bind(this,this.step12));
 	js.mocha.M.describe("Rainbow",$bind(this,this.step13));
+	js.mocha.M.describe("Linux Flavors",$bind(this,this.step14));
 	js.mocha.M.describe("Step 20",$bind(this,this.step20));
 	js.mocha.M.describe("Step 50",$bind(this,this.step50));
 	js.mocha.M.describe("Step 51",$bind(this,this.step51));
@@ -587,6 +588,22 @@ HundredSpecs.prototype = {
 		});
 		js.mocha.M.it("'sahara_river' should return the string 'Nile River'.",function() {
 			js.expect.ExpectMixins.toBe(js.expect.E.expect(sahara_river()),"Nile River");
+		});
+	}
+	,step14: function() {
+		js.mocha.M.it("should declare a new array named 'linuxFlavors'",function() {
+			js.expect.E.expect(linuxFlavors).to.not.be.an("undefined");
+		});
+		js.mocha.M.it("should have 6 properties",function() {
+			js.expect.E.expect(Reflect.fields(linuxFlavors)).to.have.length(6);
+		});
+		js.mocha.M.it("colors should define 6 Linux distros in string format",function() {
+			var distros = ["Gentoo","Fedora","Debian","Slackware","Red Hat","Bieber Linux"];
+			var _g1 = 0, _g = distros.length;
+			while(_g1 < _g) {
+				var i = _g1++;
+				js.expect.E.expect(linuxFlavors).to.contain(distros[i]);
+			}
 		});
 	}
 	,step13: function() {

@@ -23,6 +23,7 @@ class HundredSpecs
     M.describe("Domains", step11);
     M.describe("Browsers", step12);
     M.describe("Rainbow", step13);
+    M.describe("Linux Flavors", step14);
     M.describe("Step 20", step20);
     M.describe("Step 50", step50);
     M.describe("Step 51", step51);
@@ -262,6 +263,24 @@ class HundredSpecs
       E.expect( Reflect.fields( untyped(rainbow.isDouble) ) ).to.be.ok();
     });
   }
+
+  private inline function step14():Void
+  {
+    M.it("should declare a new array named 'linuxFlavors'", function() {
+      E.expect(untyped(linuxFlavors)).to.not.be.an('undefined');
+    });
+    M.it("should have 6 properties", function() {
+      E.expect( Reflect.fields( untyped(linuxFlavors) ) ).to.have.length(6);
+    });
+    M.it("colors should define 6 Linux distros in string format", function() {
+      var distros = ["Gentoo", "Fedora", "Debian", "Slackware", "Red Hat", "Bieber Linux"];
+
+      for (i in 0...distros.length) {
+        E.expect( untyped(linuxFlavors) ).to.contain(distros[i]);
+      }
+      
+    });
+  }  
 
 
   private inline function step20():Void
