@@ -115,14 +115,12 @@
  * Define a literal object named "browsers"
  * with properties and values set to:
  *
- *   Chrome     => "google"
- *   Chromium   => "google"
- *   Safari     => "apple"
- *   Opera      => "opera"
- *   Firefox    => "mozilla"
- *   Sleipnir   => "fenrir"
- *   Konqueror  => "KDE"
- *   Links      => "GPLv2+"
+ *   Chromium   => "google.com"
+ *   Safari     => "apple.com"
+ *   Opera      => "opera.com"
+ *   Firefox    => "mozilla.com"
+ *   Sleipnir   => "fenrir-inc.com"
+ *   Konqueror  => "konqueror.org"
  *
  */
 
@@ -298,12 +296,22 @@
  * Define a function named "browseURL" that takes
  * a browser and validates it, as defined by "browsers"
  * If the browser doesn't exist, return an error message.
- * If the browser exists, return the browser homepage listed.
+ * If the browser exists, return the value which is a partial URL.
  * 
  * @param {String}
  * @return {String}
  *
  */
+
+
+ // *   Chrome     => "google"
+ // *   Chromium   => "google"
+ // *   Safari     => "apple"
+ // *   Opera      => "opera"
+ // *   Firefox    => "mozilla"
+ // *   Sleipnir   => "fenrir-inc"
+ // *   Konqueror  => "KDE"
+ // *   Links      => "GPLv2+"
 
 
 /* Step 25
