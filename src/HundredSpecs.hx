@@ -419,20 +419,20 @@ class HundredSpecs
       E.expect( untyped(drink) ).to.be.a('function');
     });
     M.it("should return a phrase with the beer's name and description", function (){
-      E.expect( untyped(drink(stringProps[0])) ).to.match('This IPA is Ale.');
-      E.expect( untyped(drink(stringProps[1])) ).to.match('This Lager is Strong.');
-      E.expect( untyped(drink(stringProps[2])) ).to.match('This Heffeweisen is German.');
-      E.expect( untyped(drink(stringProps[4])) ).to.match('This Porter is Bitter.');
+      E.expect( untyped(drink(stringProps[0])) ).to.match("This IPA is Ale.");
+      E.expect( untyped(drink(stringProps[1])) ).to.match("This Lager is Strong.");
+      E.expect( untyped(drink(stringProps[2])) ).to.match("This Heffeweisen is German.");
+      E.expect( untyped(drink(stringProps[4])) ).to.match("This Porter is Bitter.");
     });
     M.it("should return a longer phrase for more descriptive beers", function (){
-      E.expect( untyped(drink(stringProps[3])) ).to.match('This Stout is Thick and Dark.');
-      E.expect( untyped(drink(stringProps[5])) ).to.match('This Ale is Light and Golden.');
+      E.expect( untyped(drink(stringProps[3])) ).to.match("This Stout is Thick and Dark.");
+      E.expect( untyped(drink(stringProps[5])) ).to.match("This Ale is Light and Golden.");
     });
     M.it("should return false if given an invalid option", function() {
       E.expect( untyped(drink({})) ).to.equal(false);
       E.expect( untyped(drink([])) ).to.equal(false);
       E.expect( untyped(drink(87)) ).to.equal(false);
-      E.expect( untyped(drink('Nierra Sevada')) ).to.equal(false);
+      E.expect( untyped(drink("Nierra Sevada")) ).to.equal(false);
     });
   }
 
@@ -452,8 +452,8 @@ class HundredSpecs
       E.expect( untyped(browseURL({}))).to.equal(false);
       E.expect( untyped(browseURL([]))).to.equal(false);
       E.expect( untyped(browseURL(90))).to.equal(false);
-      E.expect( untyped(browseURL('AOL'))).to.equal(false);
-      E.expect( untyped(browseURL('Netscape'))).to.equal(false);
+      E.expect( untyped(browseURL("AOL"))).to.equal(false);
+      E.expect( untyped(browseURL("Netscape"))).to.equal(false);
     });
   }
 
@@ -464,17 +464,29 @@ class HundredSpecs
       E.expect( untyped(listLivingOrgClass) ).to.be.a('function');
     });
     M.it("should return HTML formatted Unordered List with all the classifications", function (){
-      E.expect( untyped(listLivingOrgClass()) ).to.contain('<ul>');
-      E.expect( untyped(listLivingOrgClass()) ).to.contain('<li>');
-      E.expect( untyped(listLivingOrgClass()) ).to.contain('</li>');
-      E.expect( untyped(listLivingOrgClass()) ).to.contain('</ul>');
-      E.expect( untyped(listLivingOrgClass()) ).to.contain('Kingdom');
-      E.expect( untyped(listLivingOrgClass()) ).to.contain('Phylum');
-      E.expect( untyped(listLivingOrgClass()) ).to.contain('Class');
-      E.expect( untyped(listLivingOrgClass()) ).to.contain('Order');
-      E.expect( untyped(listLivingOrgClass()) ).to.contain('Family');
-      E.expect( untyped(listLivingOrgClass()) ).to.contain('Genus');
-      E.expect( untyped(listLivingOrgClass()) ).to.contain('Species');
+      E.expect( untyped(listLivingOrgClass()) ).to.contain("<ul>");
+      E.expect( untyped(listLivingOrgClass()) ).to.contain("<li>");
+      E.expect( untyped(listLivingOrgClass()) ).to.contain("</li>");
+      E.expect( untyped(listLivingOrgClass()) ).to.contain("</ul>");
+      E.expect( untyped(listLivingOrgClass()) ).to.contain("Kingdom");
+      E.expect( untyped(listLivingOrgClass()) ).to.contain("Phylum");
+      E.expect( untyped(listLivingOrgClass()) ).to.contain("Class");
+      E.expect( untyped(listLivingOrgClass()) ).to.contain("Order");
+      E.expect( untyped(listLivingOrgClass()) ).to.contain("Family");
+      E.expect( untyped(listLivingOrgClass()) ).to.contain("Genus");
+      E.expect( untyped(listLivingOrgClass()) ).to.contain("Species");
+    });
+  }
+
+  public inline function step25():Void
+  {
+    M.it("should define a function named 'favoritePlanet'", function (){
+      E.expect( untyped(favoritePlanet) ).to.be.a('function');
+    });
+    M.it("should print a message if your planet exists", function (){
+      E.expect( untyped(favoritePlanet()) ).to.be.a("string");
+      E.expect( untyped(favoritePlanet()) ).to.contain("");
+      E.expect( untyped(favoritePlanet()) ).to.contain('</li>');
     });
   }
 
