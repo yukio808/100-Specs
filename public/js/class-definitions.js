@@ -336,10 +336,11 @@
  * class
  *   Person
  * properties
- *   name
- *   money
- *   age
- *   gender
+ *   @param {String} name
+ *   @param {String} money
+ *   @param {String} age
+ *   @param {String} gender
+ * 
  * methods
  *   spendMoney
  *   earnMoney
@@ -379,11 +380,18 @@
  * color and a class method named "write" that takes
  * a message to write as a parameter and prints the
  * message out.
+ * a message string as a parameter and returns the
+ * string back with the pen's color added to the 
+ * beginning of the string
+ *
+ * example: "{color}: {Message passed in}"
  * 
  * class
  *   Pen
+ *   
  * properties
- *   color
+ *   @param {String} color
+ *   
  * methods
  *   write
  *
@@ -401,9 +409,11 @@
  * 
  * class
  *   Garden
+ *   
  * properties
- *   plants
- *   isWatered
+ *   @param {Number} plantsTotal   
+ *   @property {Bool:Not Passed as Argument - Default Value FALSE} isWatered 
+ *   
  * methods
  *   water
  *   grow
@@ -433,18 +443,30 @@
  *
  * Define a class named "PrincessLeia" that is a subclass of "Person"
  * with properties "name," "money," "age," "gender," and
- * "isInTrouble." Add a method "shootsGun" that prints a message
- * about shooting her's gun if she's in trouble, "getsInTrouble" that
- * puts her in trouble, and "marries" that takes a prospective
+ * "isInTrouble"(initialized as null)
+ * 
+ * Add a method "shootsGun" that returns a message
+ * "Leia shoots her gun wildly"
+ * and sets the isInTrouble property to FALSE
+ * 
+ * Add a method "getsInTrouble" that returns a message
+ * "Help me Obi-wan Kenobi, you're my only hope"
+ * and sets the property 'isInTroube' to TRUE
+ * 
+ * Add a method "marries" that takes a prospective
  * love interest and returns true for "Han Solo" or false for anyone
- * else. Add a message of disapproval for "Luke Skywalker"
+ * else.
+ * 
+ * In the 'marries' method - Add a message of disapproval for "Luke Skywalker"
+ * "Gross!"
+ * 
  * 
  * class
  *   PrincessLeia
  * properties
  *   isInTrouble
  * methods
- *   shootsGun
+ *   shootsGun 
  *   getsInTrouble
  *   marries
  *
@@ -454,7 +476,7 @@
 /* Step 34
  *
  * Define a class named "Stapler" with properties "color"
- * and "maxPapers." Add a method "staple" that accepts a
+ * and "maxPapers". Add a method "staplePapers" that accepts a
  * number of papers as a parameter and returns true if the
  * papers are less than or equal to the papers and false
  * if there are too many papers to staple.
@@ -465,28 +487,37 @@
  *   color
  *   maxPapers
  * methods
- *   staple
+ *   staplePapers
  *
  */
 
 
 /* Step 35
  *
- * Define a class named "Scientist" that is a subclass of Person with
- * array properties "disciplines" and "discoveries." Add a method
- * "doWork" that takes a discipline as a parameter. Return true and
- * print a message of discovery if the person has that discipline.
- * Return false and print a message of confusion if the person doesn't
- * have that discipline. Create a variable of type Scientist with the
- * name "Leonhard Euler" who has the disciplines "mathematics" and
- * "physics" and who has discoveries in:
- *    infinitesimal calculus
- *    graph theory
- *    mechanics,
- *    fluid dynamics,
- *    optics,
- *    astronomy,
- *    music theory.
+ * Define a class named "Scientist" that extends the Person Class that takes
+ * name, money, age, and gender as well as new instance properties
+ * "disciplines" and "discoveries" which initializes as empty arrays.
+ *
+ * Add a method named 'addDiscipline' that takes a string as an argument and
+ * adds it to the discipline property. Return the value of the discipline property
+ *
+ * Add a method named 'checkDisciple' that takes a string as an argument and
+ * checks if the argument can be found in the discipline property. Return false 
+ * if it is not found otherwise return back true.
+ *
+ * Add a method named 'addDiscovery' that takes a string as an argument and
+ * adds it to the discoveries property. Return back the contents of the discoveries 
+ * property as a String made up of all the elements found see below
+ *
+ * examples:
+ * ["Gravity"] will be returned as:
+ * "I discovered Gravity."
+ *
+ * ["Gravity", "Theory of Relativity"] will be returned as:
+ * "I discovered Gravity and Theory of Relativity."
+ * 
+ * ["Gravity", "Theory of Relativity", "Jesus Christ"] will be returned as:
+ *       "I discovered Gravity, Theory of Relativity, and Jesus Christ."
  * 
  * class
  *   Scientist
@@ -494,8 +525,10 @@
  *   disciplines
  *   discoveries
  * methods
- *   doWork
- *
+ *   addDiscipline
+ *   checkDiscipline
+ *   addDiscovery
+ *   
  */
 
 
@@ -560,13 +593,134 @@
  *
  */
 
-/* Step 50
+
+/* Step 40
  *
- * Define a Class
+ * WIP
+ * cow
+ *   poops : 0
+ *   milks : 0
+ *   eat() poops += quantity / 10
+ *   drink() milks += volume *.9
  *
  */
 
+
+/* Step 41
+ *
+ * WIP
+ * cow
+ *   poops : 0
+ *   milks : 0
+ *   eat() poops += quantity / 10
+ *   drink() milks += volume *.9
+ *
+ */
+
+
+/* Step 42
+ *
+ * WIP
+ * cow
+ *   poops : 0
+ *   milks : 0
+ *   eat() poops += quantity / 10
+ *   drink() milks += volume *.9
+ *
+ */
+
+
+/* Step 43
+ *
+ * WIP
+ * cow
+ *   poops : 0
+ *   milks : 0
+ *   eat() poops += quantity / 10
+ *   drink() milks += volume *.9
+ *
+ */
+
+
+/* Step 44
+ *
+ * WIP
+ * cow
+ *   poops : 0
+ *   milks : 0
+ *   eat() poops += quantity / 10
+ *   drink() milks += volume *.9
+ *
+ */
+
+
+/* Step 45
+ *
+ * WIP
+ * cow
+ *   poops : 0
+ *   milks : 0
+ *   eat() poops += quantity / 10
+ *   drink() milks += volume *.9
+ *
+ */
+
+
+/* Step 46
+ *
+ * WIP
+ * cow
+ *   poops : 0
+ *   milks : 0
+ *   eat() poops += quantity / 10
+ *   drink() milks += volume *.9
+ *
+ */
+
+
+/* Step 47
+ *
+ * WIP
+ * cow
+ *   poops : 0
+ *   milks : 0
+ *   eat() poops += quantity / 10
+ *   drink() milks += volume *.9
+ *
+ */
+
+
+/* Step 48
+ *
+ * WIP
+ * cow
+ *   poops : 0
+ *   milks : 0
+ *   eat() poops += quantity / 10
+ *   drink() milks += volume *.9
+ *
+ */
+
+
+/* Step 49
+ *
+ * WIP
+ * cow
+ *   poops : 0
+ *   milks : 0
+ *   eat() poops += quantity / 10
+ *   drink() milks += volume *.9
+ *
+ */
+
+
 /**
+ * Define a Classes
+ */
+
+/**
+ * Step 50
+ * 
  * Animal class
  * @param {string} species The animal species
  * @param {string} gender  male or female
@@ -574,6 +728,8 @@
 
 
 /**
+ * Step 51
+ * 
  * Vehicle class
  * @param {string} make The vehicle's make
  * @param {string} model The vehicle's model
@@ -581,12 +737,16 @@
 
 
 /**
+ * Step 52
+ * 
  * Shape class
  * @param {number} sides The number of sides, should be greater than 3
  */
 
 
 /**
+ * Step 53
+ * 
  * Box class
  * @param {anything} contents The contents of the box
  * @param {boolean} isOpen     Whether the box is opened or closed
@@ -594,12 +754,16 @@
 
 
 /**
+ * Step 54
+ * 
  * Door class
  * @param {boolean} isOpen Whether the door is opened or closed
  */
 
 
 /**
+ * Step 55
+ * 
  * Shoe class
  * @param {number} size  The shoe size
  * @param {string} color The shoe color
@@ -607,32 +771,41 @@
 
 
 /**
+ * Step 56
+ * 
  * House class
  * @param {number} stories How many stories tall the house is
  */
 
 
 /**
+ * Step 57
+ * 
  * Lightbulb class
  * @param {boolean} isOn Whether the light is on or off
  */
 
 
 /**
+ * Step 58
+ * 
  * Cookie class
  * @param {string} flavor The cookie's flavor
  */
 
 
 /**
+ * Step 59
+ * 
  * Meal class
  * @param {Array} foods All the foods in the meal
  */
 
 
-/* Step 60
+/**
+ * Step 60
  *
- * Create a new instance of
+ * Create a new instance of 
  *
  */
 
