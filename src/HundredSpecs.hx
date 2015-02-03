@@ -44,6 +44,7 @@ class HundredSpecs
     M.describe("SolarSystem Class", step32);
     M.describe("PrincessLeia Class", step33);
     M.describe("Stapler Class", step34);
+    M.describe("Scientiest Class", step35);
     M.describe("Step 50", step50);
     M.describe("Step 51", step51);
     M.describe("Step 52", step52);
@@ -668,11 +669,12 @@ class HundredSpecs
 
   public inline function step33():Void
   {
-    var leia = untyped __js__("new PrincessLeia('Leia', 1000, 20, 'female')");
     M.it("should define a Class named 'PrincessLeia'", function (){
+      var leia = untyped __js__("new PrincessLeia('Leia', 1000, 20, 'female')");
       E.expect( untyped(PrincessLeia) ).to.be.a('function');
     });
     M.it("should be an instance of the PrincessLeia Class", function (){
+      var leia = untyped __js__("new PrincessLeia('Leia', 1000, 20, 'female')");
       E.expect( leia ).to.be.a( untyped __js__("PrincessLeia") );
       E.expect( Reflect.fields( untyped(leia) ) ).to.have.length(5);
       E.expect( leia ).to.key("name");
@@ -687,12 +689,15 @@ class HundredSpecs
       E.expect( leia.isInTrouble ).to.equal(null);
     });
     M.it("should extend from the Person Class", function (){
+      var leia = untyped __js__("new PrincessLeia('Leia', 1000, 20, 'female')");
       E.expect( leia ).to.be.a(untyped __js__("Person"));
     });
     M.it("should have a method named 'shootsGun'", function (){
+      var leia = untyped __js__("new PrincessLeia('Leia', 1000, 20, 'female')");
       E.expect( untyped(leia.shootsGun) ).to.be.a('function');
     });
     M.it("'shootsGun' returns a message", function (){
+      var leia = untyped __js__("new PrincessLeia('Leia', 1000, 20, 'female')");
       var result = untyped(leia.shootsGun());
       E.expect( result ).to.contain('shoots');
       E.expect( result ).to.contain('gun');
@@ -700,24 +705,30 @@ class HundredSpecs
       E.expect( result ).to.contain('Leia');
     });
     M.it("should have a method named 'getsInTrouble'", function (){
+      var leia = untyped __js__("new PrincessLeia('Leia', 1000, 20, 'female')");
       E.expect( untyped(leia.getsInTrouble) ).to.be.a('function');
     });
     M.it("'getsInTrouble' returns a message", function (){
+      var leia = untyped __js__("new PrincessLeia('Leia', 1000, 20, 'female')");
       var result = untyped(leia.getsInTrouble());
       E.expect( result ).to.contain('Help');
       E.expect( result ).to.contain('you\'re my only');
       E.expect( result ).to.contain('Obi-wan Kenobi');
     });
     M.it("should have a method named 'marries'", function (){
+      var leia = untyped __js__("new PrincessLeia('Leia', 1000, 20, 'female')");
       E.expect( untyped(leia.marries) ).to.be.a('function');
     });
     M.it("'marries' should return True if given 'Han Solo' as an argument", function (){
+      var leia = untyped __js__("new PrincessLeia('Leia', 1000, 20, 'female')");
       E.expect( untyped(leia.marries("Han Solo")) ).to.equal(true);
     });
     M.it("'marries' should return False if given anything else as an argument", function (){
+      var leia = untyped __js__("new PrincessLeia('Leia', 1000, 20, 'female')");
       E.expect( untyped(leia.marries("Han Solo")) ).to.equal(true);
     });
     M.it("but... 'marries' should return a message if given 'Luke Skywalker' as an argument", function (){
+      var leia = untyped __js__("new PrincessLeia('Leia', 1000, 20, 'female')");
       E.expect( untyped(leia.marries("Luke Skywalker")) ).to.equal("Gross!");
     });
   }
@@ -751,6 +762,74 @@ class HundredSpecs
       E.expect( untyped(myStapler.staplePapers)(5) ).to.equal(false);
       E.expect( untyped(myStapler.staplePapers)(100) ).to.equal(false);
       E.expect( untyped(myStapler.staplePapers)(45) ).to.equal(false);
+    });
+  }
+
+  public inline function step35():Void
+  {
+    M.it("should define a Class named 'Scientist'", function (){
+      E.expect( untyped(Scientist) ).to.be.a('function');
+    });
+    M.it("should instantiate a new Scientist if given correct arguments", function (){
+      var myScientist = untyped __js__("new Scientist('Neil DeGrasse Tyson', 1000000, 18, 'male')");
+      E.expect( myScientist ).to.be.a( untyped __js__("Scientist") );
+      E.expect( Reflect.fields( untyped(myScientist) ) ).to.have.length(6);
+      E.expect( myScientist ).to.key("name");
+      E.expect( myScientist.name ).to.be.a('string');
+      E.expect( myScientist ).to.key("money");
+      E.expect( myScientist.money ).to.be.a('number');
+      E.expect( myScientist ).to.key("age");
+      E.expect( myScientist.age ).to.be.a('number');
+      E.expect( myScientist ).to.key("gender");
+      E.expect( myScientist.gender ).to.be.a('string');
+      E.expect( myScientist ).to.key("disciplines");
+      E.expect( myScientist.disciplines ).to.be.a('array');
+      E.expect( myScientist.disciplines ).to.have.length(0);
+      E.expect( myScientist ).to.key("discoveries");
+      E.expect( myScientist.discoveries ).to.be.a('array');
+      E.expect( myScientist.discoveries ).to.have.length(0);
+    });
+    M.it("should extend from the Person Class", function (){
+      var myScientist = untyped __js__("new Scientist('Neil DeGrasse Tyson', 1000000, 18, 'male')");
+      E.expect( myScientist ).to.be.a(untyped __js__("Person"));
+    });
+    M.it("should have a method named 'addDiscipline'", function (){
+      var myScientist = untyped __js__("new Scientist('Neil DeGrasse Tyson', 1000000, 18, 'male')");
+      E.expect( untyped(myScientist.addDiscipline) ).to.be.a('function');
+    });
+    M.it("'addDiscipline' should add new disciplines", function (){
+      var myScientist = untyped __js__("new Scientist('Neil DeGrasse Tyson', 1000000, 18, 'male')");
+      untyped( myScientist.addDiscipline("Number Theory") );
+      untyped( myScientist.addDiscipline("Quantum Physics") );
+      E.expect( Reflect.fields(untyped(myScientist.disciplines)) ).to.have.length(2);
+    });
+    M.it("should have a method named 'checkDiscipline'", function (){
+      var myScientist = untyped __js__("new Scientist('Neil DeGrasse Tyson', 1000000, 18, 'male')");
+      E.expect( untyped(myScientist.checkDiscipline) ).to.be.a('function');
+    });
+    M.it("'checkDiscipline' should be able to find disciplines learned", function (){
+      var myScientist = untyped __js__("new Scientist('Neil DeGrasse Tyson', 1000000, 18, 'male')");
+      untyped( myScientist.addDiscipline("Number Theory") );
+      untyped( myScientist.addDiscipline("Quantum Physics") );
+      E.expect( untyped(myScientist.checkDiscipline("Number Theory")) ).to.equal(true);
+      E.expect( untyped(myScientist.checkDiscipline("Quantum Physics")) ).to.equal(true);
+    });
+    M.it("'checkDiscipline' should be return false if the discipline can't be found", function (){
+      var myScientist = untyped __js__("new Scientist('Neil DeGrasse Tyson', 1000000, 18, 'male')");
+      untyped( myScientist.addDiscipline("Number Theory") );
+      untyped( myScientist.addDiscipline("Quantum Physics") );
+      E.expect( untyped(myScientist.checkDiscipline("Math")) ).to.equal(false);
+      E.expect( untyped(myScientist.checkDiscipline("Physics")) ).to.equal(false);
+    });
+    M.it("should have a method named 'addDiscovery'", function (){
+      var myScientist = untyped __js__("new Scientist('Neil DeGrasse Tyson', 1000000, 18, 'male')");
+      E.expect( untyped(myScientist.addDiscovery) ).to.be.a('function');
+    });
+    M.it("'addDiscovery' should add a new discovery to the discoveries property and return a string based on the length of the discoveries property", function (){
+      var myScientist = untyped __js__("new Scientist('Neil DeGrasse Tyson', 1000000, 18, 'male')");
+      E.expect( untyped(myScientist.addDiscovery("Gravity")) ).to.match('I discovered Gravity.');
+      E.expect( untyped(myScientist.addDiscovery("Theory of Relativity")) ).to.match('I discovered Gravity and Theory of Relativity.');
+      E.expect( untyped(myScientist.addDiscovery("Jesus Christ")) ).to.match('I discovered Gravity, Theory of Relativity, and Jesus Christ.');
     });
   }
 

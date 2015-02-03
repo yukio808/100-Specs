@@ -34,6 +34,7 @@ var HundredSpecs = function() {
 	js.mocha.M.describe("SolarSystem Class",$bind(this,this.step32));
 	js.mocha.M.describe("PrincessLeia Class",$bind(this,this.step33));
 	js.mocha.M.describe("Stapler Class",$bind(this,this.step34));
+	js.mocha.M.describe("Scientiest Class",$bind(this,this.step35));
 	js.mocha.M.describe("Step 50",$bind(this,this.step50));
 	js.mocha.M.describe("Step 51",$bind(this,this.step51));
 	js.mocha.M.describe("Step 52",$bind(this,this.step52));
@@ -601,6 +602,72 @@ HundredSpecs.prototype = {
 			js.expect.E.expect(new Animal('Frog', 'male')).to.have.property("gender");
 		});
 	}
+	,step35: function() {
+		js.mocha.M.it("should define a Class named 'Scientist'",function() {
+			js.expect.E.expect(Scientist).to.be.a("function");
+		});
+		js.mocha.M.it("should instantiate a new Scientist if given correct arguments",function() {
+			var myScientist = new Scientist('Neil DeGrasse Tyson', 1000000, 18, 'male');
+			js.expect.E.expect(myScientist).to.be.a(Scientist);
+			js.expect.E.expect(Reflect.fields(myScientist)).to.have.length(6);
+			js.expect.E.expect(myScientist).to.key("name");
+			js.expect.E.expect(myScientist.name).to.be.a("string");
+			js.expect.E.expect(myScientist).to.key("money");
+			js.expect.E.expect(myScientist.money).to.be.a("number");
+			js.expect.E.expect(myScientist).to.key("age");
+			js.expect.E.expect(myScientist.age).to.be.a("number");
+			js.expect.E.expect(myScientist).to.key("gender");
+			js.expect.E.expect(myScientist.gender).to.be.a("string");
+			js.expect.E.expect(myScientist).to.key("disciplines");
+			js.expect.E.expect(myScientist.disciplines).to.be.a("array");
+			js.expect.E.expect(myScientist.disciplines).to.have.length(0);
+			js.expect.E.expect(myScientist).to.key("discoveries");
+			js.expect.E.expect(myScientist.discoveries).to.be.a("array");
+			js.expect.E.expect(myScientist.discoveries).to.have.length(0);
+		});
+		js.mocha.M.it("should extend from the Person Class",function() {
+			var myScientist = new Scientist('Neil DeGrasse Tyson', 1000000, 18, 'male');
+			js.expect.E.expect(myScientist).to.be.a(Person);
+		});
+		js.mocha.M.it("should have a method named 'addDiscipline'",function() {
+			var myScientist = new Scientist('Neil DeGrasse Tyson', 1000000, 18, 'male');
+			js.expect.E.expect(myScientist.addDiscipline).to.be.a("function");
+		});
+		js.mocha.M.it("'addDiscipline' should add new disciplines",function() {
+			var myScientist = new Scientist('Neil DeGrasse Tyson', 1000000, 18, 'male');
+			myScientist.addDiscipline("Number Theory");
+			myScientist.addDiscipline("Quantum Physics");
+			js.expect.E.expect(Reflect.fields(myScientist.disciplines)).to.have.length(2);
+		});
+		js.mocha.M.it("should have a method named 'checkDiscipline'",function() {
+			var myScientist = new Scientist('Neil DeGrasse Tyson', 1000000, 18, 'male');
+			js.expect.E.expect(myScientist.checkDiscipline).to.be.a("function");
+		});
+		js.mocha.M.it("'checkDiscipline' should be able to find disciplines learned",function() {
+			var myScientist = new Scientist('Neil DeGrasse Tyson', 1000000, 18, 'male');
+			myScientist.addDiscipline("Number Theory");
+			myScientist.addDiscipline("Quantum Physics");
+			js.expect.E.expect(myScientist.checkDiscipline("Number Theory")).to.equal(true);
+			js.expect.E.expect(myScientist.checkDiscipline("Quantum Physics")).to.equal(true);
+		});
+		js.mocha.M.it("'checkDiscipline' should be return false if the discipline can't be found",function() {
+			var myScientist = new Scientist('Neil DeGrasse Tyson', 1000000, 18, 'male');
+			myScientist.addDiscipline("Number Theory");
+			myScientist.addDiscipline("Quantum Physics");
+			js.expect.E.expect(myScientist.checkDiscipline("Math")).to.equal(false);
+			js.expect.E.expect(myScientist.checkDiscipline("Physics")).to.equal(false);
+		});
+		js.mocha.M.it("should have a method named 'addDiscovery'",function() {
+			var myScientist = new Scientist('Neil DeGrasse Tyson', 1000000, 18, 'male');
+			js.expect.E.expect(myScientist.addDiscovery).to.be.a("function");
+		});
+		js.mocha.M.it("'addDiscovery' should add a new discovery to the discoveries property and return a string based on the length of the discoveries property",function() {
+			var myScientist = new Scientist('Neil DeGrasse Tyson', 1000000, 18, 'male');
+			js.expect.ExpectMixins.match(js.expect.E.expect(myScientist.addDiscovery("Gravity")).to,"I discovered Gravity.");
+			js.expect.ExpectMixins.match(js.expect.E.expect(myScientist.addDiscovery("Theory of Relativity")).to,"I discovered Gravity and Theory of Relativity.");
+			js.expect.ExpectMixins.match(js.expect.E.expect(myScientist.addDiscovery("Jesus Christ")).to,"I discovered Gravity, Theory of Relativity, and Jesus Christ.");
+		});
+	}
 	,step34: function() {
 		js.mocha.M.it("should define a Class named 'Stapler'",function() {
 			js.expect.E.expect(Stapler).to.be.a("function");
@@ -632,11 +699,12 @@ HundredSpecs.prototype = {
 		});
 	}
 	,step33: function() {
-		var leia = new PrincessLeia('Leia', 1000, 20, 'female');
 		js.mocha.M.it("should define a Class named 'PrincessLeia'",function() {
+			var leia = new PrincessLeia('Leia', 1000, 20, 'female');
 			js.expect.E.expect(PrincessLeia).to.be.a("function");
 		});
 		js.mocha.M.it("should be an instance of the PrincessLeia Class",function() {
+			var leia = new PrincessLeia('Leia', 1000, 20, 'female');
 			js.expect.E.expect(leia).to.be.a(PrincessLeia);
 			js.expect.E.expect(Reflect.fields(leia)).to.have.length(5);
 			js.expect.E.expect(leia).to.key("name");
@@ -651,12 +719,15 @@ HundredSpecs.prototype = {
 			js.expect.E.expect(leia.isInTrouble).to.equal(null);
 		});
 		js.mocha.M.it("should extend from the Person Class",function() {
+			var leia = new PrincessLeia('Leia', 1000, 20, 'female');
 			js.expect.E.expect(leia).to.be.a(Person);
 		});
 		js.mocha.M.it("should have a method named 'shootsGun'",function() {
+			var leia = new PrincessLeia('Leia', 1000, 20, 'female');
 			js.expect.E.expect(leia.shootsGun).to.be.a("function");
 		});
 		js.mocha.M.it("'shootsGun' returns a message",function() {
+			var leia = new PrincessLeia('Leia', 1000, 20, 'female');
 			var result = leia.shootsGun();
 			js.expect.E.expect(result).to.contain("shoots");
 			js.expect.E.expect(result).to.contain("gun");
@@ -664,24 +735,30 @@ HundredSpecs.prototype = {
 			js.expect.E.expect(result).to.contain("Leia");
 		});
 		js.mocha.M.it("should have a method named 'getsInTrouble'",function() {
+			var leia = new PrincessLeia('Leia', 1000, 20, 'female');
 			js.expect.E.expect(leia.getsInTrouble).to.be.a("function");
 		});
 		js.mocha.M.it("'getsInTrouble' returns a message",function() {
+			var leia = new PrincessLeia('Leia', 1000, 20, 'female');
 			var result = leia.getsInTrouble();
 			js.expect.E.expect(result).to.contain("Help");
 			js.expect.E.expect(result).to.contain("you're my only");
 			js.expect.E.expect(result).to.contain("Obi-wan Kenobi");
 		});
 		js.mocha.M.it("should have a method named 'marries'",function() {
+			var leia = new PrincessLeia('Leia', 1000, 20, 'female');
 			js.expect.E.expect(leia.marries).to.be.a("function");
 		});
 		js.mocha.M.it("'marries' should return True if given 'Han Solo' as an argument",function() {
+			var leia = new PrincessLeia('Leia', 1000, 20, 'female');
 			js.expect.E.expect(leia.marries("Han Solo")).to.equal(true);
 		});
 		js.mocha.M.it("'marries' should return False if given anything else as an argument",function() {
+			var leia = new PrincessLeia('Leia', 1000, 20, 'female');
 			js.expect.E.expect(leia.marries("Han Solo")).to.equal(true);
 		});
 		js.mocha.M.it("but... 'marries' should return a message if given 'Luke Skywalker' as an argument",function() {
+			var leia = new PrincessLeia('Leia', 1000, 20, 'female');
 			js.expect.E.expect(leia.marries("Luke Skywalker")).to.equal("Gross!");
 		});
 	}
