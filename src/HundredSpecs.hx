@@ -275,6 +275,7 @@ class HundredSpecs
   {
     M.it("should declare a new array named 'linuxFlavors'", function() {
       E.expect(untyped(linuxFlavors)).to.not.be.an('undefined');
+      E.expect(untyped(linuxFlavors)).to.be.an('array');
     });
     M.it("should have 6 elements in it", function() {
       E.expect( Reflect.fields( untyped(linuxFlavors) ) ).to.have.length(6);
@@ -292,6 +293,7 @@ class HundredSpecs
     var acids = ["nucleatides", "guanine", "adenine", "thymine", "cytosine"];
     M.it("should declare a new array named 'DNA'", function() {
       E.expect(untyped(DNA)).to.not.be.an('undefined');
+      E.expect(untyped(DNA)).to.be.an('array');
     });
     M.it("should have 5 elements in it", function() {
       E.expect( Reflect.fields(untyped(DNA)) ).to.have.length(5);
@@ -309,6 +311,7 @@ class HundredSpecs
     var brandProps = Reflect.fields(untyped(laptopCostKeys));
     M.it("should declare a new object literal named 'laptopCosts", function() {
       E.expect(untyped(laptopCosts)).to.not.be.an('undefined');
+      E.expect(untyped(laptopCosts)).to.be.an('object');
     });
     M.it("should defined 4 laptops brands as properties", function (){
       E.expect( Reflect.fields(untyped(laptopCosts)) ).to.have.length(4);
@@ -326,7 +329,7 @@ class HundredSpecs
     var loc = ["Kingdom", "Phylum", "Class", "Order", "Family", "Genus", "Species"];
 
     M.it("should declare a new array named 'livingOrganismClassification'", function() {
-      E.expect(untyped(livingOrganismClassification)).to.not.be.an('undefined');
+      E.expect(untyped(livingOrganismClassification)).to.be.an('array');
     });
     M.it("should have 7 elements inside of it", function (){
       E.expect( Reflect.fields(untyped(livingOrganismClassification)) ).to.have.length(7);
@@ -341,7 +344,7 @@ class HundredSpecs
   public inline function step18():Void
   {
     M.it("should declare a new array named 'scmList", function() {
-      E.expect(untyped(scmList)).to.not.be.an('undefined');
+      E.expect(untyped(scmList)).to.be.an('array');
     });
     M.it("should have 5 elements inside of it", function (){
       E.expect( Reflect.fields(untyped(scmList)) ).to.have.length(5);
@@ -358,7 +361,7 @@ class HundredSpecs
   {
     var stringProps = ["IPA", "Lager", "Heffeweisen", "Stout", "Porter", "Ale"];
     M.it("should declare a new object literal named 'beers", function() {
-      E.expect( untyped(beers) ).to.not.be.an('undefined');
+      E.expect( untyped(beers) ).to.be.an('object');
     });
     M.it("should have 6 properties", function (){
       E.expect( Reflect.fields(untyped(beers)) ).to.have.length(6);
@@ -375,17 +378,17 @@ class HundredSpecs
   private inline function step20():Void
   {
     M.it("should define a function named 'sahara_river'.", function() {
-      E.expect(untyped(sahara_river)).to.be.a("function");
+      E.expect( untyped(sahara_river) ).to.be.a("function");
     });
     M.it("'sahara_river' should return the string 'Nile River'.", function() {
-      E.expect(untyped(sahara_river)()).toBe("Nile River");
+      E.expect( untyped(sahara_river()) ).to.equal("Nile River");
     });
   }
 
   public inline function step21():Void
   {
     M.it("should define a function named 'addNumbers'", function (){
-      E.expect( untyped(addNumbers) ).to.not.be.an('undefined');
+      E.expect( untyped(addNumbers) ).to.be.a('function');
     });
     M.it("should return the SUM of two numbers", function (){
       E.expect( untyped(addNumbers(1, 2)) ).to.equal(3);
@@ -399,7 +402,7 @@ class HundredSpecs
   {
     var distros = ["Gentoo", "Fedora", "Debian", "Slackware", "Red Hat", "Bieber Linux"];
     M.it("should define a function named 'installLinux'", function (){
-      E.expect( untyped(installLinux) ).to.not.be.an('undefined');
+      E.expect( untyped(installLinux) ).to.be.a('function');
     });
     M.it("should return True if given a linux distro found in 'linuxFlavors' array", function (){
       E.expect( untyped(installLinux("Debian")) ).to.equal(true);
