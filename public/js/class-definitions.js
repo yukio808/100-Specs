@@ -118,7 +118,7 @@
  *   Chromium   => "google.com"
  *   Safari     => "apple.com"
  *   Opera      => "opera.com"
- *   Firefox    => "mozilla.com"
+ *   Firefox    => "mozilla.org"
  *   Sleipnir   => "fenrir-inc.com"
  *   Konqueror  => "konqueror.org"
  *
@@ -304,7 +304,6 @@
  */
 
 
- // *   Chrome     => "google"
  // *   Chromium   => "google"
  // *   Safari     => "apple"
  // *   Opera      => "opera"
