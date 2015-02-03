@@ -25,6 +25,7 @@ var HundredSpecs = function() {
 	js.mocha.M.describe("drink Function",$bind(this,this.step23));
 	js.mocha.M.describe("browseURL Function",$bind(this,this.step24));
 	js.mocha.M.describe("ListLivingOrgClass Function",$bind(this,this.step25));
+	js.mocha.M.describe("favoritePlanet Function",$bind(this,this.step26));
 	js.mocha.M.describe("Step 50",$bind(this,this.step50));
 	js.mocha.M.describe("Step 51",$bind(this,this.step51));
 	js.mocha.M.describe("Step 52",$bind(this,this.step52));
@@ -592,6 +593,25 @@ HundredSpecs.prototype = {
 			js.expect.E.expect(new Animal('Frog', 'male')).to.have.property("gender");
 		});
 	}
+	,step26: function() {
+		js.mocha.M.it("should define a function named 'favoritePlanet'",function() {
+			js.expect.E.expect(favoritePlanet).to.be.a("function");
+		});
+		js.mocha.M.it("should print a message if your planet does not exist!",function() {
+			js.expect.ExpectMixins.match(js.expect.E.expect(favoritePlanet("Wookievania")).to,"Wookievania is not a planet!");
+		});
+		js.mocha.M.it("should print a message if your planet exists!",function() {
+			var planetsKeys = ["Mercury","Venus","Earth","Mars","Jupiter","Saturn","Uranus","Neptune"];
+			js.expect.ExpectMixins.match(js.expect.E.expect(favoritePlanet(planetsKeys[0])).to,"I'm from Mercury, but I wish I could go to (Mercury|Venus|Earth|Mars|Jupiter|Saturn|Uranus|Neptune)");
+			js.expect.ExpectMixins.match(js.expect.E.expect(favoritePlanet(planetsKeys[1])).to,"I'm from Venus, but I wish I could go to (Mercury|Venus|Earth|Mars|Jupiter|Saturn|Uranus|Neptune)");
+			js.expect.ExpectMixins.match(js.expect.E.expect(favoritePlanet(planetsKeys[2])).to,"I'm from Earth, but I wish I could go to (Mercury|Venus|Earth|Mars|Jupiter|Saturn|Uranus|Neptune)");
+			js.expect.ExpectMixins.match(js.expect.E.expect(favoritePlanet(planetsKeys[3])).to,"I'm from Mars, but I wish I could go to (Mercury|Venus|Earth|Mars|Jupiter|Saturn|Uranus|Neptune)");
+			js.expect.ExpectMixins.match(js.expect.E.expect(favoritePlanet(planetsKeys[4])).to,"I'm from Jupiter, but I wish I could go to (Mercury|Venus|Earth|Mars|Jupiter|Saturn|Uranus|Neptune)");
+			js.expect.ExpectMixins.match(js.expect.E.expect(favoritePlanet(planetsKeys[5])).to,"I'm from Saturn, but I wish I could go to (Mercury|Venus|Earth|Mars|Jupiter|Saturn|Uranus|Neptune)");
+			js.expect.ExpectMixins.match(js.expect.E.expect(favoritePlanet(planetsKeys[6])).to,"I'm from Uranus, but I wish I could go to (Mercury|Venus|Earth|Mars|Jupiter|Saturn|Uranus|Neptune)");
+			js.expect.ExpectMixins.match(js.expect.E.expect(favoritePlanet(planetsKeys[7])).to,"I'm from Neptune, but I wish I could go to (Mercury|Venus|Earth|Mars|Jupiter|Saturn|Uranus|Neptune)");
+		});
+	}
 	,step25: function() {
 		var loc = ["Kingdom","Phylum","Class","Order","Family","Genus","Species"];
 		js.mocha.M.it("should define a function named 'ListLivingOrgClass'",function() {
@@ -906,26 +926,26 @@ HundredSpecs.prototype = {
 		js.mocha.M.it("should have 8 items",function() {
 			js.expect.E.expect(planets.length).to.eql(8);
 		});
-		var lowercase_planets = ["mercury","venus","earth","mars","jupiter","saturn","uranus","neptune"];
+		var planetsKeys = ["Mercury","Venus","Earth","Mars","Jupiter","Saturn","Uranus","Neptune"];
 		js.mocha.M.it("should contain the name of each of our solar system's planets",function() {
-			js.expect.E.expect(lowercase_planets[0]).to.eql(planets[0]);
-			js.expect.E.expect(lowercase_planets[1]).to.eql(planets[1]);
-			js.expect.E.expect(lowercase_planets[2]).to.eql(planets[2]);
-			js.expect.E.expect(lowercase_planets[3]).to.eql(planets[3]);
-			js.expect.E.expect(lowercase_planets[4]).to.eql(planets[4]);
-			js.expect.E.expect(lowercase_planets[5]).to.eql(planets[5]);
-			js.expect.E.expect(lowercase_planets[6]).to.eql(planets[6]);
-			js.expect.E.expect(lowercase_planets[7]).to.eql(planets[7]);
+			js.expect.E.expect(planetsKeys[0]).to.eql(planets[0]);
+			js.expect.E.expect(planetsKeys[1]).to.eql(planets[1]);
+			js.expect.E.expect(planetsKeys[2]).to.eql(planets[2]);
+			js.expect.E.expect(planetsKeys[3]).to.eql(planets[3]);
+			js.expect.E.expect(planetsKeys[4]).to.eql(planets[4]);
+			js.expect.E.expect(planetsKeys[5]).to.eql(planets[5]);
+			js.expect.E.expect(planetsKeys[6]).to.eql(planets[6]);
+			js.expect.E.expect(planetsKeys[7]).to.eql(planets[7]);
 		});
 		js.mocha.M.it("should have each planet listed in order",function() {
-			js.expect.E.expect(planets[0].toLowerCase()).to.eql("mercury");
-			js.expect.E.expect(planets[1].toLowerCase()).to.eql("venus");
-			js.expect.E.expect(planets[2].toLowerCase()).to.eql("earth");
-			js.expect.E.expect(planets[3].toLowerCase()).to.eql("mars");
-			js.expect.E.expect(planets[4].toLowerCase()).to.eql("jupiter");
-			js.expect.E.expect(planets[5].toLowerCase()).to.eql("saturn");
-			js.expect.E.expect(planets[6].toLowerCase()).to.eql("uranus");
-			js.expect.E.expect(planets[7].toLowerCase()).to.eql("neptune");
+			js.expect.E.expect(planets[0]).to.eql("Mercury");
+			js.expect.E.expect(planets[1]).to.eql("Venus");
+			js.expect.E.expect(planets[2]).to.eql("Earth");
+			js.expect.E.expect(planets[3]).to.eql("Mars");
+			js.expect.E.expect(planets[4]).to.eql("Jupiter");
+			js.expect.E.expect(planets[5]).to.eql("Saturn");
+			js.expect.E.expect(planets[6]).to.eql("Uranus");
+			js.expect.E.expect(planets[7]).to.eql("Neptune");
 		});
 	}
 	,step3: function() {
