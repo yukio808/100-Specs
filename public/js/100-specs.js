@@ -15,6 +15,7 @@ var HundredSpecs = function() {
 	js.mocha.M.describe("Rainbow",$bind(this,this.step13));
 	js.mocha.M.describe("Linux Flavors",$bind(this,this.step14));
 	js.mocha.M.describe("DNA (DeoxyriboNucleic Acid)",$bind(this,this.step15));
+	js.mocha.M.describe("laptop Costs",$bind(this,this.step16));
 	js.mocha.M.describe("Step 20",$bind(this,this.step20));
 	js.mocha.M.describe("Step 50",$bind(this,this.step50));
 	js.mocha.M.describe("Step 51",$bind(this,this.step51));
@@ -591,6 +592,27 @@ HundredSpecs.prototype = {
 			js.expect.ExpectMixins.toBe(js.expect.E.expect(sahara_river()),"Nile River");
 		});
 	}
+	,step16: function() {
+		var laptopCostKeys = { MacBook : 1500, Alienware : 2500, HP : 499, Surface : 320};
+		var brandProps = Reflect.fields(laptopCostKeys);
+		js.mocha.M.it("should declare a new object literal name 'laptopCosts",function() {
+			js.expect.E.expect(laptopCosts).to.not.be.an("undefined");
+		});
+		js.mocha.M.it("should have 4 properties",function() {
+			js.expect.E.expect(Reflect.fields(laptopCosts)).to.have.length(4);
+		});
+		js.mocha.M.it("should defined 4 laptops brands as properties",function() {
+			js.expect.E.expect(laptopCosts).to.only.have.keys(brandProps);
+		});
+		js.mocha.M.it("should have correct values for each of the brands",function() {
+			var _g = 0;
+			while(_g < brandProps.length) {
+				var prop = brandProps[_g];
+				++_g;
+				js.expect.E.expect(laptopCosts[prop]).to.be.equal(laptopCostKeys[prop]);
+			}
+		});
+	}
 	,step15: function() {
 		var acids = ["nucleatides","guanine","adenine","thymine","cytosine"];
 		js.mocha.M.it("should declare a new array named 'DNA'",function() {
@@ -611,7 +633,6 @@ HundredSpecs.prototype = {
 		js.mocha.M.it("should declare a new array named 'linuxFlavors'",function() {
 			js.expect.E.expect(linuxFlavors).to.not.be.an("undefined");
 		});
-		js.mocha.M.it("should have 6 properties",function() {
 		js.mocha.M.it("should have 6 elements in it",function() {
 			js.expect.E.expect(Reflect.fields(linuxFlavors)).to.have.length(6);
 		});

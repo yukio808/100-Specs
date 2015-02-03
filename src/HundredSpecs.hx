@@ -271,15 +271,17 @@ class HundredSpecs
     M.it("should declare a new array named 'linuxFlavors'", function() {
       E.expect(untyped(linuxFlavors)).to.not.be.an('undefined');
     });
-    M.it("should have 6 properties", function() {
     M.it("should have 6 elements in it", function() {
       E.expect( Reflect.fields( untyped(linuxFlavors) ) ).to.have.length(6);
     });
     M.it("colors should define 6 Linux distros in string format", function() {
       var distros = ["Gentoo", "Fedora", "Debian", "Slackware", "Red Hat", "Bieber Linux"];
-
       for (i in 0...distros.length) {
         E.expect( untyped(linuxFlavors) ).to.contain(distros[i]);
+      }      
+    });
+  }
+
   public inline function step15():Void
   {
     var acids = ["nucleatides", "guanine", "adenine", "thymine", "cytosine"];
@@ -296,6 +298,25 @@ class HundredSpecs
     });
   }
 
+  public inline function step16():Void
+  {
+    var laptopCostKeys = { "MacBook": 1500, "Alienware": 2500, "HP": 499, "Surface": 320 };
+    var brandProps = Reflect.fields(untyped(laptopCostKeys));
+    M.it("should declare a new object literal name 'laptopCosts", function() {
+      E.expect(untyped(laptopCosts)).to.not.be.an('undefined');
+    });
+    M.it("should have 4 properties", function (){
+      E.expect( Reflect.fields(untyped(laptopCosts)) ).to.have.length(4);
+    });
+    M.it("should defined 4 laptops brands as properties", function (){
+      E.expect( untyped(laptopCosts) ).to.only.have.keys(brandProps);
+    });
+    M.it("should have correct values for each of the brands", function (){
+      for (prop in brandProps) {
+        E.expect( untyped(laptopCosts)[prop] ).to.be.equal( untyped(laptopCostKeys)[prop] );
+      }
+    });
+  }
 
   private inline function step20():Void
   {
