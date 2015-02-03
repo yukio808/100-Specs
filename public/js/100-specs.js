@@ -29,6 +29,7 @@ var HundredSpecs = function() {
 	js.mocha.M.describe("Person Class",$bind(this,this.step27));
 	js.mocha.M.describe("purchaseLaptop Function",$bind(this,this.step28));
 	js.mocha.M.describe("canTalkAbout Function",$bind(this,this.step29));
+	js.mocha.M.describe("Pen Class",$bind(this,this.step30));
 	js.mocha.M.describe("Step 50",$bind(this,this.step50));
 	js.mocha.M.describe("Step 51",$bind(this,this.step51));
 	js.mocha.M.describe("Step 52",$bind(this,this.step52));
@@ -594,6 +595,25 @@ HundredSpecs.prototype = {
 		});
 		js.mocha.M.it("should have a gender property.",function() {
 			js.expect.E.expect(new Animal('Frog', 'male')).to.have.property("gender");
+		});
+	}
+	,step30: function() {
+		js.mocha.M.it("should define a Class named 'Pen'",function() {
+			js.expect.E.expect(Pen).to.be.a("function");
+		});
+		js.mocha.M.it("should instantiate a new Pen if given correct arguments",function() {
+			var bluePen = new Pen('blue');
+			js.expect.E.expect(bluePen).to.be.a(Pen);
+			js.expect.E.expect(Reflect.fields(bluePen)).to.have.length(1);
+			js.expect.E.expect(bluePen).to.only.have.key("color");
+		});
+		js.mocha.M.it("should have a method named 'write'",function() {
+			var bluePen = new Pen('blue');
+			js.expect.E.expect(bluePen.write).to.be.a("function");
+		});
+		js.mocha.M.it("should print and return a message string",function() {
+			var bluePen = new Pen('blue');
+			js.expect.E.expect(bluePen.write("Yar Yar Yar")).to.equal("blue: Yar Yar Yar");
 		});
 	}
 	,step29: function() {

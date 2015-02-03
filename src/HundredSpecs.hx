@@ -39,6 +39,7 @@ class HundredSpecs
     M.describe("Person Class", step27);
     M.describe("purchaseLaptop Function", step28);
     M.describe("canTalkAbout Function", step29);
+    M.describe("Pen Class", step30);
     M.describe("Step 50", step50);
     M.describe("Step 51", step51);
     M.describe("Step 52", step52);
@@ -567,6 +568,27 @@ class HundredSpecs
       E.expect( untyped(canTalkAbout)("Club Fights") ).to.be.equal(true);
       E.expect( untyped(canTalkAbout)(90) ).to.be.equal(true);
       E.expect( untyped(canTalkAbout)("Yavascript") ).to.be.equal(true);
+    });
+  }
+
+  public inline function step30():Void
+  {
+    M.it("should define a Class named 'Pen'", function (){
+      E.expect( untyped(Pen) ).to.be.a('function');
+    });
+    M.it("should instantiate a new Pen if given correct arguments", function (){
+      var bluePen = untyped __js__("new Pen('blue')");
+      E.expect( bluePen ).to.be.a(untyped __js__("Pen"));
+      E.expect( Reflect.fields( untyped(bluePen) ) ).to.have.length(1);
+      E.expect( bluePen ).to.only.have.key("color");
+    });
+    M.it("should have a method named 'write'", function (){
+      var bluePen = untyped __js__("new Pen('blue')");
+      E.expect( untyped(bluePen.write) ).to.be.a('function');
+    });
+    M.it("should print and return a message string", function (){
+      var bluePen = untyped __js__("new Pen('blue')");
+      E.expect( untyped(bluePen.write)("Yar Yar Yar") ).to.equal("blue: Yar Yar Yar");
     });
   }
 
