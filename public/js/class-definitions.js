@@ -226,7 +226,7 @@
  * properties and values set to:
  * 
  * IPA          => "Ale"
- * Lager        => "Tastes Good"
+ * Lager        => "Strong"
  * Heffeweisen  => "German"
  * Stout        => [Array]
  *                  "Thick"
@@ -277,10 +277,9 @@
 /* Step 23
  *
  * Define a function named "drink" that takes
- * a type of beer as a paramter. If it is not
+ * a type of beer as a paramater. If it is not
  * a valid type of beer as defined in "beers",
- * return failure. If it is valid, return success
- * and print the following message:
+ * return false. If it is valid, return the following phrases:
  * 
  * "This {beerName} is {beerDescription}."
  * 
@@ -289,7 +288,7 @@
  * "This {beerName is {beerDescription1} and {beerDescription2} and..."
  * 
  * @param {String}
- * @return {Bool}
+ * @return {Bool when False, String when True}
  *
  */
 
