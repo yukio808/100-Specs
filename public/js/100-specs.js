@@ -23,6 +23,7 @@ var HundredSpecs = function() {
 	js.mocha.M.describe("addNumbers Function",$bind(this,this.step21));
 	js.mocha.M.describe("installLinux Function",$bind(this,this.step22));
 	js.mocha.M.describe("drink Function",$bind(this,this.step23));
+	js.mocha.M.describe("browseURL Function",$bind(this,this.step24));
 	js.mocha.M.describe("Step 50",$bind(this,this.step50));
 	js.mocha.M.describe("Step 51",$bind(this,this.step51));
 	js.mocha.M.describe("Step 52",$bind(this,this.step52));
@@ -590,6 +591,25 @@ HundredSpecs.prototype = {
 			js.expect.E.expect(new Animal('Frog', 'male')).to.have.property("gender");
 		});
 	}
+	,step24: function() {
+		js.mocha.M.it("should define a function named 'browseURL'",function() {
+			js.expect.E.expect(browseURL).to.be.a("function");
+		});
+		js.mocha.M.it("should return a URL when given a browser that exists",function() {
+			js.expect.ExpectMixins.match(js.expect.E.expect(browseURL("Chromium")).to,"google.com");
+			js.expect.ExpectMixins.match(js.expect.E.expect(browseURL("Safari")).to,"apple.com");
+			js.expect.ExpectMixins.match(js.expect.E.expect(browseURL("Opera")).to,"opera.com");
+			js.expect.ExpectMixins.match(js.expect.E.expect(browseURL("Firefox")).to,"mozilla.org");
+			js.expect.ExpectMixins.match(js.expect.E.expect(browseURL("Konqueror")).to,"konqueror.org");
+		});
+		js.mocha.M.it("should return false if given an invalid option",function() {
+			js.expect.E.expect(browseURL({ })).to.equal(false);
+			js.expect.E.expect(browseURL([])).to.equal(false);
+			js.expect.E.expect(browseURL(90)).to.equal(false);
+			js.expect.E.expect(browseURL("AOL")).to.equal(false);
+			js.expect.E.expect(browseURL("Netscape")).to.equal(false);
+		});
+	}
 	,step23: function() {
 		var stringProps = ["IPA","Lager","Heffeweisen","Stout","Porter","Ale"];
 		js.mocha.M.it("should define a function named 'drink'",function() {
@@ -605,6 +625,12 @@ HundredSpecs.prototype = {
 			js.expect.ExpectMixins.match(js.expect.E.expect(drink(stringProps[3])).to,"This Stout is Thick and Dark.");
 			js.expect.ExpectMixins.match(js.expect.E.expect(drink(stringProps[5])).to,"This Ale is Light and Golden.");
 		});
+		js.mocha.M.it("should return false if given an invalid option",function() {
+			js.expect.E.expect(drink({ })).to.equal(false);
+			js.expect.E.expect(drink([])).to.equal(false);
+			js.expect.E.expect(drink(87)).to.equal(false);
+			js.expect.E.expect(drink("Nierra Sevada")).to.equal(false);
+		});
 	}
 	,step22: function() {
 		var distros = ["Gentoo","Fedora","Debian","Slackware","Red Hat","Bieber Linux"];
@@ -617,9 +643,9 @@ HundredSpecs.prototype = {
 			js.expect.E.expect(installLinux("Gentoo")).to.equal(true);
 		});
 		js.mocha.M.it("should return False for anything else",function() {
-			js.expect.E.expect(installLinux({ })).to.equal(true);
-			js.expect.E.expect(installLinux([])).to.equal(true);
-			js.expect.E.expect(installLinux("adventureTimeLinux")).to.equal(true);
+			js.expect.E.expect(installLinux({ })).to.equal(false);
+			js.expect.E.expect(installLinux([])).to.equal(false);
+			js.expect.E.expect(installLinux("adventureTimeLinux")).to.equal(false);
 		});
 	}
 	,step21: function() {
@@ -770,18 +796,16 @@ HundredSpecs.prototype = {
 		js.mocha.M.it("should declare a literal object named 'browsers'",function() {
 			js.expect.ExpectMixins.toBe(js.expect.E.expect(browsers).not,null);
 		});
-		js.mocha.M.it("should have 8 properties",function() {
-			js.expect.E.expect(Reflect.fields(browsers)).to.have.length(8);
+		js.mocha.M.it("should have 6 properties",function() {
+			js.expect.E.expect(Reflect.fields(browsers)).to.have.length(6);
 		});
 		js.mocha.M.it("should define browsers and their developer.",function() {
-			js.expect.E.expect(browsers.Chrome).to.eql("google");
-			js.expect.E.expect(browsers.Chromium).to.eql("google");
-			js.expect.E.expect(browsers.Safari).to.eql("apple");
-			js.expect.E.expect(browsers.Opera).to.eql("opera");
-			js.expect.E.expect(browsers.Firefox).to.eql("mozilla");
-			js.expect.E.expect(browsers.Sleipnir).to.eql("fenrir");
-			js.expect.E.expect(browsers.Konqueror).to.eql("KDE");
-			js.expect.E.expect(browsers.Links).to.eql("GPLv2+");
+			js.expect.E.expect(browsers.Chromium).to.eql("google.com");
+			js.expect.E.expect(browsers.Safari).to.eql("apple.com");
+			js.expect.E.expect(browsers.Opera).to.eql("opera.com");
+			js.expect.E.expect(browsers.Firefox).to.eql("mozilla.org");
+			js.expect.E.expect(browsers.Sleipnir).to.eql("fenrir-inc.com");
+			js.expect.E.expect(browsers.Konqueror).to.eql("konqueror.org");
 		});
 	}
 	,step11: function() {
@@ -813,16 +837,16 @@ HundredSpecs.prototype = {
 		});
 	}
 	,step9: function() {
-		js.mocha.M.it("should declare a literal object named 'Gender'",function() {
-			js.expect.ExpectMixins.toBe(js.expect.E.expect(Gender).not,null);
+		js.mocha.M.it("should declare a literal object named 'gender'",function() {
+			js.expect.ExpectMixins.toBe(js.expect.E.expect(gender).not,null);
 		});
 		js.mocha.M.it("should have 3 properties",function() {
-			js.expect.E.expect(Reflect.fields(Gender)).to.have.length(3);
+			js.expect.E.expect(Reflect.fields(gender)).to.have.length(3);
 		});
 		js.mocha.M.it("should define genders female, male, and unknown.",function() {
-			js.expect.E.expect(Gender.female).to.eql("female");
-			js.expect.E.expect(Gender.male).to.eql("male");
-			js.expect.E.expect(Gender.unknown).to.be.an("undefined");
+			js.expect.E.expect(gender.female).to.eql("female");
+			js.expect.E.expect(gender.male).to.eql("male");
+			js.expect.E.expect(gender.unknown).to.be.an("undefined");
 		});
 	}
 	,step8: function() {
@@ -896,7 +920,7 @@ HundredSpecs.prototype = {
 	}
 	,step1: function() {
 		js.mocha.M.it("should declare a variable named 'unicorn' with no value set.",function() {
-			js.expect.E.expect(unicorn).to.be.a("null");
+			js.expect.E.expect(unicorn).to.not.be.a("undefined");
 		});
 	}
 	,__class__: HundredSpecs

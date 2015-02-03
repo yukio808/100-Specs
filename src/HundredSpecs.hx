@@ -33,6 +33,7 @@ class HundredSpecs
     M.describe("addNumbers Function", step21);
     M.describe("installLinux Function", step22);
     M.describe("drink Function", step23);
+    M.describe("browseURL Function", step24);
     M.describe("Step 50", step50);
     M.describe("Step 51", step51);
     M.describe("Step 52", step52);
@@ -425,6 +426,33 @@ class HundredSpecs
     M.it("should return a longer phrase for more descriptive beers", function (){
       E.expect( untyped(drink(stringProps[3])) ).to.match('This Stout is Thick and Dark.');
       E.expect( untyped(drink(stringProps[5])) ).to.match('This Ale is Light and Golden.');
+    });
+    M.it("should return false if given an invalid option", function() {
+      E.expect( untyped(drink({})) ).to.equal(false);
+      E.expect( untyped(drink([])) ).to.equal(false);
+      E.expect( untyped(drink(87)) ).to.equal(false);
+      E.expect( untyped(drink('Nierra Sevada')) ).to.equal(false);
+    });
+  }
+
+  public inline function step24():Void
+  {
+    M.it("should define a function named 'browseURL'", function (){
+      E.expect( untyped(browseURL) ).to.be.a('function');
+    });
+    M.it("should return a URL when given a browser that exists", function (){
+      E.expect( untyped(browseURL("Chromium")) ).to.match("google.com");
+      E.expect( untyped(browseURL("Safari")) ).to.match("apple.com");
+      E.expect( untyped(browseURL("Opera")) ).to.match("opera.com");
+      E.expect( untyped(browseURL("Firefox")) ).to.match("mozilla.org");
+      E.expect( untyped(browseURL("Konqueror")) ).to.match("konqueror.org");
+    });
+    M.it("should return false if given an invalid option", function() {
+      E.expect( untyped(browseURL({}))).to.equal(false);
+      E.expect( untyped(browseURL([]))).to.equal(false);
+      E.expect( untyped(browseURL(90))).to.equal(false);
+      E.expect( untyped(browseURL('AOL'))).to.equal(false);
+      E.expect( untyped(browseURL('Netscape'))).to.equal(false);
     });
   }
 
