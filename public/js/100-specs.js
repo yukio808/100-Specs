@@ -22,6 +22,7 @@ var HundredSpecs = function() {
 	js.mocha.M.describe("Sahara River",$bind(this,this.step20));
 	js.mocha.M.describe("addNumbers Function",$bind(this,this.step21));
 	js.mocha.M.describe("installLinux Function",$bind(this,this.step22));
+	js.mocha.M.describe("drink Function",$bind(this,this.step23));
 	js.mocha.M.describe("Step 50",$bind(this,this.step50));
 	js.mocha.M.describe("Step 51",$bind(this,this.step51));
 	js.mocha.M.describe("Step 52",$bind(this,this.step52));
@@ -589,10 +590,26 @@ HundredSpecs.prototype = {
 			js.expect.E.expect(new Animal('Frog', 'male')).to.have.property("gender");
 		});
 	}
+	,step23: function() {
+		var stringProps = ["IPA","Lager","Heffeweisen","Stout","Porter","Ale"];
+		js.mocha.M.it("should define a function named 'installLinux'",function() {
+			js.expect.E.expect(drink).to.be.a("function");
+		});
+		js.mocha.M.it("should return True if given a linux distro found in 'linuxFlavors' array",function() {
+			js.expect.E.expect(drink("Debian")).to.equal(true);
+			js.expect.E.expect(drink("Slackware")).to.equal(true);
+			js.expect.E.expect(drink("Gentoo")).to.equal(true);
+		});
+		js.mocha.M.it("should return False for anything else",function() {
+			js.expect.E.expect(drink({ })).to.equal(true);
+			js.expect.E.expect(drink([])).to.equal(true);
+			js.expect.E.expect(drink("adventureTimeLinux")).to.equal(true);
+		});
+	}
 	,step22: function() {
 		var distros = ["Gentoo","Fedora","Debian","Slackware","Red Hat","Bieber Linux"];
 		js.mocha.M.it("should define a function named 'installLinux'",function() {
-			js.expect.E.expect(installLinux).to.not.be.an("undefined");
+			js.expect.E.expect(installLinux).to.be.a("function");
 		});
 		js.mocha.M.it("should return True if given a linux distro found in 'linuxFlavors' array",function() {
 			js.expect.E.expect(installLinux("Debian")).to.equal(true);
@@ -607,7 +624,7 @@ HundredSpecs.prototype = {
 	}
 	,step21: function() {
 		js.mocha.M.it("should define a function named 'addNumbers'",function() {
-			js.expect.E.expect(addNumbers).to.not.be.an("undefined");
+			js.expect.E.expect(addNumbers).to.be.a("function");
 		});
 		js.mocha.M.it("should return the SUM of two numbers",function() {
 			js.expect.E.expect(addNumbers(1,2)).to.equal(3);
@@ -621,13 +638,13 @@ HundredSpecs.prototype = {
 			js.expect.E.expect(sahara_river).to.be.a("function");
 		});
 		js.mocha.M.it("'sahara_river' should return the string 'Nile River'.",function() {
-			js.expect.ExpectMixins.toBe(js.expect.E.expect(sahara_river()),"Nile River");
+			js.expect.E.expect(sahara_river()).to.equal("Nile River");
 		});
 	}
 	,step19: function() {
 		var stringProps = ["IPA","Lager","Heffeweisen","Stout","Porter","Ale"];
 		js.mocha.M.it("should declare a new object literal named 'beers",function() {
-			js.expect.E.expect(beers).to.not.be.an("undefined");
+			js.expect.E.expect(beers).to.be.an("object");
 		});
 		js.mocha.M.it("should have 6 properties",function() {
 			js.expect.E.expect(Reflect.fields(beers)).to.have.length(6);
@@ -642,7 +659,7 @@ HundredSpecs.prototype = {
 	}
 	,step18: function() {
 		js.mocha.M.it("should declare a new array named 'scmList",function() {
-			js.expect.E.expect(scmList).to.not.be.an("undefined");
+			js.expect.E.expect(scmList).to.be.an("array");
 		});
 		js.mocha.M.it("should have 5 elements inside of it",function() {
 			js.expect.E.expect(Reflect.fields(scmList)).to.have.length(5);
@@ -659,7 +676,7 @@ HundredSpecs.prototype = {
 	,step17: function() {
 		var loc = ["Kingdom","Phylum","Class","Order","Family","Genus","Species"];
 		js.mocha.M.it("should declare a new array named 'livingOrganismClassification'",function() {
-			js.expect.E.expect(livingOrganismClassification).to.not.be.an("undefined");
+			js.expect.E.expect(livingOrganismClassification).to.be.an("array");
 		});
 		js.mocha.M.it("should have 7 elements inside of it",function() {
 			js.expect.E.expect(Reflect.fields(livingOrganismClassification)).to.have.length(7);
@@ -677,6 +694,7 @@ HundredSpecs.prototype = {
 		var brandProps = Reflect.fields(laptopCostKeys);
 		js.mocha.M.it("should declare a new object literal named 'laptopCosts",function() {
 			js.expect.E.expect(laptopCosts).to.not.be.an("undefined");
+			js.expect.E.expect(laptopCosts).to.be.an("object");
 		});
 		js.mocha.M.it("should defined 4 laptops brands as properties",function() {
 			js.expect.E.expect(Reflect.fields(laptopCosts)).to.have.length(4);
@@ -695,6 +713,7 @@ HundredSpecs.prototype = {
 		var acids = ["nucleatides","guanine","adenine","thymine","cytosine"];
 		js.mocha.M.it("should declare a new array named 'DNA'",function() {
 			js.expect.E.expect(DNA).to.not.be.an("undefined");
+			js.expect.E.expect(DNA).to.be.an("array");
 		});
 		js.mocha.M.it("should have 5 elements in it",function() {
 			js.expect.E.expect(Reflect.fields(DNA)).to.have.length(5);
@@ -710,6 +729,7 @@ HundredSpecs.prototype = {
 	,step14: function() {
 		js.mocha.M.it("should declare a new array named 'linuxFlavors'",function() {
 			js.expect.E.expect(linuxFlavors).to.not.be.an("undefined");
+			js.expect.E.expect(linuxFlavors).to.be.an("array");
 		});
 		js.mocha.M.it("should have 6 elements in it",function() {
 			js.expect.E.expect(Reflect.fields(linuxFlavors)).to.have.length(6);
