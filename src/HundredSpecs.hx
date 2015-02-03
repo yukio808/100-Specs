@@ -116,26 +116,26 @@ class HundredSpecs
     M.it("should have 8 items", function() {
       E.expect(untyped(planets).length).to.eql(8);
     });
-    var lowercase_planets = ["mercury", "venus", "earth", "mars", "jupiter", "saturn", "uranus", "neptune"];
+    var planetsKeys = ["Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune"];
     M.it("should contain the name of each of our solar system's planets", function() {
-      E.expect( lowercase_planets[0] ).to.eql(untyped(planets)[0]);
-      E.expect( lowercase_planets[1] ).to.eql(untyped(planets)[1]);
-      E.expect( lowercase_planets[2] ).to.eql(untyped(planets)[2]);
-      E.expect( lowercase_planets[3] ).to.eql(untyped(planets)[3]);
-      E.expect( lowercase_planets[4] ).to.eql(untyped(planets)[4]);
-      E.expect( lowercase_planets[5] ).to.eql(untyped(planets)[5]);
-      E.expect( lowercase_planets[6] ).to.eql(untyped(planets)[6]);
-      E.expect( lowercase_planets[7] ).to.eql(untyped(planets)[7]);
+      E.expect( planetsKeys[0] ).to.eql(untyped(planets)[0]);
+      E.expect( planetsKeys[1] ).to.eql(untyped(planets)[1]);
+      E.expect( planetsKeys[2] ).to.eql(untyped(planets)[2]);
+      E.expect( planetsKeys[3] ).to.eql(untyped(planets)[3]);
+      E.expect( planetsKeys[4] ).to.eql(untyped(planets)[4]);
+      E.expect( planetsKeys[5] ).to.eql(untyped(planets)[5]);
+      E.expect( planetsKeys[6] ).to.eql(untyped(planets)[6]);
+      E.expect( planetsKeys[7] ).to.eql(untyped(planets)[7]);
     });
     M.it("should have each planet listed in order", function() {
-      E.expect( untyped(planets)[0].toLowerCase() ).to.eql("mercury");
-      E.expect( untyped(planets)[1].toLowerCase() ).to.eql("venus");
-      E.expect( untyped(planets)[2].toLowerCase() ).to.eql("earth");
-      E.expect( untyped(planets)[3].toLowerCase() ).to.eql("mars");
-      E.expect( untyped(planets)[4].toLowerCase() ).to.eql("jupiter");
-      E.expect( untyped(planets)[5].toLowerCase() ).to.eql("saturn");
-      E.expect( untyped(planets)[6].toLowerCase() ).to.eql("uranus");
-      E.expect( untyped(planets)[7].toLowerCase() ).to.eql("neptune");
+      E.expect( untyped(planets)[0] ).to.eql("Mercury");
+      E.expect( untyped(planets)[1] ).to.eql("Venus");
+      E.expect( untyped(planets)[2] ).to.eql("Earth");
+      E.expect( untyped(planets)[3] ).to.eql("Mars");
+      E.expect( untyped(planets)[4] ).to.eql("Jupiter");
+      E.expect( untyped(planets)[5] ).to.eql("Saturn");
+      E.expect( untyped(planets)[6] ).to.eql("Uranus");
+      E.expect( untyped(planets)[7] ).to.eql("Neptune");
     });
   }
 
