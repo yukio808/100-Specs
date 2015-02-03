@@ -1,3 +1,5 @@
+# ATTENTION Skip Steps 36 - 49
+
 # 100-Specs
 There are 100 test Specs in this exercise when you first visit the page you will see failing tests, your job is to write code that will satisfy the tests requirements.
 

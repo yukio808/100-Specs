@@ -803,10 +803,8 @@
 
 
 /**
- * Step 60
- *
- * Create a new instance of 
- *
+ * Create a new instance of the Classes you defined above, below!
+ * Steps 60-80 (each variable is a 'step')
  */
 
 
