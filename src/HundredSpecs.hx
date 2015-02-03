@@ -24,6 +24,8 @@ class HundredSpecs
     M.describe("Browsers", step12);
     M.describe("Rainbow", step13);
     M.describe("Linux Flavors", step14);
+    M.describe("DNA (DeoxyriboNucleic Acid)", step15);
+    M.describe("laptop Costs", step16);
     M.describe("Step 20", step20);
     M.describe("Step 50", step50);
     M.describe("Step 51", step51);

@@ -595,6 +595,7 @@ HundredSpecs.prototype = {
 			js.expect.E.expect(linuxFlavors).to.not.be.an("undefined");
 		});
 		js.mocha.M.it("should have 6 properties",function() {
+		js.mocha.M.it("should have 6 elements in it",function() {
 			js.expect.E.expect(Reflect.fields(linuxFlavors)).to.have.length(6);
 		});
 		js.mocha.M.it("colors should define 6 Linux distros in string format",function() {
