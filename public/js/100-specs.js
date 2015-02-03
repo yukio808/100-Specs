@@ -19,7 +19,7 @@ var HundredSpecs = function() {
 	js.mocha.M.describe("Living Organism Classification",$bind(this,this.step17));
 	js.mocha.M.describe("SCM List",$bind(this,this.step18));
 	js.mocha.M.describe("Beers!!!",$bind(this,this.step19));
-	js.mocha.M.describe("Step 20",$bind(this,this.step20));
+	js.mocha.M.describe("Sahara River",$bind(this,this.step20));
 	js.mocha.M.describe("Step 50",$bind(this,this.step50));
 	js.mocha.M.describe("Step 51",$bind(this,this.step51));
 	js.mocha.M.describe("Step 52",$bind(this,this.step52));

@@ -29,7 +29,7 @@ class HundredSpecs
     M.describe("Living Organism Classification", step17);
     M.describe("SCM List", step18);
     M.describe("Beers!!!", step19);
-    M.describe("Step 20", step20);
+    M.describe("Sahara River", step20);
     M.describe("Step 50", step50);
     M.describe("Step 51", step51);
     M.describe("Step 52", step52);
@@ -356,7 +356,7 @@ class HundredSpecs
   {
     var stringProps = ["IPA", "Lager", "Heffeweisen", "Stout", "Porter", "Ale"];
     M.it("should declare a new object literal named 'beers", function() {
-      E.expect(untyped(beers)).to.not.be.an('undefined');
+      E.expect( untyped(beers) ).to.not.be.an('undefined');
     });
     M.it("should have 6 properties", function (){
       E.expect( Reflect.fields(untyped(beers)) ).to.have.length(6);
