@@ -592,18 +592,18 @@ HundredSpecs.prototype = {
 	}
 	,step23: function() {
 		var stringProps = ["IPA","Lager","Heffeweisen","Stout","Porter","Ale"];
-		js.mocha.M.it("should define a function named 'installLinux'",function() {
+		js.mocha.M.it("should define a function named 'drink'",function() {
 			js.expect.E.expect(drink).to.be.a("function");
 		});
-		js.mocha.M.it("should return True if given a linux distro found in 'linuxFlavors' array",function() {
-			js.expect.E.expect(drink("Debian")).to.equal(true);
-			js.expect.E.expect(drink("Slackware")).to.equal(true);
-			js.expect.E.expect(drink("Gentoo")).to.equal(true);
+		js.mocha.M.it("should return a phrase with the beer's name and description",function() {
+			js.expect.ExpectMixins.match(js.expect.E.expect(drink(stringProps[0])).to,"This IPA is Ale.");
+			js.expect.ExpectMixins.match(js.expect.E.expect(drink(stringProps[1])).to,"This Lager is Strong.");
+			js.expect.ExpectMixins.match(js.expect.E.expect(drink(stringProps[2])).to,"This Heffeweisen is German.");
+			js.expect.ExpectMixins.match(js.expect.E.expect(drink(stringProps[4])).to,"This Porter is Bitter.");
 		});
-		js.mocha.M.it("should return False for anything else",function() {
-			js.expect.E.expect(drink({ })).to.equal(true);
-			js.expect.E.expect(drink([])).to.equal(true);
-			js.expect.E.expect(drink("adventureTimeLinux")).to.equal(true);
+		js.mocha.M.it("should return a longer phrase for more descriptive beers",function() {
+			js.expect.ExpectMixins.match(js.expect.E.expect(drink(stringProps[3])).to,"This Stout is Thick and Dark.");
+			js.expect.ExpectMixins.match(js.expect.E.expect(drink(stringProps[5])).to,"This Ale is Light and Golden.");
 		});
 	}
 	,step22: function() {
@@ -652,7 +652,7 @@ HundredSpecs.prototype = {
 		});
 		js.mocha.M.it("should have strings at certain properties",function() {
 			js.expect.E.expect(beers.IPA).to.equal("Ale");
-			js.expect.E.expect(beers.Lager).to.equal("Tastes Good");
+			js.expect.E.expect(beers.Lager).to.equal("Strong");
 			js.expect.E.expect(beers.Heffeweisen).to.equal("German");
 			js.expect.E.expect(beers.Porter).to.equal("Bitter");
 		});

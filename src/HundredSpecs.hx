@@ -32,6 +32,7 @@ class HundredSpecs
     M.describe("Sahara River", step20);
     M.describe("addNumbers Function", step21);
     M.describe("installLinux Function", step22);
+    M.describe("drink Function", step23);
     M.describe("Step 50", step50);
     M.describe("Step 51", step51);
     M.describe("Step 52", step52);
@@ -413,6 +414,24 @@ class HundredSpecs
       E.expect( untyped(installLinux({})) ).to.equal(true);
       E.expect( untyped(installLinux([])) ).to.equal(true);
       E.expect( untyped(installLinux("adventureTimeLinux")) ).to.equal(true);
+    });
+  }
+
+  public inline function step23():Void
+  {
+    var stringProps = ["IPA", "Lager", "Heffeweisen", "Stout", "Porter", "Ale"];
+    M.it("should define a function named 'drink'", function (){
+      E.expect( untyped(drink) ).to.be.a('function');
+    });
+    M.it("should return a phrase with the beer's name and description", function (){
+      E.expect( untyped(drink(stringProps[0])) ).to.match('This IPA is Ale.');
+      E.expect( untyped(drink(stringProps[1])) ).to.match('This Lager is Strong.');
+      E.expect( untyped(drink(stringProps[2])) ).to.match('This Heffeweisen is German.');
+      E.expect( untyped(drink(stringProps[4])) ).to.match('This Porter is Bitter.');
+    });
+    M.it("should return a longer phrase for more descriptive beers", function (){
+      E.expect( untyped(drink(stringProps[3])) ).to.match('This Stout is Thick and Dark.');
+      E.expect( untyped(drink(stringProps[5])) ).to.match('This Ale is Light and Golden.');
     });
   }
 
