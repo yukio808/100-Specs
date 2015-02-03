@@ -31,6 +31,7 @@ class HundredSpecs
     M.describe("Beers!!!", step19);
     M.describe("Sahara River", step20);
     M.describe("addNumbers Function", step21);
+    M.describe("installLinux Function", step22);
     M.describe("Step 50", step50);
     M.describe("Step 51", step51);
     M.describe("Step 52", step52);
@@ -391,6 +392,24 @@ class HundredSpecs
       E.expect( untyped(addNumbers(12, 29)) ).to.equal(41);
       E.expect( untyped(addNumbers(673, 23245)) ).to.equal(23918);
       E.expect( untyped(addNumbers(2134, 890123487953)) ).to.equal(890123490087);
+    });
+  }
+
+  public inline function step22():Void
+  {
+    var distros = ["Gentoo", "Fedora", "Debian", "Slackware", "Red Hat", "Bieber Linux"];
+    M.it("should define a function named 'installLinux'", function (){
+      E.expect( untyped(installLinux) ).to.not.be.an('undefined');
+    });
+    M.it("should return True if given a linux distro found in 'linuxFlavors' array", function (){
+      E.expect( untyped(installLinux("Debian")) ).to.equal(true);
+      E.expect( untyped(installLinux("Slackware")) ).to.equal(true);
+      E.expect( untyped(installLinux("Gentoo")) ).to.equal(true);
+    });
+    M.it("should return False for anything else", function (){
+      E.expect( untyped(installLinux({})) ).to.equal(true);
+      E.expect( untyped(installLinux([])) ).to.equal(true);
+      E.expect( untyped(installLinux("adventureTimeLinux")) ).to.equal(true);
     });
   }
 

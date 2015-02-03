@@ -21,6 +21,7 @@ var HundredSpecs = function() {
 	js.mocha.M.describe("Beers!!!",$bind(this,this.step19));
 	js.mocha.M.describe("Sahara River",$bind(this,this.step20));
 	js.mocha.M.describe("addNumbers Function",$bind(this,this.step21));
+	js.mocha.M.describe("installLinux Function",$bind(this,this.step22));
 	js.mocha.M.describe("Step 50",$bind(this,this.step50));
 	js.mocha.M.describe("Step 51",$bind(this,this.step51));
 	js.mocha.M.describe("Step 52",$bind(this,this.step52));
@@ -586,6 +587,22 @@ HundredSpecs.prototype = {
 		});
 		js.mocha.M.it("should have a gender property.",function() {
 			js.expect.E.expect(new Animal('Frog', 'male')).to.have.property("gender");
+		});
+	}
+	,step22: function() {
+		var distros = ["Gentoo","Fedora","Debian","Slackware","Red Hat","Bieber Linux"];
+		js.mocha.M.it("should define a function named 'installLinux'",function() {
+			js.expect.E.expect(installLinux).to.not.be.an("undefined");
+		});
+		js.mocha.M.it("should return True if given a linux distro found in 'linuxFlavors' array",function() {
+			js.expect.E.expect(installLinux("Debian")).to.equal(true);
+			js.expect.E.expect(installLinux("Slackware")).to.equal(true);
+			js.expect.E.expect(installLinux("Gentoo")).to.equal(true);
+		});
+		js.mocha.M.it("should return False for anything else",function() {
+			js.expect.E.expect(installLinux({ })).to.equal(true);
+			js.expect.E.expect(installLinux([])).to.equal(true);
+			js.expect.E.expect(installLinux("adventureTimeLinux")).to.equal(true);
 		});
 	}
 	,step21: function() {
