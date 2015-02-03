@@ -38,6 +38,7 @@ class HundredSpecs
     M.describe("favoritePlanet Function", step26);
     M.describe("Person Class", step27);
     M.describe("purchaseLaptop Function", step28);
+    M.describe("canTalkAbout Function", step29);
     M.describe("Step 50", step50);
     M.describe("Step 51", step51);
     M.describe("Step 52", step52);
@@ -551,6 +552,21 @@ class HundredSpecs
       E.expect( untyped(purchaseLaptop)("HipserAppleWareWearable") ).to.be.equal(-1);
       E.expect( untyped(purchaseLaptop)({}) ).to.be.equal(-1);
       E.expect( untyped(purchaseLaptop)([]) ).to.be.equal(-1);
+    });
+  }
+
+  public inline function step29():Void
+  {
+    M.it("should define a function named 'canTalkAbout'", function (){
+      E.expect( untyped(canTalkAbout) ).to.be.a('function');
+    });
+    M.it("The first rule of...", function (){
+      E.expect( untyped(canTalkAbout)("Fight Club") ).to.be.equal(false);
+    });
+    M.it("Can talk about any other clubs", function (){
+      E.expect( untyped(canTalkAbout)("Club Fights") ).to.be.equal(true);
+      E.expect( untyped(canTalkAbout)(90) ).to.be.equal(true);
+      E.expect( untyped(canTalkAbout)("Yavascript") ).to.be.equal(true);
     });
   }
 

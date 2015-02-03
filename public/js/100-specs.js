@@ -28,6 +28,7 @@ var HundredSpecs = function() {
 	js.mocha.M.describe("favoritePlanet Function",$bind(this,this.step26));
 	js.mocha.M.describe("Person Class",$bind(this,this.step27));
 	js.mocha.M.describe("purchaseLaptop Function",$bind(this,this.step28));
+	js.mocha.M.describe("canTalkAbout Function",$bind(this,this.step29));
 	js.mocha.M.describe("Step 50",$bind(this,this.step50));
 	js.mocha.M.describe("Step 51",$bind(this,this.step51));
 	js.mocha.M.describe("Step 52",$bind(this,this.step52));
@@ -593,6 +594,19 @@ HundredSpecs.prototype = {
 		});
 		js.mocha.M.it("should have a gender property.",function() {
 			js.expect.E.expect(new Animal('Frog', 'male')).to.have.property("gender");
+		});
+	}
+	,step29: function() {
+		js.mocha.M.it("should define a function named 'canTalkAbout'",function() {
+			js.expect.E.expect(canTalkAbout).to.be.a("function");
+		});
+		js.mocha.M.it("The first rule of...",function() {
+			js.expect.E.expect(canTalkAbout("Fight Club")).to.be.equal(false);
+		});
+		js.mocha.M.it("Can talk about any other clubs",function() {
+			js.expect.E.expect(canTalkAbout("Club Fights")).to.be.equal(true);
+			js.expect.E.expect(canTalkAbout(90)).to.be.equal(true);
+			js.expect.E.expect(canTalkAbout("Yavascript")).to.be.equal(true);
 		});
 	}
 	,step28: function() {
