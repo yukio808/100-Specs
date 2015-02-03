@@ -79,12 +79,12 @@ class HundredSpecs
   private inline function step1():Void
   {
     M.it("should declare a variable named 'unicorn' with no value set.", function() {
-      if(untyped(unicorn) == null){
-        E.expect(true).to.be.ok();
-      }else{
-        E.expect().fail("unicorn is not set");
-      }
-      // E.expect(untyped(unicorn)).to.eql(null); // doesn't work
+      // if(untyped(unicorn) == null){
+      //   E.expect(true).to.be.ok();
+      // }else{
+      //   E.expect().fail("unicorn is not set");
+      // }
+      E.expect(untyped(unicorn)).to.be.a('null');
     });
   }
 
@@ -617,15 +617,15 @@ class HundredSpecs
 
   private inline function step81():Void
   {
-    var dory = untyped __js__("new Animal('Fish', 'female')");
     M.it("isWarmBlooded should be a function.", function() {
-      E.expect(dory.isWarmBlooded).to.be.a("function");
+      E.expect(untyped __js__("Animal")).to.not.be.a('function');
     });
     M.it("'Monkey' and 'Bird' should return true.", function() {
       E.expect(untyped __js__("new Animal('Monkey', 'male')").isWarmBlooded()).to.equal(true);
       E.expect(untyped __js__("new Animal('Bird', 'female')").isWarmBlooded()).to.equal(true);
     });
     M.it("'Fish' should return false.", function() {
+      var dory = untyped __js__("new Animal('Fish', 'female')");
       E.expect(dory.isWarmBlooded()).to.equal(false);
     });
     M.it("any other species should return 'Could not determine if warm-blooded'.", function() {
@@ -635,14 +635,15 @@ class HundredSpecs
 
   private inline function step82():Void
   {
-    var cruiser = untyped __js__("new Vehicle('Toyota', 'FJ Cruiser')");
     M.it("drive should be a function.", function() {
-      E.expect(cruiser.drive).to.be.a("function");
+      E.expect(untyped __js__("Vehicle")).to.be.a("function");
     });
     M.it("should return 'Driving on {streetName}' if param is a string and not empty", function() {
+      var cruiser = untyped __js__("new Vehicle('Toyota', 'FJ Cruiser')");
       E.expect(cruiser.drive("University Avenue")).to.equal("Driving on University Avenue");
     });
     M.it("should return 'Driving forward' if param is not a string and/or is empty", function() {
+      var cruiser = untyped __js__("new Vehicle('Toyota', 'FJ Cruiser')");
       E.expect(cruiser.drive("")).to.equal("Driving forward");
       E.expect(cruiser.drive(null)).to.equal("Driving forward");
     });
@@ -650,9 +651,8 @@ class HundredSpecs
 
   private inline function step83():Void
   {
-    var heptagon = untyped __js__("new Shape(7)");
     M.it("getType should be a function.", function() {
-      E.expect(heptagon.getType).to.be.a("function");
+      E.expect(untyped __js__("Shape")).to.be.a("function");
     });
     M.it("should return the correct types for sides 3 to 10.", function() {
       E.expect(untyped __js__("new Shape(3)").getType()).to.equal("triangle");
@@ -671,15 +671,16 @@ class HundredSpecs
 
   private inline function step84():Void
   {
-    var garfieldBox = untyped __js__("new Box(new Animal('Cat', 'male'), false)");
     M.it("openBox should be a function.", function() {
-      E.expect(garfieldBox.openBox).to.be.a("function");
+      E.expect(untyped __js__("Box")).to.be.a("function");
     });
     M.it("should open the box if it is closed.", function() {
+      var garfieldBox = untyped __js__("new Box(new Animal('Cat', 'male'), false)");
       E.expect(garfieldBox.openBox()).to.equal(true);
       E.expect(untyped(garfieldBox.isOpen)).to.equal(true);
     });
     M.it("should not close the box if it is open.", function() {
+      var garfieldBox = untyped __js__("new Box(new Animal('Cat', 'male'), false)");
       E.expect(garfieldBox.openBox()).to.equal(false);
       E.expect(untyped(garfieldBox.isOpen)).to.equal(true);
     });
@@ -687,15 +688,16 @@ class HundredSpecs
 
   private inline function step85():Void
   {
-    var door = untyped __js__("new Door(false)");
     M.it("openClose should be a function.", function() {
-      E.expect(door.openClose).to.be.a("function");
+      E.expect(untyped __js__("Door")).to.be.a("function");
     });
     M.it("should open the door if it is closed.", function() {
+      var door = untyped __js__("new Door(false)");
       E.expect(door.openClose()).to.equal(true);
       E.expect(untyped(door.isOpen)).to.equal(true);
     });
     M.it("should close the door if it is open.", function() {
+      var door = untyped __js__("new Door(false)");
       E.expect(door.openClose()).to.equal(false);
       E.expect(untyped(door.isOpen)).to.equal(false);
     });
@@ -703,41 +705,43 @@ class HundredSpecs
 
   private inline function step86():Void
   {
-    var shoes = untyped __js__("new Shoe(7, 'silver')");
     M.it("findShoes should be a function.", function() {
-      E.expect(shoes.findShoes).to.be.a("function");
+      E.expect(untyped __js__("Shoe")).to.be.a("function");
     });
     M.it("should return 'Found {color} shoes of size {size}'.", function() {
+      var shoes = untyped __js__("new Shoe(7, 'silver')");
       E.expect(shoes.findShoes()).to.equal("Found silver shoes of size 7");
     });
   }
 
   private inline function step87():Void
   {
-    var house = untyped __js__("new House(3)");
     M.it("isATallStory should be a function.", function() {
-      E.expect(house.isATallStory).to.be.a("function");
+      E.expect(untyped __js__("House")).to.be.a("function");
     });
     M.it("should return true if stories is greater than or equal to storiesTooTall.", function() {
+      var house = untyped __js__("new House(3)");
       E.expect(house.isATallStory(3)).to.equal(true);
       E.expect(house.isATallStory(2)).to.equal(true);
     });
     M.it("should return false if stories is less than storiesTooTall.", function() {
+      var house = untyped __js__("new House(3)");
       E.expect(house.isATallStory(4)).to.equal(false);
     });
   }
 
   private inline function step88():Void
   {
-    var light = untyped __js__("new Lightbulb(false)");
     M.it("flipSwitch should be a function.", function() {
-      E.expect(light.flipSwitch).to.be.a("function");
+      E.expect(untyped __js__("Lightbulb")).to.be.a("function");
     });
     M.it("should flip the switch on if 'on' is passed in as a param.", function() {
+      var light = untyped __js__("new Lightbulb(false)");
       E.expect(light.flipSwitch("on")).to.equal(true);
       E.expect(untyped(light.isOn)).to.equal(true);
     });
     M.it("should flip the switch off if anything other than 'on' is passed in.", function() {
+      var light = untyped __js__("new Lightbulb(false)");
       E.expect(light.flipSwitch("off")).to.equal(false);
       E.expect(untyped(light.isOn)).to.equal(false);
     });
@@ -745,14 +749,15 @@ class HundredSpecs
 
   private inline function step89():Void
   {
-    var chocoCookie = untyped __js__("new Cookie('chocolate')");
     M.it("swipedByCookieMonster should be a function.", function() {
-      E.expect(chocoCookie.swipedByCookieMonster).to.be.a("function");
+      E.expect(untyped __js__("Cookie")).to.be.a("function");
     });
     M.it("should return true if the flavor is 'chocolate' and the day of the week is 'Monday'.", function() {
+      var chocoCookie = untyped __js__("new Cookie('chocolate')");
       E.expect(chocoCookie.swipedByCookieMonster("Monday")).to.equal(true);
     });
     M.it("should return false if the flavor is not 'chocolate' and/or the day of the week is not 'Monday'.", function() {
+      var chocoCookie = untyped __js__("new Cookie('chocolate')");
       E.expect(chocoCookie.swipedByCookieMonster("Saturday")).to.equal(false);
       E.expect(untyped __js__("new Cookie('Oreo')").swipedByCookieMonster("Monday")).to.equal(false);
       E.expect(untyped __js__("new Cookie('sugar')").swipedByCookieMonster("Sunday")).to.equal(false);
@@ -761,15 +766,16 @@ class HundredSpecs
 
   private inline function step90():Void
   {
-    var dishes = untyped __js__("new Meal(['pizza', 'pie', 'fish', 'shrimp', 'pasta'])");
-    var snacks = untyped __js__("new Meal(['ice cream', 'chips', 'salad'])");
     M.it("containsJunkFood should be a function.", function() {
+      var dishes = untyped __js__("new Meal(['pizza', 'pie', 'fish', 'shrimp', 'pasta'])");
       E.expect(dishes.containsJunkFood).to.be.a("function");
     });
     M.it("should return true if foods array contains at least one of the junk foods.", function() {
+      var snacks = untyped __js__("new Meal(['ice cream', 'chips', 'salad'])");
       E.expect(snacks.containsJunkFood()).to.equal(true);
     });
     M.it("should return false if foods array does not contain any junk food item.", function() {
+      var dishes = untyped __js__("new Meal(['pizza', 'pie', 'fish', 'shrimp', 'pasta'])");
       E.expect(dishes.containsJunkFood()).to.equal(false);
     });
   }
