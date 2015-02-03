@@ -304,15 +304,6 @@
  */
 
 
- // *   Chromium   => "google"
- // *   Safari     => "apple"
- // *   Opera      => "opera"
- // *   Firefox    => "mozilla"
- // *   Sleipnir   => "fenrir-inc"
- // *   Konqueror  => "KDE"
- // *   Links      => "GPLv2+"
-
-
 /* Step 25
  *
  * Define a function named "listLivingOrgClass" that
