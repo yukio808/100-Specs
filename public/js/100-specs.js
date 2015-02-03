@@ -14,6 +14,7 @@ var HundredSpecs = function() {
 	js.mocha.M.describe("Browsers",$bind(this,this.step12));
 	js.mocha.M.describe("Rainbow",$bind(this,this.step13));
 	js.mocha.M.describe("Linux Flavors",$bind(this,this.step14));
+	js.mocha.M.describe("DNA (DeoxyriboNucleic Acid)",$bind(this,this.step15));
 	js.mocha.M.describe("Step 20",$bind(this,this.step20));
 	js.mocha.M.describe("Step 50",$bind(this,this.step50));
 	js.mocha.M.describe("Step 51",$bind(this,this.step51));
@@ -588,6 +589,22 @@ HundredSpecs.prototype = {
 		});
 		js.mocha.M.it("'sahara_river' should return the string 'Nile River'.",function() {
 			js.expect.ExpectMixins.toBe(js.expect.E.expect(sahara_river()),"Nile River");
+		});
+	}
+	,step15: function() {
+		var acids = ["nucleatides","guanine","adenine","thymine","cytosine"];
+		js.mocha.M.it("should declare a new array named 'DNA'",function() {
+			js.expect.E.expect(DNA).to.not.be.an("undefined");
+		});
+		js.mocha.M.it("should have 5 elements in it",function() {
+			js.expect.E.expect(Reflect.fields(DNA)).to.have.length(5);
+		});
+		js.mocha.M.it("should define 5 nucleic acids",function() {
+			var _g1 = 0, _g = acids.length;
+			while(_g1 < _g) {
+				var i = _g1++;
+				js.expect.E.expect(DNA).to.contain(acids[i]);
+			}
 		});
 	}
 	,step14: function() {

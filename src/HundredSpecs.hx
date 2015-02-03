@@ -272,6 +272,7 @@ class HundredSpecs
       E.expect(untyped(linuxFlavors)).to.not.be.an('undefined');
     });
     M.it("should have 6 properties", function() {
+    M.it("should have 6 elements in it", function() {
       E.expect( Reflect.fields( untyped(linuxFlavors) ) ).to.have.length(6);
     });
     M.it("colors should define 6 Linux distros in string format", function() {
@@ -279,10 +280,21 @@ class HundredSpecs
 
       for (i in 0...distros.length) {
         E.expect( untyped(linuxFlavors) ).to.contain(distros[i]);
-      }
-      
+  public inline function step15():Void
+  {
+    var acids = ["nucleatides", "guanine", "adenine", "thymine", "cytosine"];
+    M.it("should declare a new array named 'DNA'", function() {
+      E.expect(untyped(DNA)).to.not.be.an('undefined');
     });
-  }  
+    M.it("should have 5 elements in it", function() {
+      E.expect( Reflect.fields(untyped(DNA)) ).to.have.length(5);
+    });
+    M.it("should define 5 nucleic acids", function (){
+      for (i in 0...acids.length) {
+        E.expect( untyped(DNA) ).to.contain(acids[i]);
+      }
+    });
+  }
 
 
   private inline function step20():Void
