@@ -16,6 +16,7 @@ var HundredSpecs = function() {
 	js.mocha.M.describe("Linux Flavors",$bind(this,this.step14));
 	js.mocha.M.describe("DNA (DeoxyriboNucleic Acid)",$bind(this,this.step15));
 	js.mocha.M.describe("laptop Costs",$bind(this,this.step16));
+	js.mocha.M.describe("Living Organism Classification",$bind(this,this.step17));
 	js.mocha.M.describe("Step 20",$bind(this,this.step20));
 	js.mocha.M.describe("Step 50",$bind(this,this.step50));
 	js.mocha.M.describe("Step 51",$bind(this,this.step51));
@@ -592,10 +593,26 @@ HundredSpecs.prototype = {
 			js.expect.ExpectMixins.toBe(js.expect.E.expect(sahara_river()),"Nile River");
 		});
 	}
+	,step17: function() {
+		var loc = ["Kingdom","Phylum","Class","Order","Family","Genus","Species"];
+		js.mocha.M.it("should declare a new array named 'livingOrganismClassification",function() {
+			js.expect.E.expect(livingOrganismClassification).to.not.be.an("undefined");
+		});
+		js.mocha.M.it("should have 7 elements inside of it",function() {
+			js.expect.E.expect(Reflect.fields(livingOrganismClassification)).to.have.length(7);
+		});
+		js.mocha.M.it("should define 5 nucleic acids",function() {
+			var _g1 = 0, _g = loc.length;
+			while(_g1 < _g) {
+				var i = _g1++;
+				js.expect.E.expect(livingOrganismClassification).to.contain(loc[i]);
+			}
+		});
+	}
 	,step16: function() {
 		var laptopCostKeys = { MacBook : 1500, Alienware : 2500, HP : 499, Surface : 320};
 		var brandProps = Reflect.fields(laptopCostKeys);
-		js.mocha.M.it("should declare a new object literal name 'laptopCosts",function() {
+		js.mocha.M.it("should declare a new object literal named 'laptopCosts",function() {
 			js.expect.E.expect(laptopCosts).to.not.be.an("undefined");
 		});
 		js.mocha.M.it("should have 4 properties",function() {

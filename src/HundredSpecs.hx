@@ -318,18 +318,20 @@ class HundredSpecs
       }
     });
   }
-    M.it("should declare a new object literal name 'laptopCosts", function() {
-      E.expect(untyped(laptopCosts)).to.not.be.an('undefined');
+
+  public inline function step17():Void
+  {
+    var loc = ["Kingdom", "Phylum", "Class", "Order", "Family", "Genus", "Species"];
+
+    M.it("should declare a new array named 'livingOrganismClassification", function() {
+      E.expect(untyped(livingOrganismClassification)).to.not.be.an('undefined');
     });
-    M.it("should have 4 properties", function (){
-      E.expect( Reflect.fields(untyped(laptopCosts)) ).to.have.length(4);
+    M.it("should have 7 elements inside of it", function (){
+      E.expect( Reflect.fields(untyped(livingOrganismClassification)) ).to.have.length(7);
     });
-    M.it("should defined 4 laptops brands as properties", function (){
-      E.expect( untyped(laptopCosts) ).to.only.have.keys(brandProps);
-    });
-    M.it("should have correct values for each of the brands", function (){
-      for (prop in brandProps) {
-        E.expect( untyped(laptopCosts)[prop] ).to.be.equal( untyped(laptopCostKeys)[prop] );
+    M.it("should have the right classifications", function (){
+      for (i in 0...loc.length) {
+        E.expect( untyped(livingOrganismClassification) ).to.contain(loc[i]);
       }
     });
   }
