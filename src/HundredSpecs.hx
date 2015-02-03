@@ -40,6 +40,7 @@ class HundredSpecs
     M.describe("purchaseLaptop Function", step28);
     M.describe("canTalkAbout Function", step29);
     M.describe("Pen Class", step30);
+    M.describe("Garden Class", step31);
     M.describe("Step 50", step50);
     M.describe("Step 51", step51);
     M.describe("Step 52", step52);
@@ -589,6 +590,28 @@ class HundredSpecs
     M.it("should print and return a message string", function (){
       var bluePen = untyped __js__("new Pen('blue')");
       E.expect( untyped(bluePen.write)("Yar Yar Yar") ).to.equal("blue: Yar Yar Yar");
+    });
+  }
+
+  public inline function step31():Void
+  {
+    M.it("should define a Class named 'Garden'", function (){
+      E.expect( untyped(Garden) ).to.be.a('function');
+    });
+    M.it("should instantiate a new Garden if given correct arguments", function (){
+      var myGarden = untyped __js__("new Garden(10)");
+      E.expect( myGarden ).to.be.a(untyped __js__("Garden"));
+      E.expect( Reflect.fields( untyped(myGarden) ) ).to.have.length(2);
+      E.expect( myGarden ).to.have.key("plantsTotal");
+      E.expect( myGarden ).to.have.key("isWatered");
+    });
+    M.it("should have a method named 'write'", function (){
+      var Garden = untyped __js__("new Pen('blue')");
+      E.expect( untyped(Garden.write) ).to.be.a('function');
+    });
+    M.it("should print and return a message string", function (){
+      var Garden = untyped __js__("new Pen('blue')");
+      E.expect( untyped(Garden.write)("Yar Yar Yar") ).to.equal("blue: Yar Yar Yar");
     });
   }
 

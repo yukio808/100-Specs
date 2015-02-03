@@ -30,6 +30,7 @@ var HundredSpecs = function() {
 	js.mocha.M.describe("purchaseLaptop Function",$bind(this,this.step28));
 	js.mocha.M.describe("canTalkAbout Function",$bind(this,this.step29));
 	js.mocha.M.describe("Pen Class",$bind(this,this.step30));
+	js.mocha.M.describe("Garden Class",$bind(this,this.step31));
 	js.mocha.M.describe("Step 50",$bind(this,this.step50));
 	js.mocha.M.describe("Step 51",$bind(this,this.step51));
 	js.mocha.M.describe("Step 52",$bind(this,this.step52));
@@ -595,6 +596,26 @@ HundredSpecs.prototype = {
 		});
 		js.mocha.M.it("should have a gender property.",function() {
 			js.expect.E.expect(new Animal('Frog', 'male')).to.have.property("gender");
+		});
+	}
+	,step31: function() {
+		js.mocha.M.it("should define a Class named 'Garden'",function() {
+			js.expect.E.expect(Garden).to.be.a("function");
+		});
+		js.mocha.M.it("should instantiate a new Garden if given correct arguments",function() {
+			var myGarden = new Garden(10);
+			js.expect.E.expect(myGarden).to.be.a(Garden);
+			js.expect.E.expect(Reflect.fields(myGarden)).to.have.length(2);
+			js.expect.E.expect(myGarden).to.have.key("plantsTotal");
+			js.expect.E.expect(myGarden).to.have.key("isWatered");
+		});
+		js.mocha.M.it("should have a method named 'write'",function() {
+			var Garden = new Pen('blue');
+			js.expect.E.expect(Garden.write).to.be.a("function");
+		});
+		js.mocha.M.it("should print and return a message string",function() {
+			var Garden = new Pen('blue');
+			js.expect.E.expect(Garden.write("Yar Yar Yar")).to.equal("blue: Yar Yar Yar");
 		});
 	}
 	,step30: function() {
