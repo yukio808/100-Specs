@@ -24,6 +24,7 @@ var HundredSpecs = function() {
 	js.mocha.M.describe("installLinux Function",$bind(this,this.step22));
 	js.mocha.M.describe("drink Function",$bind(this,this.step23));
 	js.mocha.M.describe("browseURL Function",$bind(this,this.step24));
+	js.mocha.M.describe("ListLivingOrgClass Function",$bind(this,this.step25));
 	js.mocha.M.describe("Step 50",$bind(this,this.step50));
 	js.mocha.M.describe("Step 51",$bind(this,this.step51));
 	js.mocha.M.describe("Step 52",$bind(this,this.step52));
@@ -589,6 +590,25 @@ HundredSpecs.prototype = {
 		});
 		js.mocha.M.it("should have a gender property.",function() {
 			js.expect.E.expect(new Animal('Frog', 'male')).to.have.property("gender");
+		});
+	}
+	,step25: function() {
+		var loc = ["Kingdom","Phylum","Class","Order","Family","Genus","Species"];
+		js.mocha.M.it("should define a function named 'ListLivingOrgClass'",function() {
+			js.expect.E.expect(listLivingOrgClass).to.be.a("function");
+		});
+		js.mocha.M.it("should return HTML formatted Unordered List with all the classifications",function() {
+			js.expect.E.expect(listLivingOrgClass()).to.contain("<ul>");
+			js.expect.E.expect(listLivingOrgClass()).to.contain("<li>");
+			js.expect.E.expect(listLivingOrgClass()).to.contain("</li>");
+			js.expect.E.expect(listLivingOrgClass()).to.contain("</ul>");
+			js.expect.E.expect(listLivingOrgClass()).to.contain("Kingdom");
+			js.expect.E.expect(listLivingOrgClass()).to.contain("Phylum");
+			js.expect.E.expect(listLivingOrgClass()).to.contain("Class");
+			js.expect.E.expect(listLivingOrgClass()).to.contain("Order");
+			js.expect.E.expect(listLivingOrgClass()).to.contain("Family");
+			js.expect.E.expect(listLivingOrgClass()).to.contain("Genus");
+			js.expect.E.expect(listLivingOrgClass()).to.contain("Species");
 		});
 	}
 	,step24: function() {

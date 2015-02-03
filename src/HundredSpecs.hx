@@ -34,6 +34,7 @@ class HundredSpecs
     M.describe("installLinux Function", step22);
     M.describe("drink Function", step23);
     M.describe("browseURL Function", step24);
+    M.describe("ListLivingOrgClass Function", step25);
     M.describe("Step 50", step50);
     M.describe("Step 51", step51);
     M.describe("Step 52", step52);
@@ -453,6 +454,27 @@ class HundredSpecs
       E.expect( untyped(browseURL(90))).to.equal(false);
       E.expect( untyped(browseURL('AOL'))).to.equal(false);
       E.expect( untyped(browseURL('Netscape'))).to.equal(false);
+    });
+  }
+
+  public inline function step25():Void
+  {
+    var loc = ["Kingdom", "Phylum", "Class", "Order", "Family", "Genus", "Species"];
+    M.it("should define a function named 'ListLivingOrgClass'", function (){
+      E.expect( untyped(listLivingOrgClass) ).to.be.a('function');
+    });
+    M.it("should return HTML formatted Unordered List with all the classifications", function (){
+      E.expect( untyped(listLivingOrgClass()) ).to.contain('<ul>');
+      E.expect( untyped(listLivingOrgClass()) ).to.contain('<li>');
+      E.expect( untyped(listLivingOrgClass()) ).to.contain('</li>');
+      E.expect( untyped(listLivingOrgClass()) ).to.contain('</ul>');
+      E.expect( untyped(listLivingOrgClass()) ).to.contain('Kingdom');
+      E.expect( untyped(listLivingOrgClass()) ).to.contain('Phylum');
+      E.expect( untyped(listLivingOrgClass()) ).to.contain('Class');
+      E.expect( untyped(listLivingOrgClass()) ).to.contain('Order');
+      E.expect( untyped(listLivingOrgClass()) ).to.contain('Family');
+      E.expect( untyped(listLivingOrgClass()) ).to.contain('Genus');
+      E.expect( untyped(listLivingOrgClass()) ).to.contain('Species');
     });
   }
 
