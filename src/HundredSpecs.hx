@@ -27,6 +27,7 @@ class HundredSpecs
     M.describe("DNA (DeoxyriboNucleic Acid)", step15);
     M.describe("laptop Costs", step16);
     M.describe("Living Organism Classification", step17);
+    M.describe("SCM List", step18);
     M.describe("Step 20", step20);
     M.describe("Step 50", step50);
     M.describe("Step 51", step51);
@@ -323,7 +324,7 @@ class HundredSpecs
   {
     var loc = ["Kingdom", "Phylum", "Class", "Order", "Family", "Genus", "Species"];
 
-    M.it("should declare a new array named 'livingOrganismClassification", function() {
+    M.it("should declare a new array named 'livingOrganismClassification'", function() {
       E.expect(untyped(livingOrganismClassification)).to.not.be.an('undefined');
     });
     M.it("should have 7 elements inside of it", function (){
@@ -332,6 +333,22 @@ class HundredSpecs
     M.it("should have the right classifications", function (){
       for (i in 0...loc.length) {
         E.expect( untyped(livingOrganismClassification) ).to.contain(loc[i]);
+      }
+    });
+  }
+
+  public inline function step18():Void
+  {
+    M.it("should declare a new array named 'scmList", function() {
+      E.expect(untyped(scmList)).to.not.be.an('undefined');
+    });
+    M.it("should have 5 elements inside of it", function (){
+      E.expect( Reflect.fields(untyped(scmList)) ).to.have.length(5);
+    });
+    M.it("should have the right classifications", function (){
+      var scmKeys = ["git", "svn", "mercurial", "bazaar", "cvs"];
+      for (i in 0...scmKeys.length) {
+        E.expect( untyped(scmList) ).to.contain(scmKeys[i]);
       }
     });
   }

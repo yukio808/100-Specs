@@ -17,6 +17,7 @@ var HundredSpecs = function() {
 	js.mocha.M.describe("DNA (DeoxyriboNucleic Acid)",$bind(this,this.step15));
 	js.mocha.M.describe("laptop Costs",$bind(this,this.step16));
 	js.mocha.M.describe("Living Organism Classification",$bind(this,this.step17));
+	js.mocha.M.describe("SCM List",$bind(this,this.step18));
 	js.mocha.M.describe("Step 20",$bind(this,this.step20));
 	js.mocha.M.describe("Step 50",$bind(this,this.step50));
 	js.mocha.M.describe("Step 51",$bind(this,this.step51));
@@ -593,15 +594,31 @@ HundredSpecs.prototype = {
 			js.expect.ExpectMixins.toBe(js.expect.E.expect(sahara_river()),"Nile River");
 		});
 	}
+	,step18: function() {
+		js.mocha.M.it("should declare a new array named 'scmList",function() {
+			js.expect.E.expect(scmList).to.not.be.an("undefined");
+		});
+		js.mocha.M.it("should have 5 elements inside of it",function() {
+			js.expect.E.expect(Reflect.fields(scmList)).to.have.length(5);
+		});
+		js.mocha.M.it("should have the right classifications",function() {
+			var scmKeys = ["git","svn","mercurial","bazaar","cvs"];
+			var _g1 = 0, _g = scmKeys.length;
+			while(_g1 < _g) {
+				var i = _g1++;
+				js.expect.E.expect(scmList).to.contain(scmKeys[i]);
+			}
+		});
+	}
 	,step17: function() {
 		var loc = ["Kingdom","Phylum","Class","Order","Family","Genus","Species"];
-		js.mocha.M.it("should declare a new array named 'livingOrganismClassification",function() {
+		js.mocha.M.it("should declare a new array named 'livingOrganismClassification'",function() {
 			js.expect.E.expect(livingOrganismClassification).to.not.be.an("undefined");
 		});
 		js.mocha.M.it("should have 7 elements inside of it",function() {
 			js.expect.E.expect(Reflect.fields(livingOrganismClassification)).to.have.length(7);
 		});
-		js.mocha.M.it("should define 5 nucleic acids",function() {
+		js.mocha.M.it("should have the right classifications",function() {
 			var _g1 = 0, _g = loc.length;
 			while(_g1 < _g) {
 				var i = _g1++;
