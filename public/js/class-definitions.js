@@ -3,7 +3,7 @@
  * Declare a variable named "unicorn"
  *
  */
-var unicorn = null;
+
 
 /* Step 2
  *
@@ -11,7 +11,7 @@ var unicorn = null;
  * then assign it to be the value of "Atari"
  *
  */
-var videogame_system = "Atari";
+
 
 /* Step 3
  *
@@ -19,7 +19,7 @@ var videogame_system = "Atari";
  * and assign the value of sahara_animal to "The Addax"
  *
  */
-var sahara_animal = "The Addax";
+
 
 /* Step 4
  *
@@ -28,7 +28,6 @@ var sahara_animal = "The Addax";
  * each planet in our solar system, in order of distance from the sun
  * Capitalize the names.
  */
-var planets = ["Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune"];
 
 
 /* Step 5
@@ -38,7 +37,6 @@ var planets = ["Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus
  * each galilean moon of Jupiter
  *
  */
-var galilean_moons = ["io","europa","ganymede","callisto"];
 
 
 /* Step 6 φ
@@ -47,7 +45,6 @@ var galilean_moons = ["io","europa","ganymede","callisto"];
  * and assign the value of golden_ratio to 1.61803398874
  *
  */
-var golden_ratio = 1.61803398874;
 
 
 /* Step 7
@@ -56,7 +53,6 @@ var golden_ratio = 1.61803398874;
  * and assign the value of earths_water_composition to 0.71
  *
  */
-var earths_water_composition = 0.71;
 
 
 /* Step 8
@@ -65,7 +61,6 @@ var earths_water_composition = 0.71;
  * and assign the value of club_name to "Fight Club"
  *
  */
-var club_name = "Fight Club";
 
 
 /* Step 9
@@ -77,11 +72,6 @@ var club_name = "Fight Club";
  *   male    => "male"
  *   unknown => undefined
  */
-var gender = {
-  female: "female",
-  male: "male",
-  unknown: undefined
-};
 
 
 /* Step 10
@@ -96,13 +86,6 @@ var gender = {
  *   gender  => gender.female
  *
  */
-var princess_leia = {
-  name: "Leia Organa",
-  money: 890,
-  age: 20,
-  gender: gender.female
-};
-
 
 
 /* Step 11
@@ -116,13 +99,6 @@ var princess_leia = {
  *   jsonformatter.curiousconcept.com => "104.28.5.70"
  *
  */
-var domains = {
- "ycombinator.com": "198.41.190.47",
- "laughingsquid.com": "162.159.247.97",
- "slumlordhosting.com": "198.61.179.126",
- "jsonformatter.curiousconcept.com": "104.28.5.70"
-};
-
 
 
 /* Step 12
@@ -138,15 +114,6 @@ var domains = {
  *   Konqueror  => "konqueror.org"
  *
  */
-var browsers = {
- Chromium: "google.com",
- Safari: "apple.com",
- Opera: "opera.com",
- Firefox: "mozilla.org",
- Sleipnir: "fenrir-inc.com",
- Konqueror: "konqueror.org"
-};
-
 
 
 /* Step 13
@@ -165,18 +132,6 @@ var browsers = {
  *  isDouble  => true
  *
  */
-var rainbow = {
-  colors: {
-    red: "#F0280A",
-    orange: "#FF8800",
-    yellow: "#FFDD00",
-    green: "#51AB0C",
-    blue: "#1593ED",
-    indigo: "#5215ED",
-    violet: "#A915ED"
-  },
-  isDouble: true
-};
 
 
 /* Step 14
@@ -192,14 +147,7 @@ var rainbow = {
  * "Bieber Linux"
  *
  */
-var linuxFlavors = [
- "Gentoo",
- "Fedora",
- "Debian",
- "Slackware",
- "Red Hat",
- "Bieber Linux"
-];
+
 
 /* Step 15
  *
@@ -213,13 +161,7 @@ var linuxFlavors = [
  * "cytosine"
  *
  */
-var DNA = [
- "nucleatides",
- "guanine",
- "adenine",
- "thymine",
- "cytosine"
-];
+
 
 /* Step 16
  *
@@ -232,12 +174,6 @@ var DNA = [
  * Surface      => 320
  *
  */
-var laptopCosts = {
-  MacBook: 1500,
-  Alienware: 2500,
-  HP: 499,
-  Surface: 320
-};
 
 
 /* Step 17
@@ -254,15 +190,7 @@ var laptopCosts = {
  * "Species"
  *
  */
-var livingOrganismClassification = [
- "Kingdom",
- "Phylum",
- "Class",
- "Order",
- "Family",
- "Genus",
- "Species"
-];
+
 
 /* Step 18
  *
@@ -276,13 +204,7 @@ var livingOrganismClassification = [
  * "cvs"
  *
  */
-var scmList = [
-  "git",
-  "svn",
-  "mercurial",
-  "bazaar",
-  "cvs"
-];
+
 
 /* Step 19
  *
@@ -301,21 +223,7 @@ var scmList = [
  *                  "Golden"
  *
  */
-var beers = {
-  IPA: "Ale",
-  Lager: "Strong",
-  Heffeweisen: "German",
-  Stout: [
-    "Thick",
-    "Dark"
-  ],
-  Porter: "Bitter",
-  Ale: [
-    "Light",
-    "Golden"
-  ]
 
-};
 
 /* Step 20
  *
@@ -325,9 +233,7 @@ var beers = {
  * @return {String}
  *
  */
-function sahara_river(){
-  return "Nile River";
-}
+
 
 /* Step 21
  *
@@ -339,9 +245,7 @@ function sahara_river(){
  * @return {Number}
  *
  */
-function addNumbers(a, b) {
-  return a + b;
-}
+
 
 /* Step 22
  *
@@ -354,12 +258,7 @@ function addNumbers(a, b) {
  * @return {Bool}
  *
  */
-function installLinux(os) {
-  if (linuxFlavors.indexOf(os) > -1) {
-    return true;
-  }
-  return false;
-}
+
 
 /* Step 23
  *
@@ -378,28 +277,8 @@ function installLinux(os) {
  * @return {Bool when False, String when True}
  *
  */
-function drink(beer) {
-  var selection = beers[beer];
-  if (!selection) {
-    return false;
-  }
 
-  if (typeof selection === 'string') {
-    return "This " + beer + " is " + selection + ".";
-  }
 
-  if (Array.isArray(selection)) {
-    var phrase = "This " + beer + " is ";
-    selection.forEach(function (value, i){
-      phrase += value;
-      if (selection[i] === selection.length - 1) {
-        return;
-      }
-       phrase += " and ";
-    });
-    return phrase;
-  }
-}
 /* Step 24
  *
  * Define a function named "browseURL" that takes
@@ -411,13 +290,7 @@ function drink(beer) {
  * @return {String}
  *
  */
-function browseURL(software) {
-  if (!browsers[software]) {
-    return false;
-  }
 
-  return browsers[software];
-}
 
 /* Step 25
  *
@@ -428,13 +301,6 @@ function browseURL(software) {
  * @return {String}
  *
  */
-function listLivingOrgClass() {
-  var html = "<ul>";
-  livingOrganismClassification.forEach(function (value){
-    html += "<li>" + value + "</li>";
-  });
-  return html += "</ul>";
-}
 
 
 /* Step 26
@@ -456,12 +322,7 @@ function listLivingOrgClass() {
  * @return {String}
  *
  */
-function favoritePlanet(planet) {
-  if (planets.indexOf(planet) === -1) {
-    return planet + " is not a planet!";
-  }
-  return "I'm from " + planet + ", but I wish I could go to " + planets[Math.floor(Math.random() * planets.length)];
-}
+
 
 /* Step 27
  *
@@ -484,20 +345,7 @@ function favoritePlanet(planet) {
  *   earnMoney
  *
  */
-function Person(name, money, age, gender){
-  this.name = name;
-  this.money = money;
-  this.age = age;
-  this.gender = gender;
-}
 
-Person.prototype.spendMoney = function(amount) {
-  this.money -= amount;
-};
-
-Person.prototype.earnMoney = function(amount) {
-  this.money += amount;
-};
 
 /* Step 28
  *
