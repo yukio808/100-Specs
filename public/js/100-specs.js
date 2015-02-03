@@ -20,6 +20,7 @@ var HundredSpecs = function() {
 	js.mocha.M.describe("SCM List",$bind(this,this.step18));
 	js.mocha.M.describe("Beers!!!",$bind(this,this.step19));
 	js.mocha.M.describe("Sahara River",$bind(this,this.step20));
+	js.mocha.M.describe("addNumbers Function",$bind(this,this.step21));
 	js.mocha.M.describe("Step 50",$bind(this,this.step50));
 	js.mocha.M.describe("Step 51",$bind(this,this.step51));
 	js.mocha.M.describe("Step 52",$bind(this,this.step52));
@@ -585,6 +586,17 @@ HundredSpecs.prototype = {
 		});
 		js.mocha.M.it("should have a gender property.",function() {
 			js.expect.E.expect(new Animal('Frog', 'male')).to.have.property("gender");
+		});
+	}
+	,step21: function() {
+		js.mocha.M.it("should define a function named 'addNumbers'",function() {
+			js.expect.E.expect(addNumbers).to.not.be.an("undefined");
+		});
+		js.mocha.M.it("should return the SUM of two numbers",function() {
+			js.expect.E.expect(addNumbers(1,2)).to.equal(3);
+			js.expect.E.expect(addNumbers(12,29)).to.equal(41);
+			js.expect.E.expect(addNumbers(673,23245)).to.equal(23918);
+			js.expect.E.expect(addNumbers(2134,890123487953)).to.equal(890123490087);
 		});
 	}
 	,step20: function() {

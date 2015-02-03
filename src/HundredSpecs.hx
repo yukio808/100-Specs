@@ -30,6 +30,7 @@ class HundredSpecs
     M.describe("SCM List", step18);
     M.describe("Beers!!!", step19);
     M.describe("Sahara River", step20);
+    M.describe("addNumbers Function", step21);
     M.describe("Step 50", step50);
     M.describe("Step 51", step51);
     M.describe("Step 52", step52);
@@ -377,6 +378,19 @@ class HundredSpecs
     });
     M.it("'sahara_river' should return the string 'Nile River'.", function() {
       E.expect(untyped(sahara_river)()).toBe("Nile River");
+    });
+  }
+
+  public inline function step21():Void
+  {
+    M.it("should define a function named 'addNumbers'", function (){
+      E.expect( untyped(addNumbers) ).to.not.be.an('undefined');
+    });
+    M.it("should return the SUM of two numbers", function (){
+      E.expect( untyped(addNumbers(1, 2)) ).to.equal(3);
+      E.expect( untyped(addNumbers(12, 29)) ).to.equal(41);
+      E.expect( untyped(addNumbers(673, 23245)) ).to.equal(23918);
+      E.expect( untyped(addNumbers(2134, 890123487953)) ).to.equal(890123490087);
     });
   }
 
