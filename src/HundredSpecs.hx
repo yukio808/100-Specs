@@ -35,6 +35,7 @@ class HundredSpecs
     M.describe("drink Function", step23);
     M.describe("browseURL Function", step24);
     M.describe("ListLivingOrgClass Function", step25);
+    M.describe("favoritePlanet Function", step26);
     M.describe("Step 50", step50);
     M.describe("Step 51", step51);
     M.describe("Step 52", step52);
@@ -478,15 +479,24 @@ class HundredSpecs
     });
   }
 
-  public inline function step25():Void
+  public inline function step26():Void
   {
     M.it("should define a function named 'favoritePlanet'", function (){
       E.expect( untyped(favoritePlanet) ).to.be.a('function');
     });
-    M.it("should print a message if your planet exists", function (){
-      E.expect( untyped(favoritePlanet()) ).to.be.a("string");
-      E.expect( untyped(favoritePlanet()) ).to.contain("");
-      E.expect( untyped(favoritePlanet()) ).to.contain('</li>');
+    M.it("should print a message if your planet does not exist!", function (){
+      E.expect( untyped(favoritePlanet("Wookievania")) ).to.match("Wookievania is not a planet!");
+    });
+    M.it("should print a message if your planet exists!", function (){
+      var planetsKeys = ["Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune"];
+      E.expect( untyped(favoritePlanet(planetsKeys[0])) ).to.match("I'm from Mercury, but I wish I could go to (Mercury|Venus|Earth|Mars|Jupiter|Saturn|Uranus|Neptune)");
+      E.expect( untyped(favoritePlanet(planetsKeys[1])) ).to.match("I'm from Venus, but I wish I could go to (Mercury|Venus|Earth|Mars|Jupiter|Saturn|Uranus|Neptune)");
+      E.expect( untyped(favoritePlanet(planetsKeys[2])) ).to.match("I'm from Earth, but I wish I could go to (Mercury|Venus|Earth|Mars|Jupiter|Saturn|Uranus|Neptune)");
+      E.expect( untyped(favoritePlanet(planetsKeys[3])) ).to.match("I'm from Mars, but I wish I could go to (Mercury|Venus|Earth|Mars|Jupiter|Saturn|Uranus|Neptune)");
+      E.expect( untyped(favoritePlanet(planetsKeys[4])) ).to.match("I'm from Jupiter, but I wish I could go to (Mercury|Venus|Earth|Mars|Jupiter|Saturn|Uranus|Neptune)");
+      E.expect( untyped(favoritePlanet(planetsKeys[5])) ).to.match("I'm from Saturn, but I wish I could go to (Mercury|Venus|Earth|Mars|Jupiter|Saturn|Uranus|Neptune)");
+      E.expect( untyped(favoritePlanet(planetsKeys[6])) ).to.match("I'm from Uranus, but I wish I could go to (Mercury|Venus|Earth|Mars|Jupiter|Saturn|Uranus|Neptune)");
+      E.expect( untyped(favoritePlanet(planetsKeys[7])) ).to.match("I'm from Neptune, but I wish I could go to (Mercury|Venus|Earth|Mars|Jupiter|Saturn|Uranus|Neptune)");
     });
   }
 
