@@ -340,8 +340,23 @@
 
 /* Step 27
  *
- * WIP
- * reverse lookup
+ * Define a class named "Person" that has properties for
+ * "name," "money," "age," and "gender." Pass values for
+ * all these properies in the constructor. Create methods
+ * named "spendMoney" and "earnMoney" that each take an
+ * amount of money and add or subtract them to this
+ * person's money.
+ * 
+ * class
+ *   Person
+ * properties
+ *   name
+ *   money
+ *   age
+ *   gender
+ * methods
+ *   spendMoney
+ *   earnMoney
  *
  */
 
@@ -430,23 +445,17 @@
 
 /* Step 33
  *
- * Define a class named "Hero" with properties "name,"
- * "money," "age," "gender," and "isInTrouble" that gets
- * instantiated by the "princess_leia" variable. Add a
- * method "shootsGun" that prints a message about shooting
- * her gun if she's in trouble, "getsInTrouble" that puts
- * her in trouble, and "marries" that takes a prospective
- * love interest and returns true for "Han Solo" or false
- * for anyone else. Add a message of disapproval for
- * "Luke Skywalker"
+ * Define a class named "PrincessLeia" that is a subclass of "Person"
+ * with properties "name," "money," "age," "gender," and
+ * "isInTrouble." Add a method "shootsGun" that prints a message
+ * about shooting her's gun if she's in trouble, "getsInTrouble" that
+ * puts her in trouble, and "marries" that takes a prospective
+ * love interest and returns true for "Han Solo" or false for anyone
+ * else. Add a message of disapproval for "Luke Skywalker"
  * 
  * class
- *   Hero
+ *   PrincessLeia
  * properties
- *   name
- *   money
- *   age
- *   gender
  *   isInTrouble
  * methods
  *   shootsGun
@@ -477,11 +486,14 @@
 
 /* Step 35
  *
- * WIP
- * Leonhard Euler
- *  mathematician
- *  physicist
- *  discoveries in
+ * Define a class named "Scientist" that is a subclass of Person with
+ * array properties "disciplines" and "discoveries." Add a method
+ * "doWork" that takes a discipline as a parameter. Return true and
+ * print a message of discovery if the person has that discipline.
+ * Return false and print a message of confusion if the person doesn't
+ * have that discipline. Create a variable of type Scientist with the
+ * name "Leonhard Euler" who has the disciplines "mathematics" and
+ * "physics" and who has discoveries in:
  *    infinitesimal calculus
  *    graph theory
  *    mechanics,
@@ -489,20 +501,36 @@
  *    optics,
  *    astronomy,
  *    music theory.
- *  do(math)
- *
+ * 
+ * class
+ *   Scientist
+ * properties
+ *   disciplines
+ *   discoveries
+ * methods
+ *   doWork
  *
  */
 
 
 /* Step 36
  *
- * WIP
- * Bank Account
- *  balance
- *  withdraw
- *  deposit
- *  rob
+ * Define a class named "BankAccount" that has properties
+ * "balance" and "owner." Add a method "withdraw" that allows
+ * the owner to remove money from the account and add it to
+ * their Person object, "deposit" that lets a Person spend
+ * money to increase their balance, and "rob" that allows
+ * any Person object to take money from the bank account.
+ * 
+ * class
+ *   BankAccount
+ * properties
+ *   balance
+ *   owner
+ * methods
+ *   withdraw
+ *   deposit
+ *   rob
  *
  */
 
