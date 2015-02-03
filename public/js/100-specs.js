@@ -33,6 +33,7 @@ var HundredSpecs = function() {
 	js.mocha.M.describe("Garden Class",$bind(this,this.step31));
 	js.mocha.M.describe("SolarSystem Class",$bind(this,this.step32));
 	js.mocha.M.describe("PrincessLeia Class",$bind(this,this.step33));
+	js.mocha.M.describe("Stapler Class",$bind(this,this.step34));
 	js.mocha.M.describe("Step 50",$bind(this,this.step50));
 	js.mocha.M.describe("Step 51",$bind(this,this.step51));
 	js.mocha.M.describe("Step 52",$bind(this,this.step52));
@@ -598,6 +599,36 @@ HundredSpecs.prototype = {
 		});
 		js.mocha.M.it("should have a gender property.",function() {
 			js.expect.E.expect(new Animal('Frog', 'male')).to.have.property("gender");
+		});
+	}
+	,step34: function() {
+		js.mocha.M.it("should define a Class named 'Stapler'",function() {
+			js.expect.E.expect(Stapler).to.be.a("function");
+		});
+		js.mocha.M.it("should instantiate a new Stapler if given correct arguments",function() {
+			var myStapler = new Stapler('blue', 10);
+			js.expect.E.expect(myStapler).to.be.a(Stapler);
+			js.expect.E.expect(Reflect.fields(myStapler)).to.have.length(2);
+			js.expect.E.expect(myStapler).to.have.key("color");
+			js.expect.E.expect(myStapler.color).to.be.a("string");
+			js.expect.E.expect(myStapler).to.have.key("maxPapers");
+			js.expect.E.expect(myStapler.maxPapers).to.be.a("number");
+		});
+		js.mocha.M.it("should have a method named 'staplePapers'",function() {
+			var myStapler = new Stapler('blue', 10);
+			js.expect.E.expect(myStapler.staplePapers).to.be.a("function");
+		});
+		js.mocha.M.it("should staple papers together is strong enough!",function() {
+			var myStapler = new Stapler('blue', 4);
+			js.expect.E.expect(myStapler.staplePapers(1)).to.equal(true);
+			js.expect.E.expect(myStapler.staplePapers(2)).to.equal(true);
+			js.expect.E.expect(myStapler.staplePapers(4)).to.equal(true);
+		});
+		js.mocha.M.it("should NOT staple papers together if above limit!",function() {
+			var myStapler = new Stapler('blue', 4);
+			js.expect.E.expect(myStapler.staplePapers(5)).to.equal(false);
+			js.expect.E.expect(myStapler.staplePapers(100)).to.equal(false);
+			js.expect.E.expect(myStapler.staplePapers(45)).to.equal(false);
 		});
 	}
 	,step33: function() {

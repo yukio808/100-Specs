@@ -43,6 +43,7 @@ class HundredSpecs
     M.describe("Garden Class", step31);
     M.describe("SolarSystem Class", step32);
     M.describe("PrincessLeia Class", step33);
+    M.describe("Stapler Class", step34);
     M.describe("Step 50", step50);
     M.describe("Step 51", step51);
     M.describe("Step 52", step52);
@@ -718,6 +719,38 @@ class HundredSpecs
     });
     M.it("but... 'marries' should return a message if given 'Luke Skywalker' as an argument", function (){
       E.expect( untyped(leia.marries("Luke Skywalker")) ).to.equal("Gross!");
+    });
+  }
+
+  public inline function step34():Void
+  {
+    M.it("should define a Class named 'Stapler'", function (){
+      E.expect( untyped(Stapler) ).to.be.a('function');
+    });
+    M.it("should instantiate a new Stapler if given correct arguments", function (){
+      var myStapler = untyped __js__("new Stapler('blue', 10)");
+      E.expect( myStapler ).to.be.a( untyped __js__("Stapler") );
+      E.expect( Reflect.fields( untyped(myStapler) ) ).to.have.length(2);
+      E.expect( myStapler ).to.have.key("color");
+      E.expect( myStapler.color ).to.be.a("string");
+      E.expect( myStapler ).to.have.key("maxPapers");
+      E.expect( myStapler.maxPapers ).to.be.a("number");
+    });
+    M.it("should have a method named 'staplePapers'", function (){
+      var myStapler = untyped __js__("new Stapler('blue', 10)");
+      E.expect( untyped(myStapler.staplePapers) ).to.be.a('function');
+    });
+    M.it("should staple papers together is strong enough!", function (){
+      var myStapler = untyped __js__("new Stapler('blue', 4)");
+      E.expect( untyped(myStapler.staplePapers)(1) ).to.equal(true);
+      E.expect( untyped(myStapler.staplePapers)(2) ).to.equal(true);
+      E.expect( untyped(myStapler.staplePapers)(4) ).to.equal(true);
+    });
+    M.it("should NOT staple papers together if above limit!", function (){
+      var myStapler = untyped __js__("new Stapler('blue', 4)");
+      E.expect( untyped(myStapler.staplePapers)(5) ).to.equal(false);
+      E.expect( untyped(myStapler.staplePapers)(100) ).to.equal(false);
+      E.expect( untyped(myStapler.staplePapers)(45) ).to.equal(false);
     });
   }
 
