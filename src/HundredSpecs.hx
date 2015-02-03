@@ -41,6 +41,7 @@ class HundredSpecs
     M.describe("canTalkAbout Function", step29);
     M.describe("Pen Class", step30);
     M.describe("Garden Class", step31);
+    M.describe("SolarSystem Class", step32);
     M.describe("Step 50", step50);
     M.describe("Step 51", step51);
     M.describe("Step 52", step52);
@@ -605,13 +606,61 @@ class HundredSpecs
       E.expect( myGarden ).to.have.key("plantsTotal");
       E.expect( myGarden ).to.have.key("isWatered");
     });
-    M.it("should have a method named 'write'", function (){
-      var Garden = untyped __js__("new Pen('blue')");
-      E.expect( untyped(Garden.write) ).to.be.a('function');
+    M.it("should have a method named 'water'", function (){
+      var myGarden = untyped __js__("new Garden(10)");
+      E.expect( untyped(myGarden.water) ).to.be.a('function');
     });
-    M.it("should print and return a message string", function (){
-      var Garden = untyped __js__("new Pen('blue')");
-      E.expect( untyped(Garden.write)("Yar Yar Yar") ).to.equal("blue: Yar Yar Yar");
+    M.it("should be able to water the plants", function (){
+      var myGarden = untyped __js__("new Garden(10)");
+      E.expect( untyped(myGarden.isWatered) ).to.equal(false);
+      untyped(myGarden.water());
+      E.expect( untyped(myGarden.isWatered) ).to.equal(true);
+    });
+    M.it("should have a method named 'grow'", function (){
+      var myGarden = untyped __js__("new Garden(10)");
+      E.expect( untyped(myGarden.grow) ).to.be.a('function');
+    });
+    M.it("should be able to grow more plants", function (){
+      var myGarden = untyped __js__("new Garden(10)");
+      E.expect( untyped(myGarden.plantsTotal) ).to.equal(10);
+      untyped(myGarden.grow());
+      E.expect( untyped(myGarden.plantsTotal) ).to.equal(11);
+    });
+  }
+
+  public inline function step32():Void
+  {
+    M.it("should define a Class named 'SolarSystem'", function (){
+      E.expect( untyped(SolarSystem) ).to.be.a('function');
+    });
+    M.it("should instantiate a new Solar System if given correct arguments", function (){
+      var mySystem = untyped __js__("new SolarSystem()");
+      E.expect( mySystem ).to.be.a(untyped __js__("SolarSystem"));
+      E.expect( Reflect.fields( untyped(mySystem) ) ).to.have.length(1);
+      E.expect( untyped(mySystem) ).to.have.key("planets");
+      E.expect( untyped(mySystem.planets) ).to.be.a("array");
+    });
+    M.it("should have a method named 'addPlanet'", function (){
+      var mySystem = untyped __js__("new SolarSystem()");
+      E.expect( untyped(mySystem.addPlanet) ).to.be.a('function');
+    });
+    M.it("should add a planet to the 'planets' property array", function (){
+      var mySystem = untyped __js__("new SolarSystem()");
+      E.expect( untyped(mySystem.planets) ).to.have.length(0);
+      untyped(mySystem.addPlanet("Pluto"));
+      E.expect( untyped(mySystem.planets) ).to.have.length(1);
+    });
+    M.it("should have a method named 'removePlanet'", function (){
+      var mySystem = untyped __js__("new SolarSystem()");
+      E.expect( untyped(mySystem.removePlanet) ).to.be.a('function');
+    });
+    M.it("should remove a planet from the 'planets' property array", function (){
+      var mySystem = untyped __js__("new SolarSystem()");
+      E.expect( untyped(mySystem.planets) ).to.have.length(0);
+      untyped(mySystem.addPlanet("Pluto"));
+      E.expect( untyped(mySystem.planets) ).to.have.length(1);
+      untyped(mySystem.removePlanet());
+      E.expect( untyped(mySystem.planets) ).to.have.length(0);
     });
   }
 

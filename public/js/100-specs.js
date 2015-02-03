@@ -31,6 +31,7 @@ var HundredSpecs = function() {
 	js.mocha.M.describe("canTalkAbout Function",$bind(this,this.step29));
 	js.mocha.M.describe("Pen Class",$bind(this,this.step30));
 	js.mocha.M.describe("Garden Class",$bind(this,this.step31));
+	js.mocha.M.describe("SolarSystem Class",$bind(this,this.step32));
 	js.mocha.M.describe("Step 50",$bind(this,this.step50));
 	js.mocha.M.describe("Step 51",$bind(this,this.step51));
 	js.mocha.M.describe("Step 52",$bind(this,this.step52));
@@ -602,20 +603,34 @@ HundredSpecs.prototype = {
 		js.mocha.M.it("should define a Class named 'SolarSystem'",function() {
 			js.expect.E.expect(SolarSystem).to.be.a("function");
 		});
-		js.mocha.M.it("should instantiate a new Garden if given correct arguments",function() {
-			var mySystem = new Garden(10);
-			js.expect.E.expect(mySystem).to.be.a(Garden);
-			js.expect.E.expect(Reflect.fields(mySystem)).to.have.length(2);
-			js.expect.E.expect(mySystem).to.have.key("plantsTotal");
-			js.expect.E.expect(mySystem).to.have.key("isWatered");
+		js.mocha.M.it("should instantiate a new Solar System if given correct arguments",function() {
+			var mySystem = new SolarSystem();
+			js.expect.E.expect(mySystem).to.be.a(SolarSystem);
+			js.expect.E.expect(Reflect.fields(mySystem)).to.have.length(1);
+			js.expect.E.expect(mySystem).to.have.key("planets");
+			js.expect.E.expect(mySystem.planets).to.be.a("array");
 		});
-		js.mocha.M.it("should have a method named 'write'",function() {
-			var Garden = new Pen('blue');
-			js.expect.E.expect(Garden.write).to.be.a("function");
+		js.mocha.M.it("should have a method named 'addPlanet'",function() {
+			var mySystem = new SolarSystem();
+			js.expect.E.expect(mySystem.addPlanet).to.be.a("function");
 		});
-		js.mocha.M.it("should print and return a message string",function() {
-			var Garden = new Pen('blue');
-			js.expect.E.expect(Garden.write("Yar Yar Yar")).to.equal("blue: Yar Yar Yar");
+		js.mocha.M.it("should add a planet to the 'planets' property array",function() {
+			var mySystem = new SolarSystem();
+			js.expect.E.expect(mySystem.planets).to.have.length(0);
+			mySystem.addPlanet("Pluto");
+			js.expect.E.expect(mySystem.planets).to.have.length(1);
+		});
+		js.mocha.M.it("should have a method named 'removePlanet'",function() {
+			var mySystem = new SolarSystem();
+			js.expect.E.expect(mySystem.removePlanet).to.be.a("function");
+		});
+		js.mocha.M.it("should remove a planet from the 'planets' property array",function() {
+			var mySystem = new SolarSystem();
+			js.expect.E.expect(mySystem.planets).to.have.length(0);
+			mySystem.addPlanet("Pluto");
+			js.expect.E.expect(mySystem.planets).to.have.length(1);
+			mySystem.removePlanet();
+			js.expect.E.expect(mySystem.planets).to.have.length(0);
 		});
 	}
 	,step31: function() {
@@ -629,13 +644,25 @@ HundredSpecs.prototype = {
 			js.expect.E.expect(myGarden).to.have.key("plantsTotal");
 			js.expect.E.expect(myGarden).to.have.key("isWatered");
 		});
-		js.mocha.M.it("should have a method named 'write'",function() {
-			var Garden = new Pen('blue');
-			js.expect.E.expect(Garden.write).to.be.a("function");
+		js.mocha.M.it("should have a method named 'water'",function() {
+			var myGarden = new Garden(10);
+			js.expect.E.expect(myGarden.water).to.be.a("function");
 		});
-		js.mocha.M.it("should print and return a message string",function() {
-			var Garden = new Pen('blue');
-			js.expect.E.expect(Garden.write("Yar Yar Yar")).to.equal("blue: Yar Yar Yar");
+		js.mocha.M.it("should be able to water the plants",function() {
+			var myGarden = new Garden(10);
+			js.expect.E.expect(myGarden.isWatered).to.equal(false);
+			myGarden.water();
+			js.expect.E.expect(myGarden.isWatered).to.equal(true);
+		});
+		js.mocha.M.it("should have a method named 'grow'",function() {
+			var myGarden = new Garden(10);
+			js.expect.E.expect(myGarden.grow).to.be.a("function");
+		});
+		js.mocha.M.it("should be able to grow more plants",function() {
+			var myGarden = new Garden(10);
+			js.expect.E.expect(myGarden.plantsTotal).to.equal(10);
+			myGarden.grow();
+			js.expect.E.expect(myGarden.plantsTotal).to.equal(11);
 		});
 	}
 	,step30: function() {
