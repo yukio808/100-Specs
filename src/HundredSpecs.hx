@@ -307,10 +307,8 @@ class HundredSpecs
     M.it("should declare a new object literal named 'laptopCosts", function() {
       E.expect(untyped(laptopCosts)).to.not.be.an('undefined');
     });
-    M.it("should have 4 properties", function (){
-      E.expect( Reflect.fields(untyped(laptopCosts)) ).to.have.length(4);
-    });
     M.it("should defined 4 laptops brands as properties", function (){
+      E.expect( Reflect.fields(untyped(laptopCosts)) ).to.have.length(4);
       E.expect( untyped(laptopCosts) ).to.only.have.keys(brandProps);
     });
     M.it("should have correct values for each of the brands", function (){
