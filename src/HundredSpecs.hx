@@ -26,6 +26,7 @@ class HundredSpecs
     M.describe("Linux Flavors", step14);
     M.describe("DNA (DeoxyriboNucleic Acid)", step15);
     M.describe("laptop Costs", step16);
+    M.describe("Living Organism Classification", step17);
     M.describe("Step 20", step20);
     M.describe("Step 50", step50);
     M.describe("Step 51", step51);
@@ -302,6 +303,21 @@ class HundredSpecs
   {
     var laptopCostKeys = { "MacBook": 1500, "Alienware": 2500, "HP": 499, "Surface": 320 };
     var brandProps = Reflect.fields(untyped(laptopCostKeys));
+    M.it("should declare a new object literal named 'laptopCosts", function() {
+      E.expect(untyped(laptopCosts)).to.not.be.an('undefined');
+    });
+    M.it("should have 4 properties", function (){
+      E.expect( Reflect.fields(untyped(laptopCosts)) ).to.have.length(4);
+    });
+    M.it("should defined 4 laptops brands as properties", function (){
+      E.expect( untyped(laptopCosts) ).to.only.have.keys(brandProps);
+    });
+    M.it("should have correct values for each of the brands", function (){
+      for (prop in brandProps) {
+        E.expect( untyped(laptopCosts)[prop] ).to.be.equal( untyped(laptopCostKeys)[prop] );
+      }
+    });
+  }
     M.it("should declare a new object literal name 'laptopCosts", function() {
       E.expect(untyped(laptopCosts)).to.not.be.an('undefined');
     });
