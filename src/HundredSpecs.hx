@@ -369,7 +369,7 @@ class HundredSpecs
     });
     M.it("should have strings at certain properties", function (){
       E.expect( untyped(beers)["IPA"] ).to.equal("Ale");
-      E.expect( untyped(beers)["Lager"] ).to.equal("Tastes Good");
+      E.expect( untyped(beers)["Lager"] ).to.equal("Strong");
       E.expect( untyped(beers)["Heffeweisen"] ).to.equal("German");
       E.expect( untyped(beers)["Porter"] ).to.equal("Bitter");
     });
