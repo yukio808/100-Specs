@@ -27,6 +27,7 @@ var HundredSpecs = function() {
 	js.mocha.M.describe("ListLivingOrgClass Function",$bind(this,this.step25));
 	js.mocha.M.describe("favoritePlanet Function",$bind(this,this.step26));
 	js.mocha.M.describe("Person Class",$bind(this,this.step27));
+	js.mocha.M.describe("purchaseLaptop Function",$bind(this,this.step28));
 	js.mocha.M.describe("Step 50",$bind(this,this.step50));
 	js.mocha.M.describe("Step 51",$bind(this,this.step51));
 	js.mocha.M.describe("Step 52",$bind(this,this.step52));
@@ -592,6 +593,24 @@ HundredSpecs.prototype = {
 		});
 		js.mocha.M.it("should have a gender property.",function() {
 			js.expect.E.expect(new Animal('Frog', 'male')).to.have.property("gender");
+		});
+	}
+	,step28: function() {
+		var laptopCostKeys = { MacBook : 1500, Alienware : 2500, HP : 499, Surface : 320};
+		js.mocha.M.it("should define a function named 'purchaseLaptop'",function() {
+			js.expect.E.expect(purchaseLaptop).to.be.a("function");
+		});
+		js.mocha.M.it("should return the value of a laptop if the brand exists in 'laptopCosts' array",function() {
+			js.expect.E.expect(purchaseLaptop("MacBook")).to.be.equal("1500");
+			js.expect.E.expect(purchaseLaptop("Alienware")).to.be.equal("2500");
+			js.expect.E.expect(purchaseLaptop("HP")).to.be.equal("499");
+			js.expect.E.expect(purchaseLaptop("Surface")).to.be.equal("320");
+		});
+		js.mocha.M.it("should return -1 if brand does not exists in the 'laptopCosts' array",function() {
+			js.expect.E.expect(purchaseLaptop("Sager")).to.be.equal(-1);
+			js.expect.E.expect(purchaseLaptop("HipserAppleWareWearable")).to.be.equal(-1);
+			js.expect.E.expect(purchaseLaptop({ })).to.be.equal(-1);
+			js.expect.E.expect(purchaseLaptop([])).to.be.equal(-1);
 		});
 	}
 	,step27: function() {

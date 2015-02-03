@@ -37,6 +37,7 @@ class HundredSpecs
     M.describe("ListLivingOrgClass Function", step25);
     M.describe("favoritePlanet Function", step26);
     M.describe("Person Class", step27);
+    M.describe("purchaseLaptop Function", step28);
     M.describe("Step 50", step50);
     M.describe("Step 51", step51);
     M.describe("Step 52", step52);
@@ -531,7 +532,27 @@ class HundredSpecs
       kingtak.earnMoney(10);
       E.expect( untyped(kingtak.money) ).to.equal(110);
     });
-  }  
+  }
+
+  public inline function step28():Void
+  {
+    var laptopCostKeys = { "MacBook": 1500, "Alienware": 2500, "HP": 499, "Surface": 320 };
+    M.it("should define a function named 'purchaseLaptop'", function (){
+      E.expect( untyped(purchaseLaptop) ).to.be.a('function');
+    });
+    M.it("should return the value of a laptop if the brand exists in 'laptopCosts' array", function (){
+      E.expect( untyped(purchaseLaptop)("MacBook") ).to.be.equal("1500");
+      E.expect( untyped(purchaseLaptop)("Alienware") ).to.be.equal("2500");
+      E.expect( untyped(purchaseLaptop)("HP") ).to.be.equal("499");
+      E.expect( untyped(purchaseLaptop)("Surface") ).to.be.equal("320");
+    });
+    M.it("should return -1 if brand does not exists in the 'laptopCosts' array", function (){
+      E.expect( untyped(purchaseLaptop)("Sager") ).to.be.equal(-1);
+      E.expect( untyped(purchaseLaptop)("HipserAppleWareWearable") ).to.be.equal(-1);
+      E.expect( untyped(purchaseLaptop)({}) ).to.be.equal(-1);
+      E.expect( untyped(purchaseLaptop)([]) ).to.be.equal(-1);
+    });
+  }
 
   private inline function step50():Void
   {
