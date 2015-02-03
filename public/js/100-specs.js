@@ -26,6 +26,7 @@ var HundredSpecs = function() {
 	js.mocha.M.describe("browseURL Function",$bind(this,this.step24));
 	js.mocha.M.describe("ListLivingOrgClass Function",$bind(this,this.step25));
 	js.mocha.M.describe("favoritePlanet Function",$bind(this,this.step26));
+	js.mocha.M.describe("Person Class",$bind(this,this.step27));
 	js.mocha.M.describe("Step 50",$bind(this,this.step50));
 	js.mocha.M.describe("Step 51",$bind(this,this.step51));
 	js.mocha.M.describe("Step 52",$bind(this,this.step52));
@@ -591,6 +592,36 @@ HundredSpecs.prototype = {
 		});
 		js.mocha.M.it("should have a gender property.",function() {
 			js.expect.E.expect(new Animal('Frog', 'male')).to.have.property("gender");
+		});
+	}
+	,step27: function() {
+		js.mocha.M.it("should define a Class named 'Person'",function() {
+			js.expect.E.expect(Person).to.be.a("function");
+		});
+		js.mocha.M.it("should instantiate a new Person if given correct arguments",function() {
+			var stringProps = ["name","money","age","gender"];
+			var kingtak = new Person('Justin Wong', 100, 26, 'Male');
+			js.expect.E.expect(kingtak).to.be.a(Person);
+			js.expect.E.expect(Reflect.fields(kingtak)).to.have.length(4);
+			js.expect.E.expect(kingtak).to.only.have.keys(stringProps);
+		});
+		js.mocha.M.it("should have a method named 'spendMoney'",function() {
+			var kingtak = new Person('Justin Wong', 100, 26, 'Male');
+			js.expect.E.expect(kingtak.spendMoney).to.be.a("function");
+		});
+		js.mocha.M.it("Person should be able to spend money",function() {
+			var kingtak = new Person('Justin Wong', 100, 26, 'Male');
+			kingtak.spendMoney(10);
+			js.expect.E.expect(kingtak.money).to.equal(90);
+		});
+		js.mocha.M.it("should have a method named 'earnMoney'",function() {
+			var kingtak = new Person('Justin Wong', 100, 26, 'Male');
+			js.expect.E.expect(kingtak.earnMoney).to.be.a("function");
+		});
+		js.mocha.M.it("Person should be able to earn money",function() {
+			var kingtak = new Person('Justin Wong', 100, 26, 'Male');
+			kingtak.earnMoney(10);
+			js.expect.E.expect(kingtak.money).to.equal(110);
 		});
 	}
 	,step26: function() {

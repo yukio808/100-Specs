@@ -36,6 +36,7 @@ class HundredSpecs
     M.describe("browseURL Function", step24);
     M.describe("ListLivingOrgClass Function", step25);
     M.describe("favoritePlanet Function", step26);
+    M.describe("Person Class", step27);
     M.describe("Step 50", step50);
     M.describe("Step 51", step51);
     M.describe("Step 52", step52);
@@ -499,6 +500,38 @@ class HundredSpecs
       E.expect( untyped(favoritePlanet(planetsKeys[7])) ).to.match("I'm from Neptune, but I wish I could go to (Mercury|Venus|Earth|Mars|Jupiter|Saturn|Uranus|Neptune)");
     });
   }
+
+  public inline function step27():Void
+  {
+    M.it("should define a Class named 'Person'", function (){
+      E.expect( untyped(Person) ).to.be.a('function');
+    });
+    M.it("should instantiate a new Person if given correct arguments", function (){
+      var stringProps = ["name", "money", "age", "gender"];
+      var kingtak = untyped __js__("new Person('Justin Wong', 100, 26, 'Male')");
+      E.expect( kingtak ).to.be.a(untyped __js__("Person"));
+      E.expect( Reflect.fields( untyped(kingtak) ) ).to.have.length(4);
+      E.expect( kingtak ).to.only.have.keys(stringProps);
+    });
+    M.it("should have a method named 'spendMoney'", function (){
+      var kingtak = untyped __js__("new Person('Justin Wong', 100, 26, 'Male')");
+      E.expect( untyped(kingtak.spendMoney) ).to.be.a('function');
+    });
+    M.it("Person should be able to spend money", function (){
+      var kingtak = untyped __js__("new Person('Justin Wong', 100, 26, 'Male')");
+      kingtak.spendMoney(10);
+      E.expect( untyped(kingtak.money) ).to.equal(90);
+    });
+    M.it("should have a method named 'earnMoney'", function (){
+      var kingtak = untyped __js__("new Person('Justin Wong', 100, 26, 'Male')");
+      E.expect( untyped(kingtak.earnMoney) ).to.be.a('function');
+    });
+    M.it("Person should be able to earn money", function (){
+      var kingtak = untyped __js__("new Person('Justin Wong', 100, 26, 'Male')");
+      kingtak.earnMoney(10);
+      E.expect( untyped(kingtak.money) ).to.equal(110);
+    });
+  }  
 
   private inline function step50():Void
   {
