@@ -267,7 +267,7 @@ var beers = {
 	Heffeweisen : "German",
 	Stout 			: ["Thick", "Dark"], 
 	Porter			: "Bitter", 
-	Ale   			: ["light", "Golden"]
+	Ale   			: ["Light", "Golden"]
 };
 
 /* Step 20
@@ -308,7 +308,7 @@ function addNumbers(x, y){
  *
  */
 function installLinux(String){
-	if(String == linuxFlavors.map(String)){
+	if(linuxFlavors.indexOf(String) !== -1){
 		return true;
 	}else{
 		return false;
@@ -330,10 +330,32 @@ function installLinux(String){
  * 
  * @param {String}
  * @return {Bool when False, String when True}
- *
+ * 
  */
-
-
+//  var beers = {
+// 	IPA   			: "Ale",
+// 	Lager 			: "Strong",
+// 	Heffeweisen : "German",
+// 	Stout 			: ["Thick", "Dark"], 
+// 	Porter			: "Bitter", 
+// 	Ale   			: ["light", "Golden"]
+// };
+function drink(beer){
+  // access the beer obj variable and check if beer is in the property of the beers variable
+  // possible for testing if it has its own property
+  //console.log("This " + beer + " is a " + beers[beer]);
+  var logger = false;
+  if (beers.hasOwnProperty(beer)){ 
+	  if(beers[beer] !== undefined){
+	  	if (beers[beer] instanceof Array){// instance of array is not being checked.
+	  		return ("This " + beer + " is " + beers[beer][0] + " and " + beers[beer][1] + ".");
+	  	}
+			return "This " + beer + " is " + beers[beer] + ".";
+	  } 
+	}
+  return logger;
+// check if multiple beers are being passed through and print the results
+}
 /* Step 24
  *
  * Define a function named "browseURL" that takes
