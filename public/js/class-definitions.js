@@ -261,7 +261,14 @@ var scmList = ["git", "svn", "mercurial", "bazaar", "cvs"];
  *                  "Golden"
  *
  */
-
+var beers = {
+	IPA   			: "Ale",
+	Lager 			: "Strong",
+	Heffeweisen : "German",
+	Stout 			: ["Thick", "Dark"], 
+	Porter			: "Bitter", 
+	Ale   			: ["light", "Golden"]
+};
 
 /* Step 20
  *
@@ -271,7 +278,9 @@ var scmList = ["git", "svn", "mercurial", "bazaar", "cvs"];
  * @return {String}
  *
  */
-
+function sahara_river(){
+	return "Nile River";
+}
 
 /* Step 21
  *
