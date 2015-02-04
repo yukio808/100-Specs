@@ -3,7 +3,7 @@
  * Declare a variable named "unicorn"
  *
  */
-
+var unicorn = 0;
 
 /* Step 2
  *
@@ -11,7 +11,7 @@
  * then assign it to be the value of "Atari"
  *
  */
-
+var videogame_system = "Atari";
 
 /* Step 3
  *
