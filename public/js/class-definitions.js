@@ -207,7 +207,12 @@ var DNA = ["nucleatides", "guanine", "adenine", "thymine", "cytosine"];
  * Surface      => 320
  *
  */
-
+var laptopCosts = {
+  MacBook  : 1500,
+  Alienware: 2500,
+  HP       : 499,
+  Surface  : 320
+};
 
 /* Step 17
  *
@@ -223,7 +228,7 @@ var DNA = ["nucleatides", "guanine", "adenine", "thymine", "cytosine"];
  * "Species"
  *
  */
-
+var livingOrganismClassification = ["Kingdom", "Phylum", "Class", "Order", "Family", "Genus", "Species"];
 
 /* Step 18
  *
@@ -238,7 +243,7 @@ var DNA = ["nucleatides", "guanine", "adenine", "thymine", "cytosine"];
  *
  */
 
-
+var scmList = ["git", "svn", "mercurial", "bazaar", "cvs"];
 /* Step 19
  *
  * Define a literal object named "beers" with
