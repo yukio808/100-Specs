@@ -45,7 +45,7 @@ var galilean_moons = ['Io','Europa','Ganymede','Callisto'];
  * and assign the value of golden_ratio to 1.61803398874
  *
  */
-
+var golden_ratio = 1.61803398874;
 
 /* Step 7
  *
@@ -53,7 +53,7 @@ var galilean_moons = ['Io','Europa','Ganymede','Callisto'];
  * and assign the value of earths_water_composition to 0.71
  *
  */
-
+var earths_water_composition = 0.71;
 
 /* Step 8
  *
@@ -61,7 +61,7 @@ var galilean_moons = ['Io','Europa','Ganymede','Callisto'];
  * and assign the value of club_name to "Fight Club"
  *
  */
-
+var club_name = "Fight Club";
 
 /* Step 9
  *
