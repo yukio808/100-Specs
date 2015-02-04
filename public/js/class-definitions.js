@@ -72,7 +72,9 @@ var club_name = "Fight Club";
  *   male    => "male"
  *   unknown => undefined
  */
-
+var gender = {
+	property : value
+};
 
 /* Step 10
  *
