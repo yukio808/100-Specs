@@ -347,14 +347,14 @@ function drink(beer){
   var logger = false;
   if (beers.hasOwnProperty(beer)){ 
 	  if(beers[beer] !== undefined){
-	  	if (beers[beer] instanceof Array){// instance of array is not being checked.
+	  	if (beers[beer] instanceof Array){
 	  		return ("This " + beer + " is " + beers[beer][0] + " and " + beers[beer][1] + ".");
+				// check if multiple beers are being passed through and print the results
 	  	}
 			return "This " + beer + " is " + beers[beer] + ".";
 	  } 
 	}
   return logger;
-// check if multiple beers are being passed through and print the results
 }
 /* Step 24
  *
@@ -367,6 +367,23 @@ function drink(beer){
  * @return {String}
  *
  */
+
+//  var browsers = {
+// 	"Chromium"   : "google.com",
+//   "Safari"     : "apple.com",
+//   "Opera"      : "opera.com",
+//   "Firefox"    : "mozilla.org",
+//   "Sleipnir"   : "fenrir-inc.com",
+//   "Konqueror"  : "konqueror.org"
+// };
+
+function browseURL(browser){
+  if (browsers[browser] !== undefined){
+ 	return (browsers[browser]);
+	}
+		return false;
+
+}
 
 
 /* Step 25
