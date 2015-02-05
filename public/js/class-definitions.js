@@ -479,7 +479,7 @@ Person.prototype.earnMoney = function (income){
 function purchaseLaptop(laptop){
 	if (laptopCosts.hasOwnProperty(laptop)){ 
 	  if(laptopCosts[laptop] !== undefined){
-	  	return laptopCosts[laptop];
+	  	return laptopCosts[laptop].toString();
 	  } 
 	}
   return -1;
