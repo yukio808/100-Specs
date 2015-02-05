@@ -588,9 +588,10 @@ function SolarSystem (planets){
 SolarSystem.prototype.addPlanet = function (planet){
 	this.planets.push(planet);
 };
-SolarSystem.prototype.removePlanet = function(){
-	
-}
+SolarSystem.prototype.removePlanet = function(planet){
+	var removal = this.planets.indexOf(planet);
+	this.planets.splice(removal, 1);
+};
 
 
 /* Step 33
