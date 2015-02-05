@@ -344,17 +344,16 @@ function drink(beer){
   // access the beer obj variable and check if beer is in the property of the beers variable
   // possible for testing if it has its own property
   //console.log("This " + beer + " is a " + beers[beer]);
-  var logger = false;
   if (beers.hasOwnProperty(beer)){ 
 	  if(beers[beer] !== undefined){
 	  	if (beers[beer] instanceof Array){
-	  		return ("This " + beer + " is " + beers[beer][0] + " and " + beers[beer][1] + ".");
+	  		return "This " + beer + " is " + beers[beer].join(" and ")  + ".";
 				// check if multiple beers are being passed through and print the results
 	  	}
 			return "This " + beer + " is " + beers[beer] + ".";
 	  } 
 	}
-  return logger;
+  return false;
 }
 /* Step 24
  *
@@ -379,9 +378,9 @@ function drink(beer){
 
 function browseURL(browser){
   if (browsers[browser] !== undefined){
- 	return (browsers[browser]);
+ 		return (browsers[browser]);
 	}
-		return false;
+	return false;
 
 }
 
@@ -395,7 +394,14 @@ function browseURL(browser){
  * @return {String}
  *
  */
-
+function listLivingOrgClass(){
+	var liForm =[];
+	for (i = 0 ; i < livingOrganismClassification.length; i++){
+		//console.log(livingOrganismClassification[i]);
+		liForm.push("<li>" + livingOrganismClassification[i] + "</li>");
+	}
+	return "<ul>" + liForm.join("") + "</ul>";
+}
 
 /* Step 26
  *
@@ -416,7 +422,13 @@ function browseURL(browser){
  * @return {String}
  *
  */
-
+function favoritePlanet(planet){
+	var randomNum = Math.floor(Math.random() * planets.length);
+	if (planets.indexOf(planet) !== -1){
+		return "I\'m from " + planet + ", but I wish I could go to " + planets[randomNum];
+	}
+	return planet + " is not a planet!";
+}
 
 /* Step 27
  *
@@ -440,7 +452,12 @@ function browseURL(browser){
  *   earnMoney
  *
  */
-
+function Person (name, money, age, gender){
+	this.name = name;
+	this.money = money;
+	this.age= age;
+	this.gender = gender; 
+}
 
 /* Step 28
  *
