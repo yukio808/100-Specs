@@ -525,7 +525,12 @@ function canTalkAbout (club){
  *   write
  *
  */
-
+function Pen (color){
+	this.color= color;
+}
+Pen.prototype.write = function(message){
+	return this.color + ": " + message;
+};
 
 /* Step 31
  *
@@ -548,7 +553,18 @@ function canTalkAbout (club){
  *   grow
  * 
  */
-
+function Garden(plantsTotal){
+	this.plantsTotal = plantsTotal;
+	this.isWatered = false;
+}
+Garden.prototype.water = function (){
+	this.isWatered = true;
+};
+Garden.prototype.grow = function (){
+	if(this.isWatered === false){
+	this.plantsTotal += 1;
+	}	
+};
 
 /* Step 32
  *
@@ -566,6 +582,15 @@ function canTalkAbout (club){
  *   removePlanet
  *
  */
+function SolarSystem (planets){
+	this.planets = [];
+}
+SolarSystem.prototype.addPlanet = function (planet){
+	this.planets.push(planet);
+};
+SolarSystem.prototype.removePlanet = function(){
+	
+}
 
 
 /* Step 33
