@@ -455,9 +455,15 @@ function favoritePlanet(planet){
 function Person (name, money, age, gender){
 	this.name = name;
 	this.money = money;
-	this.age= age;
+	this.age = age;
 	this.gender = gender; 
 }
+Person.prototype.spendMoney = function(cost){
+  this.money = this.money - cost;
+};
+Person.prototype.earnMoney = function (income){
+	this.money = this.money + income;
+};
 
 /* Step 28
  *
@@ -470,7 +476,14 @@ function Person (name, money, age, gender){
  * @return {Number}
  *
  */
-
+function purchaseLaptop(laptop){
+	if (laptopCosts.hasOwnProperty(laptop)){ 
+	  if(laptopCosts[laptop] !== undefined){
+	  	return laptopCosts[laptop];
+	  } 
+	}
+  return -1;
+}
 
 /* Step 29
  *
