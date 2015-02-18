@@ -626,7 +626,35 @@ SolarSystem.prototype.removePlanet = function(planet){
  *   marries
  *
  */
-
+function PrincessLeia (name, money, age, gender){
+  this.name = name;
+  this.money = money;
+  this.age = age;
+  this.gender = gender;
+	this.isInTrouble = null;
+}
+PrincessLeia.prototype = Object.create(Person.prototype, {
+	constructor : {
+		value : Person
+	}
+});
+PrincessLeia.prototype.shootsGun = function (){
+	this.isInTrouble = false;
+	return "Leia shoots her gun wildly";
+};
+PrincessLeia.prototype.getsInTrouble=  function(){
+	this.isInTrouble = true;
+	return "Help me Obi-wan Kenobi, you're my only hope";
+};
+PrincessLeia.prototype.marries = function(mar){
+	if (mar == "Han Solo"){
+		return true;
+	}else if (mar == "Luke Skywalker"){
+		return "Gross!";
+	}else if (mar != "Han Solo") {
+		return false;
+	}
+};
 
 /* Step 34
  *
@@ -645,7 +673,17 @@ SolarSystem.prototype.removePlanet = function(planet){
  *   staplePapers
  *
  */
-
+function Stapler (color, maxPapers){
+  this.color = color;
+  this.maxPapers = maxPapers;
+}
+Stapler.prototype.staplePapers = function(papers){
+  if(this.maxPapers >= papers){
+    return true;
+  }else{
+    return false;
+  }
+};
 
 /* Step 35
  *
@@ -685,8 +723,45 @@ SolarSystem.prototype.removePlanet = function(planet){
  *   addDiscovery
  *   
  */
-
-
+function Scientist(name, money, age, gender){
+  this.name = name;
+  this.money = money;
+  this.age = age;
+  this.gender = gender;
+  this.disciplines = [];
+  this.discoveries = [];
+}
+Scientist.prototype = Object.create(Person.prototype, {
+  constructor : {
+    value : Person
+  }
+});
+Scientist.prototype.addDiscipline = function (string){
+  var result = this.disciplines;
+  result.push(string);
+  return result;
+};
+Scientist.prototype.checkDiscipline = function(string){
+  if(this.disciplines.indexOf(string) !== -1){
+    return true;
+  }else{
+    return false;
+  }
+};
+Scientist.prototype.addDiscovery = function(string){
+  var result = this.discoveries;
+  result.push(string);
+  if(this.discoveries.length == 1){ 
+  return "I discovered " + string + ".";
+  }
+  if(this.discoveries.length == 2){
+  return "I discovered " + result[0] + " and " + result[1] + ".";
+  }
+  if(this.discoveries.length == 3){
+    return "I discovered " + result[0] + ", " + result[1] + ", " + "and " + result[2] + ".";
+  }
+};
+///////////////////////////////////////////////////////////////////////////////////////////////////////
 /* Step 36
  *
  * Define a class named "BankAccount" that has properties
@@ -707,7 +782,6 @@ SolarSystem.prototype.removePlanet = function(planet){
  *   rob
  *
  */
-
 
 /* Step 37
  *
@@ -868,6 +942,7 @@ SolarSystem.prototype.removePlanet = function(planet){
  *
  */
 
+///////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /**
  * Define a Classes
@@ -880,8 +955,10 @@ SolarSystem.prototype.removePlanet = function(planet){
  * @param {string} species The animal species
  * @param {string} gender  male or female
  */
-
-
+function Animal (species, gender){
+  this.species = species;
+  this.gender = gender;
+}
 /**
  * Step 51
  * 
@@ -889,7 +966,10 @@ SolarSystem.prototype.removePlanet = function(planet){
  * @param {string} make The vehicle's make
  * @param {string} model The vehicle's model
  */
-
+function Vehicle (make, model){
+  this.make = make; 
+  this.model = model;
+}
 
 /**
  * Step 52
@@ -897,7 +977,9 @@ SolarSystem.prototype.removePlanet = function(planet){
  * Shape class
  * @param {number} sides The number of sides, should be greater than 3
  */
-
+function Shape (sides){
+  this.sides = sides;
+}
 
 /**
  * Step 53
@@ -906,7 +988,10 @@ SolarSystem.prototype.removePlanet = function(planet){
  * @param {anything} contents The contents of the box
  * @param {boolean} isOpen     Whether the box is opened or closed
  */
-
+function Box (contents, isOpen){
+  this.contents = contents;
+  this.isOpen = false;
+}
 
 /**
  * Step 54
@@ -914,7 +999,9 @@ SolarSystem.prototype.removePlanet = function(planet){
  * Door class
  * @param {boolean} isOpen Whether the door is opened or closed
  */
-
+function Door (isOpen){
+  this.isOpen = false;
+}
 
 /**
  * Step 55
@@ -923,7 +1010,10 @@ SolarSystem.prototype.removePlanet = function(planet){
  * @param {number} size  The shoe size
  * @param {string} color The shoe color
  */
-
+function Shoe (size, color){
+  this.size = size;
+  this.color = color;
+}
 
 /**
  * Step 56
@@ -931,7 +1021,9 @@ SolarSystem.prototype.removePlanet = function(planet){
  * House class
  * @param {number} stories How many stories tall the house is
  */
-
+function House (stories){
+  this.stories = stories;
+}
 
 /**
  * Step 57
@@ -939,7 +1031,9 @@ SolarSystem.prototype.removePlanet = function(planet){
  * Lightbulb class
  * @param {boolean} isOn Whether the light is on or off
  */
-
+function Lightbulp (isOn){
+  this.isOn = false;
+}
 
 /**
  * Step 58
@@ -947,7 +1041,9 @@ SolarSystem.prototype.removePlanet = function(planet){
  * Cookie class
  * @param {string} flavor The cookie's flavor
  */
-
+function Cookie (flavor){
+  this.flavor = flavor;
+}
 
 /**
  * Step 59
