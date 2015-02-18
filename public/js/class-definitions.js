@@ -1031,7 +1031,7 @@ function House (stories){
  * Lightbulb class
  * @param {boolean} isOn Whether the light is on or off
  */
-function Lightbulp (isOn){
+function Lightbulb (isOn){
   this.isOn = false;
 }
 
@@ -1051,7 +1051,9 @@ function Cookie (flavor){
  * Meal class
  * @param {Array} foods All the foods in the meal
  */
-
+function Meal (foods){
+  this.foods = foods;
+}
 
 /**
  * Create a new instance of the Classes you defined above, below!
@@ -1060,32 +1062,36 @@ function Cookie (flavor){
 
 
 // Create 2 different species of animals
-var george;
-var nemo;
+var george = new Animal("Monkey", "male");
+var nemo = new Animal("Fish", "male");
 
 // Create 2 different vehicles
-var civic;
-var forte;
+var civic = new Vehicle("Honda", "Civic");
+var forte = new Vehicle("KIA", "Forte");
 
 // Create 2 shapes with different numbers of sides
-var square;
-var hexagon;
+var square = new Shape(4);
+var hexagon = new Shape(6);
 
 // Create 2 boxes
-var catBox;
-var christmasPresent;
+var catBox = new Box(new Animal("Cat")); 
+catBox.isOpen = true;
+var christmasPresent = new Box("present");
+christmasPresent.isOpen = false;
 
 // Create 2 doors
-var automaticDoor;
-var bankVault;
+var automaticDoor = new Door();
+automaticDoor.isOpen = true;
+var bankVault = new Door();
+bankVault.isOpen = false;
 
 // Create 2 shoes
-var rubySlippers;
-var dressShoes;
+var rubySlippers = new Shoe(7, "red");
+var dressShoes = new Shoe(10, "black");
 
 // Create 2 houses
-var singleStory;
-var twoStory;
+var singleStory = new House(1);
+var twoStory = new House(2);
 
 // Create 2 lightbulbs
 var incandescent;
