@@ -1094,16 +1094,20 @@ var singleStory = new House(1);
 var twoStory = new House(2);
 
 // Create 2 lightbulbs
-var incandescent;
-var halogen;
+var incandescent = new Lightbulb();
+incandescent.isOn = true;
+var halogen = new Lightbulb();
+halogen.isOn = false;
 
 // Create 2 cookies of different flavors
-var chocolateChip;
-var gingerbread;
+var chocolateChip = new Cookie("chocolate");
+var gingerbread = new Cookie("gingerbread");
 
 // Create 2 different meals
-var breakfast;
-var dinner;
+var breakfast = new Meal("breakfast");
+breakfast.foods = ["cereal", "milk"];
+var dinner = new Meal("dinner");
+dinner.foods= ["fish", "vegetables"];
 
 
  /* Steps 81 to 90
@@ -1111,7 +1115,6 @@ var dinner;
  * Create methods
  *
  */
-
 
 /* Step 81
  *
@@ -1127,6 +1130,8 @@ var dinner;
  *       Any other species => "Could not determine if warm-blooded"
  *
  */
+function isWarmBlooded (){
+}
 
 
 /* Step 82
