@@ -3,7 +3,7 @@
  * Declare a variable named "unicorn"
  *
  */
-var unicorn = 0;
+var unicorn = null;
 
 /* Step 2
  *
@@ -559,11 +559,14 @@ function Garden(plantsTotal){
 }
 Garden.prototype.water = function (){
 	this.isWatered = true;
+  return this.isWatered;
 };
 Garden.prototype.grow = function (){
-	if(this.isWatered === false){
-	this.plantsTotal += 1;
-	}	
+	if(this.isWatered === true){
+  	this.plantsTotal += 1;
+    this.isWatered = false;
+	}
+  return this.isWatered;
 };
 
 /* Step 32
@@ -978,6 +981,10 @@ function Vehicle (make, model){
  * @param {number} sides The number of sides, should be greater than 3
  */
 function Shape (sides){
+  if(typeof sides !== "number" || sides < 3 || sides > 10){
+    this.sides = null;
+    return;
+  }
   this.sides = sides;
 }
 
@@ -990,7 +997,7 @@ function Shape (sides){
  */
 function Box (contents, isOpen){
   this.contents = contents;
-  this.isOpen = false;
+  this.isOpen = isOpen;
 }
 
 /**
@@ -1000,7 +1007,7 @@ function Box (contents, isOpen){
  * @param {boolean} isOpen Whether the door is opened or closed
  */
 function Door (isOpen){
-  this.isOpen = false;
+  this.isOpen = isOpen;
 }
 
 /**
@@ -1071,6 +1078,7 @@ var forte = new Vehicle("KIA", "Forte");
 
 // Create 2 shapes with different numbers of sides
 var square = new Shape(4);
+square.sides = 4;
 var hexagon = new Shape(6);
 
 // Create 2 boxes
@@ -1130,8 +1138,20 @@ dinner.foods= ["fish", "vegetables"];
  *       Any other species => "Could not determine if warm-blooded"
  *
  */
-function isWarmBlooded (){
-}
+Animal.prototype.isWarmBlooded = function(){
+  if("Bird" == this.species){
+    return true;
+  }else if("Monkey" == this.species){
+    return true;
+  }
+  if("Fish" == this.species){
+    return false;
+  }else{
+    return "Could not determine if warm-blooded";
+  }
+
+};
+
 
 
 /* Step 82
@@ -1141,7 +1161,12 @@ function isWarmBlooded (){
  * return "Driving on {streetName}", else return "Driving forward".
  *
  */
-
+Vehicle.prototype.drive = function (streetName) {
+  if(streetName === null || streetName.length === 0){
+    return "Driving forward";
+  }
+  return "Driving on " + streetName;
+};
 
  /* Step 83
  *
@@ -1160,7 +1185,35 @@ function isWarmBlooded (){
  * Any other number => "Could not determine type"
  *
  */
-
+Shape.prototype.getType = function(){
+  console.log(this.sides);
+  if(this.sides == 3){
+    return "triangle"; 
+  }
+  if(this.sides == 4){
+    return "quadrilateral";
+  }
+  if(this.sides == 5){
+    return "pentagon";
+  }
+  if(this.sides == 6){
+    return "hexagon";
+  }
+  if(this.sides == 7){
+    return "heptagon";
+  }
+  if(this.sides == 8){
+    return "octagon";
+  }
+  if(this.sides == 9){
+    return "nonagon";
+  }
+  if(this.sides == 10){
+    return "decagon";
+  }else{
+    return "Could not determine type";
+  }
+};
 
 /* Step 84
  *
@@ -1170,8 +1223,15 @@ function isWarmBlooded (){
  * Return true if openBox opens the box, false otherwise.
  *
  */
-
-
+Box.prototype.openBox = function(){
+  if(this.isOpen === false){
+    this.isOpen = true;
+    return true;
+  }else{
+    return false;
+  }
+};
+//?????????????????????????????????????????
  /* Step 85
  *
  * Declare a Door method called openClose that opens the door
@@ -1179,7 +1239,16 @@ function isWarmBlooded (){
  * Return true if openClose opens the door, false if openClose closes the door.
  *
  */
-
+Door.prototype.openClose = function(){
+  if(this.isOpen === false){
+    this.isOpen = true;
+    return true;
+  }
+  if(this.isOpen === true){
+    this.isOpen = false;
+    return false;
+  }
+};
 
 /* Step 86
  *
@@ -1187,7 +1256,11 @@ function isWarmBlooded (){
  * the color and size of the shoe ("Found red shoes of size 8").
  *
  */
-
+Shoe.prototype.findShoes = function(){
+  var clr = this.color;
+  var size = this.size;
+  return "Found " + clr + " shoes of size " + size;
+};
 
  /* Step 87
  *
@@ -1197,7 +1270,13 @@ function isWarmBlooded (){
  * storiesTooTall, return true, else return false.
  *
  */
-
+House.prototype.isATallStory = function(storiesTooTall){
+  if(this.stories >= storiesTooTall){
+    return true;
+  }else{
+    return false;
+  }
+};
 
  /* Step 88
  *
@@ -1208,7 +1287,14 @@ function isWarmBlooded (){
  * Return true if isOn is true, false otherwise.
  *
  */
-
+Lightbulb.prototype.flipSwitch = function(str){
+  if(str == "on"){
+    this.isOn = true;
+    return true;
+  }else{
+    return false;
+  }
+};
 
  /* Step 89
  *
@@ -1217,7 +1303,18 @@ function isWarmBlooded (){
  * and the dayOfTheWeek is "Monday", return true.  Else return false.
  *
  */
-
+Cookie.prototype.swipedByCookieMonster = function(dayOfTheWeek){
+  if(this.flavor == "chocolate"){
+    if(dayOfTheWeek == "Monday"){
+    return true;
+    }else{
+      return false;
+    }
+  }
+  if(this.flavor != "chocolate"){
+    return false;
+  }
+};
 
  /* Step 90
  *
@@ -1232,7 +1329,23 @@ function isWarmBlooded (){
  * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf
  *
  */
+Meal.prototype.containsJunkFood = function(){
+  var junkFood = [
+  "chips",
+  "soda",
+  "ice cream",
+  "popcorn",
+  "candy"];
+  console.log(junkFood.indexOf(this.foods));
+  if(junkFood.indexOf(this.foods) === -1){
+    return false;
+  }
+  if(junkFood.indexOf(this.foods) !== -1){
+    return true;
+    // this tests for if there is a junkfood item in myarray.
+  }
 
+};
 
  /* Steps 91 to 100
  *
